@@ -1,0 +1,1876 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StrawberryShake.Core</name>
+    </assembly>
+    <members>
+        <member name="T:StrawberryShake.ClientBuilder`1">
+            <inheritdoc />
+        </member>
+        <member name="M:StrawberryShake.ClientBuilder`1.#ctor(System.String,Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Initializes a new instance of a <see cref="T:StrawberryShake.ClientBuilder`1"/>
+            </summary>
+            <param name="clientName">
+            The name of the client
+            </param>
+            <param name="services">
+            The service collection this client was registered to
+            </param>
+            <param name="clientServices">
+            The service collection of the client
+            </param>
+        </member>
+        <member name="P:StrawberryShake.ClientBuilder`1.ClientName">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientBuilder`1.Services">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientBuilder`1.ClientServices">
+            <inheritdoc />
+        </member>
+        <member name="T:StrawberryShake.ClientError">
+            <summary>
+            Represents a query error.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.ClientError.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyList{System.Object},System.Collections.Generic.IReadOnlyList{StrawberryShake.Location},System.Exception,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.ClientError"/>.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="code">The error code.</param>
+            <param name="path">The field path where the error happened.</param>
+            <param name="locations">A location reference to the query document.</param>
+            <param name="exception">An associated exception.</param>
+            <param name="extensions">Additional error data.</param>
+        </member>
+        <member name="P:StrawberryShake.ClientError.Message">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientError.Code">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientError.Path">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientError.Locations">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientError.Exception">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.ClientError.Extensions">
+            <inheritdoc />
+        </member>
+        <member name="T:StrawberryShake.DocumentHash">
+            <summary>
+            Represents the document hash.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.DocumentHash.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.DocumentHash"/>.
+            </summary>
+            <param name="algorithm">
+            The name of the hash algorithm.
+            </param>
+            <param name="value">
+            The document hash value.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.DocumentHash.Algorithm">
+            <summary>
+            Gets the name of the hash algorithm.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.DocumentHash.Value">
+            <summary>
+            Gets the document hash value.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.EntityId">
+            <summary>
+            Represents the internal entity id which is used to interact with the client store.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.EntityId.#ctor(System.String,System.Object)">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.EntityId"/>.
+            </summary>
+            <param name="name">
+            The GraphQL type name.
+            </param>
+            <param name="value">
+            The internal ID value.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.EntityId.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityId.Value">
+            <summary>
+            Gets the internal ID value.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.EntityId.Equals(StrawberryShake.EntityId)">
+            <summary>
+            Indicates whether this instance and a specified <paramref name="other"/> are equal.
+            </summary>
+            <param name="other">
+            The other <see cref="T:StrawberryShake.EntityId"/> to compare with the current instance.
+            </param>
+            <returns>
+            <see langword="true" /> if <paramref name="other" /> and this instance are
+            the same type and represent the same value; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.EntityId.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="obj">
+            The object to compare with the current instance.
+            </param>
+            <returns>
+            <see langword="true" /> if <paramref name="obj" /> and this instance are
+            the same type and represent the same value; otherwise, <see langword="false" />.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.EntityId.GetHashCode">
+            <summary>Returns the hash code for this instance.</summary>
+            <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        </member>
+        <member name="T:StrawberryShake.EntityIdOrData">
+            <summary>
+            <see cref="T:StrawberryShake.EntityIdOrData"/> represents a union that can be
+            a <see cref="P:StrawberryShake.EntityIdOrData.EntityId"/> or a data object.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.EntityIdOrData.#ctor(StrawberryShake.EntityId)">
+            <summary>
+            Creates a new <see cref="T:StrawberryShake.EntityIdOrData"/> instance.
+            </summary>
+            <param name="entityId">
+            The entity id.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.EntityIdOrData.#ctor(System.Object)">
+            <summary>
+            Creates a new <see cref="T:StrawberryShake.EntityIdOrData"/> instance.
+            </summary>
+            <param name="data">
+            The data.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.EntityIdOrData.EntityId">
+            <summary>
+            Gets the entityId value.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityIdOrData.IsEntityId">
+            <summary>
+            Defines if this union is an entityId.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityIdOrData.Data">
+            <summary>
+            Gets the data value.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityIdOrData.IsData">
+            <summary>
+            Defines if this union is data.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.EntityIdOrData.op_Implicit(StrawberryShake.EntityId)~StrawberryShake.EntityIdOrData">
+            <summary>
+            Implicitly calls <c>new EntityIdOrData(entityId)</c>.
+            </summary>
+            <param name="entityId">
+            The <paramref cref="!:entityId"/> that shall be converted.
+            </param>
+        </member>
+        <member name="T:StrawberryShake.EntityInfo">
+            <summary>
+            The entity info allows access to the entity and the id of the entity.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.EntityInfo.#ctor(StrawberryShake.EntityId,System.Object)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.EntityInfo"/>.
+            </summary>
+            <param name="id">
+            The Entity object.
+            </param>
+            <param name="entity">
+            The entity id.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.EntityInfo.Id">
+            <summary>
+            Gets the entity id.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityInfo.Entity">
+            <summary>
+            Gets the entity object.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.EntityStore">
+            <summary>
+            The entity store can be used to access and mutate entities.
+            </summary>
+            <summary>
+            The entity store can be used to access and mutate entities.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityStore.CurrentSnapshot">
+            <inheritdoc />
+        </member>
+        <member name="M:StrawberryShake.EntityStore.Update(System.Action{StrawberryShake.IEntityStoreUpdateSession})">
+            <inheritdoc />
+        </member>
+        <member name="M:StrawberryShake.EntityStore.Watch">
+            <inheritdoc />
+        </member>
+        <member name="P:StrawberryShake.EntityUpdate.Snapshot">
+            <summary>
+            Gets the store snapshot.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityUpdate.UpdatedEntityIds">
+            <summary>
+            Gets the ids of the updated entities.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.EntityUpdate.Version">
+            <summary>
+            Gets the store version.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.ErrorCodes.InvalidRuntimeType">
+            <summary>
+            The runtime value is expected to be {runtimeType} for {scalarType}.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.ErrorCodes.InvalidResultDataStructure">
+            <summary>
+            Error while building the result. 
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.GraphQLClientException">
+            <summary>
+            GraphQL client-side error.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.GraphQLClientException.#ctor(System.String)">
+            <summary>
+            Creates a new exception with the specified message.
+            </summary>
+            <param name="message">
+            The error message.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.GraphQLClientException.#ctor(StrawberryShake.IClientError)">
+            <summary>
+            Creates a new exception that is caused by the specified client <see cref="!:error"/>.
+            </summary>
+            <param name="error">
+            The client error.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="error"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.GraphQLClientException.#ctor(StrawberryShake.IClientError[])">
+            <summary>
+            Creates a new exception that is caused by the specified client <paramref cref="!:errors"/>.
+            </summary>
+            <param name="errors">
+            The client errors.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="errors"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.GraphQLClientException.#ctor(System.Collections.Generic.IEnumerable{StrawberryShake.IClientError})">
+            <summary>
+            Creates a new exception that is caused by the specified client <paramref cref="!:errors"/>.
+            </summary>
+            <param name="errors">
+            The client errors.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="errors"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="P:StrawberryShake.GraphQLClientException.Message">
+            <summary>
+            The aggregated error message.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.GraphQLClientException.Errors">
+            <summary>
+            The underlying client errors.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IClientBuilder`1">
+            <summary>
+            Represents a builder that can be used to configure a client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientBuilder`1.ClientName">
+            <summary>
+            The name of the client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientBuilder`1.Services">
+            <summary>
+            The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> this client was registered to
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientBuilder`1.ClientServices">
+            <summary>
+            The <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> of the client
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IClientError">
+            <summary>
+            Represents a query error.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Message">
+            <summary>
+            Gets the error message.
+            This property is mandatory and cannot be null.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Code">
+            <summary>
+            Gets an error code that can be used to automatically
+            process an error.
+            This property is optional and can be null.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Path">
+            <summary>
+            Gets the path to the object that caused the error.
+            This property is optional and can be null.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Locations">
+            <summary>
+            Gets the source text positions to which this error refers to.
+            This property is optional and can be null.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Exception">
+            <summary>
+            Gets the exception associated with this error.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IClientError.Extensions">
+            <summary>
+            Gets non-spec error properties.
+            This property is optional and can be null.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IConnection`1">
+            <summary>
+            A connection represents a transport connection to a GraphQL server and allows to execute
+            requests against it.
+            </summary>
+            <typeparam name="TResponseBody"></typeparam>
+        </member>
+        <member name="M:StrawberryShake.IConnection`1.ExecuteAsync(StrawberryShake.OperationRequest)">
+            <summary>
+            Executes a request and yields the results.
+            </summary>
+            <param name="request">
+            The operation request that shall be send to the server.
+            </param>
+            <returns>
+            The results of the request.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IDocument">
+            <summary>
+            Represents a GraphQL query document.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IDocument.Kind">
+            <summary>
+            Defines operation kind.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IDocument.Body">
+            <summary>
+            Gets the GraphQL document body.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IDocument.Hash">
+            <summary>
+            Gets the document hash.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IEntityIdSerializer">
+            <summary>
+            The entity ID serializer allows to parse entities from JSON, or
+            to format the entity id as JSON string.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IEntityIdSerializer.Parse(System.Text.Json.JsonElement)">
+            <summary>
+            Parse an entity ID from a JSON object.
+            </summary>
+            <param name="obj">
+            The JSON object.
+            </param>
+            <returns>
+            Returns an entity id that can identify the object.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IEntityIdSerializer.Format(StrawberryShake.EntityId)">
+            <summary>
+            Formats the <paramref name="entityId"/> to a JSON object.
+            </summary>
+            <param name="entityId">
+            The entity id that shall be serialized.
+            </param>
+            <returns>
+            Returns a string representing the <paramref name="entityId"/>.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IEntityMapper`2">
+            <summary>
+            The entity mapper maps the data from an entity to a new read-only model
+            that is used by the result data object.
+            </summary>
+            <typeparam name="TEntity">The entity type.</typeparam>
+            <typeparam name="TModel">The model type.</typeparam>
+        </member>
+        <member name="M:StrawberryShake.IEntityMapper`2.Map(`0,StrawberryShake.IEntityStoreSnapshot)">
+            <summary>
+            Maps the data from the entity to a new read-only model
+            that is used by the result data object.
+            </summary>
+            <param name="entity">
+            The entity from which we want to create the model.
+            </param>
+            <param name="snapshot">
+            An optional store snapshot that shall be used instead of the newest snapshot.
+            </param>
+            <returns>
+            Returns a new read-only instance of the model that was created by using the entity.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IEntityStore">
+            <summary>
+            The entity store can be used to access and mutate entities.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IEntityStore.CurrentSnapshot">
+            <summary>
+            Gets the current snapshot of the store.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IEntityStore.Update(System.Action{StrawberryShake.IEntityStoreUpdateSession})">
+            <summary>
+            Updates the store by modifying entities.
+            Updating the store will cause a new snapshot.
+            </summary>
+            <param name="action">
+            The action that represents the store mutation.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.IEntityStore.Watch">
+            <summary>
+            Observe the entity store.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IEntityStoreSnapshot">
+            <summary>
+            A store snapshot represents the state of the store at a specific point in time.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IEntityStoreSnapshot.Version">
+            <summary>
+            Gets an <see cref="T:System.UInt64"/> representing the version of this snapshot.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreSnapshot.GetEntity``1(StrawberryShake.EntityId)">
+            <summary>
+            Gets an entity object that is tracked by the store.
+            </summary>
+            <param name="id">
+            The entity id.
+            </param>
+            <typeparam name="TEntity">
+            The entity type.
+            </typeparam>
+            <returns>
+            The retrieved entity instance.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreSnapshot.TryGetEntity``1(StrawberryShake.EntityId,``0@)">
+            <summary>
+            Tries to get an entity object that is tracked by the store.
+            </summary>
+            <param name="id">
+            The entity id.
+            </param>
+            <param name="entity">
+            The retrieved entity or <c>null</c>.
+            </param>
+            <typeparam name="TEntity">
+            The entity type.
+            </typeparam>
+            <returns>
+            <c>true</c> if an entity was found that matches the <paramref name="id"/> and type.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreSnapshot.GetEntities``1(System.Collections.Generic.IEnumerable{StrawberryShake.EntityId})">
+            <summary>
+            Get entity object which are tracked by this store.
+            </summary>
+            <param name="ids">
+            Entity ids.
+            </param>
+            <typeparam name="TEntity">
+            The entity type.
+            </typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreSnapshot.GetEntities(System.String)">
+            <summary>
+            Gets all the entities or the entities of a specific type.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreSnapshot.GetEntityIds">
+            <summary>
+            Gets all the entity ids that are currently managed by the store.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IEntityStoreUpdateSession">
+            <summary>
+            The update session can be used to create a new store snapshot that will replace the
+            current one.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IEntityStoreUpdateSession.CurrentSnapshot">
+            <summary>
+            Gets the snapshot that is being created by this store update.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreUpdateSession.SetEntity``1(StrawberryShake.EntityId,``0)">
+            <summary>
+            Adds or replaces an entity.
+            </summary>
+            <param name="id">The entity id.</param>
+            <param name="entity">The entity.</param>
+            <typeparam name="TEntity">The entity type.</typeparam>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreUpdateSession.RemoveEntity(StrawberryShake.EntityId)">
+            <summary>
+            Removes an entity from the store.
+            </summary>
+            <param name="id">The entity id.</param>
+        </member>
+        <member name="M:StrawberryShake.IEntityStoreUpdateSession.RemoveEntityRange(System.Collections.Generic.IEnumerable{StrawberryShake.EntityId})">
+            <summary>
+            Removes a range of entities from the store.
+            </summary>
+            <param name="entityIds">The entity ids.</param>
+        </member>
+        <member name="T:StrawberryShake.IEntityUpdateSession">
+            <summary>
+            Represents a session that allows to apply changes to the entity
+            store or read from the store.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IEntityUpdateSession.Version">
+            <summary>
+            Gets the store version.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IEntityReadSession">
+            <summary>
+            Represents a session that allows to apply changes to the entity
+            store or read from the store.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IEntityReadSession.Version">
+            <summary>
+            Gets the store version.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Internal.ArrayWriter">
+            <summary>
+            A <see cref="T:System.Buffers.IBufferWriter`1"/> that writes to a rented buffer.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:StrawberryShake.Internal.ArrayWriter"/> class.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Internal.ArrayWriter.Length">
+            <summary>
+            Gets the number of bytes written to the buffer.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.GetInternalBuffer">
+            <summary>
+            Gets the underlying buffer.
+            </summary>
+            <returns>
+            The underlying buffer.
+            </returns>
+            <remarks>
+            Accessing the underlying buffer directly is not recommended.
+            If possible use <see cref="M:StrawberryShake.Internal.ArrayWriter.GetWrittenMemory"/> or <see cref="M:StrawberryShake.Internal.ArrayWriter.GetWrittenSpan"/>.
+            </remarks>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.GetWrittenMemory">
+            <summary>
+            Gets the part of the buffer that has been written to.
+            </summary>
+            <returns>
+            A <see cref="T:System.ReadOnlyMemory`1"/> of the written portion of the buffer.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.GetWrittenSpan">
+            <summary>
+            Gets the part of the buffer that has been written to.
+            </summary>
+            <returns>
+            A <see cref="T:System.ReadOnlySpan`1"/> of the written portion of the buffer.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.Advance(System.Int32)">
+            <summary>
+            Advances the writer by the specified number of bytes.
+            </summary>
+            <param name="count">
+            The number of bytes to advance the writer by.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown if <paramref name="count"/> is negative or
+            if <paramref name="count"/> is greater than the
+            available capacity on the internal buffer.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.GetMemory(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.Memory`1"/> to write to.
+            </summary>
+            <param name="sizeHint">
+            The minimum size of the returned <see cref="T:System.Memory`1"/>.
+            </param>
+            <returns>
+            A <see cref="T:System.Memory`1"/> to write to.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown if <paramref name="sizeHint"/> is negative.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.GetSpan(System.Int32)">
+            <summary>
+            Gets a <see cref="T:System.Span`1"/> to write to.
+            </summary>
+            <param name="sizeHint">
+            The minimum size of the returned <see cref="T:System.Span`1"/>.
+            </param>
+            <returns>
+            A <see cref="T:System.Span`1"/> to write to.
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown if <paramref name="sizeHint"/> is negative.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.ToArraySegment">
+            <summary>
+            Gets the buffer as an <see cref="T:System.ArraySegment`1"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.EnsureBufferCapacity(System.Int32)">
+            <summary>
+            Ensures that the internal buffer has the needed capacity.
+            </summary>
+            <param name="neededCapacity">
+            The needed capacity on the internal buffer.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.Internal.ArrayWriter.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:StrawberryShake.IOperationExecutor`1">
+            <summary>
+            The operation executor handles the execution of a specific operation.
+            </summary>
+            <typeparam name="TResultData">
+            The result data type of this operation executor.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.IOperationExecutor`1.ExecuteAsync(StrawberryShake.OperationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Executes the result and returns the result.
+            </summary>
+            <param name="request">
+            The operation request.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>
+            Returns the operation result.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IOperationExecutor`1.Watch(StrawberryShake.OperationRequest,System.Nullable{StrawberryShake.ExecutionStrategy})">
+            <summary>
+            Registers a requests and subscribes to updates on the request results.
+            </summary>
+            <param name="request">
+            The operation request.
+            </param>
+            <param name="strategy">
+            The request execution strategy.
+            </param>
+            <returns>
+            The observable that can be used to subscribe to results.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationRequestFactory">
+            <summary>
+            The operation request factory allows to create requests for specific operations.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationRequestFactory.ResultType">
+            <summary>
+            The result type of the operation.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationRequestFactory.Create(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Creates an operation request with the given variables.
+            </summary>
+            <param name="variables">
+            The variables that shall be passed into the request.
+            </param>
+            <returns>
+            Returns a new operation request.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationResult`1">
+            <summary>
+            The result of a GraphQL operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult`1.Data">
+            <summary>
+            Gets the data object or <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult`1.DataFactory">
+            <summary>
+            Gets the data factory which can build from the
+            <see cref="T:StrawberryShake.IOperationResultDataInfo"/> a new <see cref="P:StrawberryShake.IOperationResult`1.Data"/>.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationResult`1.WithData(`0,StrawberryShake.IOperationResultDataInfo)">
+            <summary>
+            Create a new result object with the specified data and dataInfo.
+            </summary>
+            <param name="data">
+            The data of the new result object.
+            </param>
+            <param name="dataInfo">
+            The data info describes the structure of the data object.
+            </param>
+            <returns>
+            Returns the new result object with the specified data and dataInfo.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationResult">
+            <summary>
+            The result of a GraphQL operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.Data">
+            <summary>
+            Gets the data object or <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.DataType">
+            <summary>
+            Gets the type of the data object.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.DataInfo">
+            <summary>
+            Gets the data info which contains information on how to
+            construct data from the entity store.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.DataFactory">
+            <summary>
+            Gets the data factory which can build from the
+            <see cref="P:StrawberryShake.IOperationResult.DataInfo"/> a new <see cref="P:StrawberryShake.IOperationResult.Data"/>.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.Errors">
+            <summary>
+            Gets the errors that occured during the execution.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.Extensions">
+            <summary>
+            Gets custom transport data specified by the server.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResult.ContextData">
+            <summary>
+            Gets custom context data provided by the transport pipeline.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.IOperationResultBuilder`2">
+            <summary>
+            The operation result builder will use the transport response and build from it
+            the operation result.
+            </summary>
+            <typeparam name="TResponseBody">
+            The serialized result.
+            </typeparam>
+            <typeparam name="TResultData">
+            The runtime result.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.IOperationResultBuilder`2.Build(StrawberryShake.Response{`0})">
+            <summary>
+            Build runtime operation result.
+            </summary>
+            <param name="response">
+            The serialized result.
+            </param>
+            <returns>
+            Returns the runtime result.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationResultDataFactory`1">
+            <summary>
+            This factory Creates the data object of a operation
+            result by using the data info which provides
+            all the entity ids used by the result.
+            </summary>
+            <typeparam name="TResultData">
+            The runtime type of the result data object.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.IOperationResultDataFactory`1.Create(StrawberryShake.IOperationResultDataInfo,StrawberryShake.IEntityStoreSnapshot)">
+            <summary>
+            Creates the data object of a operation result by using the data info which provides
+            all the entity ids used by the result.
+            </summary>
+            <param name="dataInfo">
+            The data info that provides all the entity ids used by the result.
+            </param>
+            <param name="snapshot">
+            An optional store snapshot that shall be used instead of the newest snapshot.
+            </param>
+            <returns>
+            Returns the constructed result model.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationResultDataFactory">
+            <summary>
+            This factory Creates the data object of a operation
+            result by using the data info which provides
+            all the entity ids used by the result.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResultDataFactory.ResultType">
+            <summary>
+            Gets the result data type.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationResultDataFactory.Create(StrawberryShake.IOperationResultDataInfo,StrawberryShake.IEntityStoreSnapshot)">
+            <summary>
+            Creates the data object of a operation result by using the data info which provides
+            all the entity ids used by the result.
+            </summary>
+            <param name="dataInfo">
+            The data info that provides all the entity ids used by the result.
+            </param>
+            <param name="snapshot">
+            An optional store snapshot that shall be used instead of the newest snapshot.
+            </param>
+            <returns>
+            Returns the constructed result model.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationResultDataInfo">
+            <summary>
+            A result data info exposes all information necessary to
+            rebuild the result data object by using entity ids.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResultDataInfo.EntityIds">
+            <summary>
+            A read-only set (reflexive and transitive closure)
+            of all entities that are used by the operation result.
+            This includes all entities (And not only the entities on the root level of the result).
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IOperationResultDataInfo.Version">
+            <summary>
+            Gets the entity store version.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationResultDataInfo.WithVersion(System.UInt64)">
+            <summary>
+            Creates a new operation data info with a new entity store version.
+            </summary>
+            <param name="version">
+            The entity store version.
+            </param>
+            <returns>
+            Returns a new operation data info with a new entity store version.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IOperationStore">
+            <summary>
+            The operation store tracks and stores results by requests.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Set``1(StrawberryShake.OperationRequest,StrawberryShake.IOperationResult{``0})">
+            <summary>
+            Stores the <paramref name="operationResult"/> for the specified
+            <paramref name="operationRequest"/>.
+            </summary>
+            <param name="operationRequest">
+            The operation request for which a result shall be stored.
+            </param>
+            <param name="operationResult">
+            The operation result that shall be stored.
+            </param>
+            <typeparam name="TResultData">
+            The type of result data.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Set(StrawberryShake.OperationRequest,StrawberryShake.IOperationResult)">
+            <summary>
+            Stores the <paramref name="operationResult"/> for the specified
+            <paramref name="operationRequest"/>.
+            </summary>
+            <param name="operationRequest">
+            The operation request for which a result shall be stored.
+            </param>
+            <param name="operationResult">
+            The operation result that shall be stored.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Reset(StrawberryShake.OperationRequest)">
+             <summary>
+             Resets the stored operation by removing the cached result.
+            
+             This marks an operation as dirty meaning that whenever a new subscriber comes
+             the result will be re-fetched from the network.
+             </summary>
+             <param name="operationRequest">
+             The operation request for which a result shall be stored.
+             </param>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Remove(StrawberryShake.OperationRequest)">
+            <summary>
+            Removes the operation and completes all subscriptions.
+            </summary>
+            <param name="operationRequest">
+            The request that shall be completed.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Clear">
+            <summary>
+            Removes all operations and completes all subscriptions.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.TryGet``1(StrawberryShake.OperationRequest,StrawberryShake.IOperationResult{``0}@)">
+            <summary>
+            Tries to retrieve for a <paramref name="operationRequest"/>.
+            </summary>
+            <param name="operationRequest">
+            The operation request for which a result shall be retrieved.
+            </param>
+            <param name="result">
+            The retrieved operation result.
+            </param>
+            <typeparam name="TResultData">
+            The type of result data.
+            </typeparam>
+            <returns>
+            <c>true</c>, a result was found for the specified <paramref name="operationRequest"/>;
+            otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.GetAll">
+            <summary>
+            Gets a snapshot of the current stored operations.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.GetUsedEntityIds">
+            <summary>
+            Gets a list of entities that are linked to operation results.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Watch``1(StrawberryShake.OperationRequest)">
+            <summary>
+            Watches for updates to a <paramref name="operationRequest"/>.
+            </summary>
+            <param name="operationRequest">
+            The operation request that is being observed.
+            </param>
+            <typeparam name="TResultData">
+            The type of result data.
+            </typeparam>
+            <returns>
+            Returns an operation observable which can be used to observe
+            updates to the result of the specified <paramref name="operationRequest"/>.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IOperationStore.Watch">
+            <summary>
+            Watches all updates to this store.
+            </summary>
+            <returns>
+            Returns an operation update observable which can be used to observe
+            updates to the <see cref="T:StrawberryShake.IOperationStore"/>.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IResultPatcher`1">
+            <summary>
+            The result patcher allows the operation executor to
+            handle result patches which are used when deferring data.
+            </summary>
+            <typeparam name="TData">
+            The data objects.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.IResultPatcher`1.SetResponse(StrawberryShake.Response{`0})">
+            <summary>
+            Sets the initial response on which patches can be applied.
+            </summary>
+            <param name="response">
+            The response object.
+            </param>
+        </member>
+        <member name="M:StrawberryShake.IResultPatcher`1.PatchResponse(StrawberryShake.Response{`0})">
+            <summary>
+            Patches the initial result and returns the patched response.
+            </summary>
+            <param name="response">
+            The response object.
+            </param>
+            <returns>
+            Returns the patched response.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IStoreAccessor">
+            <summary>
+            The store accessor allows access to the stores and additionally some helpers for
+            serialization/deserialization of store objects.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoreAccessor.OperationStore">
+            <summary>
+            Gets the operation store tracks and stores results by requests.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoreAccessor.EntityStore">
+            <summary>
+            Get the entity store tracks and stores the GraphQL entities.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoreAccessor.EntityIdSerializer">
+            <summary>
+            Gets the entity ID serializer.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IStoreAccessor.GetOperationRequestFactory(System.Type)">
+            <summary>
+            Gets the operation request factory to recreate a request..
+            </summary>
+            <param name="resultType">
+            The request result type.
+            </param>
+            <returns>
+            Returns a factory that can create requests.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.IStoreAccessor.GetOperationResultDataFactory(System.Type)">
+            <summary>
+            Gets the result data factory for the specified result type.
+            </summary>
+            <param name="resultType">The result type.</param>
+            <returns>
+            Returns an instance of <see cref="T:StrawberryShake.IOperationResultDataFactory"/> for the
+            specified <paramref name="resultType"/>.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.IStoredOperation">
+            <summary>
+            A non generic marker interface for the operation store implementation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.Request">
+            <summary>
+            Gets the operation request.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.LastResult">
+            <summary>
+            Gets the last result.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.EntityIds">
+            <summary>
+            Gets the entities that were used to create this result.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.Version">
+            <summary>
+            Gets the current entity store version of this operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.Subscribers">
+            <summary>
+            Gets the count of subscribers that are listening to this operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.IStoredOperation.LastModified">
+            <summary>
+            Gets the time when this operation was last modified.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IStoredOperation.ClearResult">
+            <summary>
+            Clears the currently cached result.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IStoredOperation.UpdateResult(System.UInt64)">
+            <summary>
+            This will trigger the stored operation to rebuild the result from the entity store.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.IStoredOperation.Complete">
+            <summary>
+            This will complete all subscribers.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.OperationExecutor`2">
+            <summary>
+            The operation executor handles the execution of a specific operation.
+            </summary>
+            <typeparam name="TData">
+            The result data type of this operation executor.
+            </typeparam>
+            <typeparam name="TResult">
+            The runtime result
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.OperationExecutor`2.ExecuteAsync(StrawberryShake.OperationRequest,System.Threading.CancellationToken)">
+            <inheritdocs />
+        </member>
+        <member name="M:StrawberryShake.OperationExecutor`2.Watch(StrawberryShake.OperationRequest,System.Nullable{StrawberryShake.ExecutionStrategy})">
+            <inheritdocs />
+        </member>
+        <member name="T:StrawberryShake.OperationRequest">
+            <summary>
+            Represents an operation request that is send to the GraphQL server.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.OperationRequest.#ctor(System.String,StrawberryShake.IDocument,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Nullable{StrawberryShake.Upload}},StrawberryShake.RequestStrategy)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.OperationRequest"/>.
+            </summary>
+            <param name="name">The operation name.</param>
+            <param name="document">The GraphQL query document containing this operation.</param>
+            <param name="variables">The request variable values.</param>
+            <param name="strategy">The request strategy to the connection.</param>
+            <param name="files">The files of this request</param>
+        </member>
+        <member name="M:StrawberryShake.OperationRequest.#ctor(System.String,System.String,StrawberryShake.IDocument,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Nullable{StrawberryShake.Upload}},StrawberryShake.RequestStrategy)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.OperationRequest"/>.
+            </summary>
+            <param name="id">The the optional request id.</param>
+            <param name="name">The operation name.</param>
+            <param name="document">The GraphQL query document containing this operation.</param>
+            <param name="variables">The request variable values.</param>
+            <param name="strategy">The request strategy to the connection.</param>
+            <param name="files">The files of this request</param>
+        </member>
+        <member name="M:StrawberryShake.OperationRequest.Deconstruct(System.String@,System.String@,StrawberryShake.IDocument@,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}@,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}@,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}@,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Nullable{StrawberryShake.Upload}}@,StrawberryShake.RequestStrategy@)">
+            <summary>
+            Deconstructs <see cref="T:StrawberryShake.OperationRequest"/>.
+            </summary>
+            <param name="id">The the optional request id.</param>
+            <param name="name">The operation name.</param>
+            <param name="document">The GraphQL query document containing this operation.</param>
+            <param name="variables">The request variable values.</param>
+            <param name="extensions">The request extension values.</param>
+            <param name="contextData">The local context data.</param>
+            <param name="strategy">The request strategy to the connection.</param>
+            <param name="files">The files of the request</param>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Id">
+            <summary>
+            Gets the optional request id.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Name">
+            <summary>
+            Gets the operation name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Document">
+            <summary>
+            Gets the GraphQL query document containing this operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Variables">
+            <summary>
+            Gets the request variable values.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Files">
+            <summary>
+            The files of the request
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Extensions">
+            <summary>
+            Gets the request extension values.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.ContextData">
+            <summary>
+            Gets the local context data.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationRequest.Strategy">
+            <summary>
+            Defines the request strategy to the connection.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.OperationRequest.GetExtensionsOrNull">
+            <summary>
+            Gets the request extension values or null.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.OperationRequest.GetContextDataOrNull">
+            <summary>
+            Gets the request context data values or null.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.OperationResult`1">
+            <summary>
+            Represents a GraphQL result object.
+            </summary>
+            <typeparam name="T">
+            The type of the data object.
+            </typeparam>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.Data">
+            <summary>
+            The GraphQL data object.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.DataInfo">
+            <summary>
+            The data info contains the reference list to entities and the store version of
+            which this result was created.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.DataFactory">
+            <summary>
+            The data factory can be used to create a new data object from the result info.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.Errors">
+            <summary>
+            Gets the GraphQL server errors.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.Extensions">
+            <summary>
+            Gets additional custom data provided by the server.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.OperationResult`1.ContextData">
+            <summary>
+            Gets additional custom data provided by client extensions.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.OperationResult`1.WithData(`0,StrawberryShake.IOperationResultDataInfo)">
+            <summary>
+            Creates a new result version with the specified data object.
+            </summary>
+            <param name="data">
+            The data object.
+            </param>
+            <param name="dataInfo">
+            The data info.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:StrawberryShake.OperationResult">
+            <summary>
+            This is a helper class that provides generic and non-generic factory methods to create
+            a new instance of <see cref="T:StrawberryShake.OperationResult`1"/>.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.OperationResultBuilder`1">
+            <summary>
+            The operation result builder will use the transport response and build from it
+            the operation result.
+            </summary>
+            <typeparam name="TResultData">
+            The runtime result.
+            </typeparam>
+        </member>
+        <member name="T:StrawberryShake.OperationResultExtensions">
+            <summary>
+            This class provides extension methods for the operation result.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.OperationResultExtensions.EnsureNoErrors(StrawberryShake.IOperationResult)">
+            <summary>
+            Ensures that the operation result has no errors and throws a
+            <see cref="T:StrawberryShake.GraphQLClientException"/> when the operation result
+            has errors.
+            </summary>
+            <param name="result">The operation result.</param>
+            <exception cref="T:System.ArgumentNullException">
+            The operation result is null.
+            </exception>
+            <exception cref="T:StrawberryShake.GraphQLClientException">
+            The operation result has errors.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.OperationResultExtensions.IsErrorResult(StrawberryShake.IOperationResult)">
+            <summary>
+            Indicates if the operation result has errors.
+            </summary>
+            <param name="result">The operation result.</param>
+            <returns>
+            <c>true</c>, if the result has errors; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The operation result is null.
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.OperationResultExtensions.IsSuccessResult(StrawberryShake.IOperationResult)">
+            <summary>
+            Indicates if the operation result has errors.
+            </summary>
+            <param name="result">The operation result.</param>
+            <returns>
+            <c>true</c>, if the result has no errors; otherwise, <c>false</c>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The operation result is null.
+            </exception>
+        </member>
+        <member name="T:StrawberryShake.RequestStrategy">
+            <summary>
+            Specifies the GraphQL request strategy.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.RequestStrategy.Default">
+            <summary>
+            The full GraphQL query is send.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.RequestStrategy.PersistedQuery">
+            <summary>
+            An id is send representing the query that is stored on the server.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.RequestStrategy.AutomaticPersistedQuery">
+            <summary>
+            The full GraphQL query is only send if the server has not yet stored the
+            persisted query.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Response`1">
+            <summary>
+            Represents a request result object containing the
+            server result and/or the transport exception.
+            </summary>
+            <typeparam name="TBody">
+            The response data.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.Response`1.#ctor(`0,System.Exception,System.Boolean,System.Boolean,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.Response`1"/>.
+            </summary>
+            <param name="body">
+            The serialized response payload.
+            </param>
+            <param name="exception">
+            The transport exception.
+            </param>
+            <param name="isPatch">
+            Defines if this is a partial result that
+            shall be patched onto a previous one.
+            </param>
+            <param name="hasNext">
+            Defines if there are more partial results expected.
+            </param>
+            <param name="extensions">
+            Additional custom data provided by the server.
+            </param>
+            <param name="contextData">
+            Additional custom data provided by client extensions.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.Response`1.Body">
+            <summary>
+            The serialized response body.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Response`1.Exception">
+            <summary>
+            The transport exception.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Response`1.IsPatch">
+            <summary>
+            Defines if this is a partial result that
+            shall be patched onto a previous one.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Response`1.HasNext">
+            <summary>
+            Defines if there are more partial results expected.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Response`1.Extensions">
+            <summary>
+            Gets additional custom data provided by the server.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Response`1.ContextData">
+            <summary>
+            Gets additional custom data provided by client extensions.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Response`1.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing,
+            releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.BooleanSerializer">
+            <summary>
+            This serializer handles boolean scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.BuiltInScalarNames">
+            <summary>
+            The built-in scalar names.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ByteArraySerializer">
+            <summary>
+            This serializer handles byte array scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ByteSerializer">
+            <summary>
+            This serializer handles byte scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.DateSerializer">
+            <summary>
+            This serializer handles date scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.DateTimeSerializer">
+            <summary>
+            This serializer handles date-time scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.DecimalSerializer">
+            <summary>
+            This serializer handles decimal scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.FloatSerializer">
+            <summary>
+            This serializer handles float scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.IdSerializer">
+            <summary>
+            This serializer handles ID scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.IInputObjectFormatter">
+            <summary>
+            A input value formatter for input objects
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.IInputObjectFormatter.Initialize(StrawberryShake.Serialization.ISerializerResolver)">
+            <summary>
+            Initializes the serializer on the formatter
+            </summary>
+            <param name="serializerResolver">
+            The <see cref="T:StrawberryShake.Serialization.SerializerResolver"/> to lookup serializers
+            </param>
+        </member>
+        <member name="T:StrawberryShake.Serialization.IInputValueFormatter">
+            <summary>
+            The input value formatter serializes input values so that they can be send to the server.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.IInputValueFormatter.Format(System.Object)">
+            <summary>
+            Formats an input value for transport.
+            </summary>
+            <param name="runtimeValue">
+            The runtime representation of an input value.
+            </param>
+            <returns>
+            Return a serialized/formatted version of the input value.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ILeafValueParser`2">
+            <summary>
+            The leaf value parser can parse a serialized leaf value to its runtime representation.
+            </summary>
+            <typeparam name="TSerialized">
+            The type of the serialized value.
+            </typeparam>
+            <typeparam name="TRuntime">
+            The type of the runtime value.
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.Serialization.ILeafValueParser`2.Parse(`0)">
+            <summary>
+            Parses the serialized value to the runtime representation.
+            </summary>
+            <param name="serializedValue">
+            The serialized value.
+            </param>
+            <returns>
+            Returns the parsed runtime representation.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.Serialization.IntSerializer">
+            <summary>
+            This serializer handles int scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ISerializer">
+            <summary>
+            This abstract serializer interfaces is used by
+            <see cref="T:StrawberryShake.Serialization.ILeafValueParser`2"/> and <see cref="T:StrawberryShake.Serialization.IInputValueFormatter"/>
+            to refer to serializers in an abstract way.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Serialization.ISerializer.TypeName">
+            <summary>
+            The name of the GraphQL type that is handled by this serializer.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ISerializerResolver">
+            <summary>
+            The serializer resolver provides centralised access to the serializers.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.ISerializerResolver.GetLeafValueParser``2(System.String)">
+            <summary>
+            Gets a <see cref="T:StrawberryShake.Serialization.ILeafValueParser`2"/> by its GraphQL type name.
+            </summary>
+            <param name="typeName">The GraphQL type name for which a parser is needed.</param>
+            <typeparam name="TSerialized">The serialized value type.</typeparam>
+            <typeparam name="TRuntime">The runtime value type.</typeparam>
+            <returns>
+            Returns the <see cref="T:StrawberryShake.Serialization.ILeafValueParser`2"/> for the specified
+            GraphQL type.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.Serialization.ISerializerResolver.GetInputValueFormatter(System.String)">
+            <summary>
+            Gets a <see cref="T:StrawberryShake.Serialization.IInputValueFormatter"/> from the registry
+            </summary>
+            <param name="typeName">The type name of the input value formatter</param>
+            <returns>The input value formatter for <paramref name="typeName"/></returns>
+        </member>
+        <member name="T:StrawberryShake.Serialization.Iso8601Duration">
+            <summary>
+            ISO 8601 Duration based on XsdDuration which include additional "Weeks" part
+            https://github.com/dotnet/runtime/blob/master/src/libraries/System.Private.Xml/src/System/Xml/Schema/XsdDuration.cs
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.Iso8601Duration.TryToTimeSpan(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.UInt32,System.Boolean,System.Nullable{System.TimeSpan}@)">
+            <summary>
+            Internal helper method that converts to a TimeSpan value. This code uses the estimate
+            that there are 365 days in the year, 52 weeks in a year and 30 days in a month.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.Iso8601Duration.TryParseDigits(System.String,System.Int32@,System.Boolean,System.Int32@,System.Int32@)">
+            Helper method that constructs an integer from leading digits starting at s[offset].
+            "offset" is updated to contain an offset just beyond the last digit.
+            The number of digits consumed is returned in cntDigits.
+            The integer is returned (0 if no digits).  If the digits cannot fit into an Int32:
+              1. If eatDigits is true, then additional digits will be silently discarded
+                 (don't count towards numDigits)
+              2. If eatDigits is false, an overflow exception is thrown
+        </member>
+        <member name="T:StrawberryShake.Serialization.JsonSerializer">
+            <summary>
+            This serializer handles json scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.LongSerializer">
+            <summary>
+            This serializer handles long scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.SerializerResolver">
+            <summary>
+            This class defines how StrawberryShake deals with references on serialization and
+            deserialization of GraphQL types.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:StrawberryShake.Serialization.SerializerResolver.#ctor(System.Collections.Generic.IEnumerable{StrawberryShake.Serialization.ISerializer})" -->
+        <member name="M:StrawberryShake.Serialization.SerializerResolver.GetLeafValueParser``2(System.String)">
+            <summary>
+            Resolves a <see cref="T:StrawberryShake.Serialization.ILeafValueParser`2"/> from the known
+            serializers
+            </summary>
+            <param name="typeName">The GraphQL type name of the requested serializer</param>
+            <typeparam name="TSerialized">The serialized value type</typeparam>
+            <typeparam name="TRuntime">The runtime value type</typeparam>
+            <returns>A <see cref="T:StrawberryShake.Serialization.ILeafValueParser`2"/></returns>
+            <exception cref="T:System.ArgumentNullException">
+            In case <paramref name="typeName"/> is null
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            In case the serializer was not found
+            </exception>
+        </member>
+        <member name="M:StrawberryShake.Serialization.SerializerResolver.GetInputValueFormatter(System.String)">
+            <summary>
+            Resolves a <see cref="T:StrawberryShake.Serialization.IInputValueFormatter"/> from the known serializers
+            </summary>
+            <param name="typeName">The GraphQL type name of the requested serializer</param>
+            <returns>A <see cref="T:StrawberryShake.Serialization.IInputValueFormatter"/></returns>
+            <exception cref="T:System.ArgumentNullException">
+            In case <paramref name="typeName"/> is null
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            In case the serializer was not found
+            </exception>
+        </member>
+        <member name="T:StrawberryShake.Serialization.ShortSerializer">
+            <summary>
+            This serializer handles short scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.StringSerializer">
+            <summary>
+            This serializer handles string scalars.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.Serialization.TimeSpanFormat.Iso8601">
+            <summary>
+            TimeSpan ISO 8601 Format
+            https://tools.ietf.org/html/rfc3339
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.Serialization.TimeSpanFormat.DotNet">
+            <summary>
+            TimeSpan .NET Constant ("c") Format
+            https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings#the-constant-c-format-specifier
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.TimeSpanSerializer">
+            <summary>
+            This serializer handles time-span scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.UploadSerializer">
+            <summary>
+            This serializer handles upload scalars.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Serialization.UploadSerializer.#ctor(System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.Serialization.UploadSerializer"/>
+            </summary>
+            <param name="typeName"></param>
+        </member>
+        <member name="T:StrawberryShake.Serialization.UrlSerializer">
+            <summary>
+            This serializer handles url scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Serialization.UUIDSerializer">
+            <summary>
+            This serializer handles UUID scalars.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.StoreAccessor">
+            <summary>
+            The store accessor allows access to the stores and additionally some helpers for
+            serialization/deserialization of store objects.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoreAccessor.OperationStore">
+            <summary>
+            Gets the operation store tracks and stores results by requests.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoreAccessor.EntityStore">
+            <summary>
+            Get the entity store tracks and stores the GraphQL entities.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoreAccessor.EntityIdSerializer">
+            <summary>
+            Gets the entity ID serializer.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.StoreAccessor.GetOperationRequestFactory(System.Type)">
+            <summary>
+            Gets the operation request factory to recreate a request..
+            </summary>
+            <param name="resultType">
+            The request result type.
+            </param>
+            <returns>
+            Returns a factory that can create requests.
+            </returns>
+        </member>
+        <member name="M:StrawberryShake.StoreAccessor.GetOperationResultDataFactory(System.Type)">
+            <summary>
+            Gets the result data factory for the specified result type.
+            </summary>
+            <param name="resultType">The result type.</param>
+            <returns>
+            Returns an instance of <see cref="T:StrawberryShake.IOperationResultDataFactory"/> for the
+            specified <paramref name="resultType"/>.
+            </returns>
+        </member>
+        <member name="T:StrawberryShake.StoredOperationVersion">
+            <summary>
+            A snapshot of the current stored operation.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.StoredOperationVersion.#ctor(StrawberryShake.OperationRequest,StrawberryShake.IOperationResult,System.Int32,System.DateTime)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.StoredOperationVersion"/>.
+            </summary>
+            <param name="request">
+            The operation request.
+            </param>
+            <param name="result">
+            The last result.
+            </param>
+            <param name="subscribers">
+            The count of subscribers that are listening to this operation.
+            </param>
+            <param name="lastModified">
+            The time when this operation was last modified.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.StoredOperationVersion.Request">
+            <summary>
+            Gets the operation request.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoredOperationVersion.Result">
+            <summary>
+            Gets the last result.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoredOperationVersion.Subscribers">
+            <summary>
+            Gets the count of subscribers that are listening to this operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.StoredOperationVersion.LastModified">
+            <summary>
+            Gets the time when this operation was last modified.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.StorelessOperationExecutor`2">
+            <summary>
+            The no store operation executor handles the execution of a specific operation without
+            involving store updates
+            </summary>
+            <typeparam name="TData">
+            The result data type of this operation executor.
+            </typeparam>
+            <typeparam name="TResult">
+            The runtime result
+            </typeparam>
+        </member>
+        <member name="M:StrawberryShake.StorelessOperationExecutor`2.ExecuteAsync(StrawberryShake.OperationRequest,System.Threading.CancellationToken)">
+            <inheritdocs />
+        </member>
+        <member name="M:StrawberryShake.StorelessOperationExecutor`2.Watch(StrawberryShake.OperationRequest,System.Nullable{StrawberryShake.ExecutionStrategy})">
+            <inheritdocs />
+        </member>
+        <member name="T:StrawberryShake.Upload">
+            <summary>
+            Wrapper to upload a file to a GraphQL Server
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.Upload.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Creates a new instance of Upload
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Upload.Content">
+            <summary>
+            The content that is streamed to the server
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Upload.FileName">
+            <summary>
+            The name of the file
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.SerializerServiceCollectionExtensions">
+            <summary>
+            Common extensions for <see cref="T:StrawberryShake.Serialization.ISerializer"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.SerializerServiceCollectionExtensions.AddSerializer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,``0)">
+            <summary>
+            Registers a <see cref="T:StrawberryShake.Serialization.ISerializer"/> for Strawberry Shake.
+            </summary>
+            <param name="services">The service collection to register the serializer</param>
+            <param name="serializer">The instance of the serializer</param>
+            <typeparam name="T">The type of the serializer</typeparam>
+            <returns>The service collection form <paramref name="services"/></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.SerializerServiceCollectionExtensions.AddSerializer``1(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers a <see cref="T:StrawberryShake.Serialization.ISerializer"/> for Strawberry Shake
+            </summary>
+            <param name="services">The service collection to register the serializer</param>
+            <typeparam name="T">The type of the serializer</typeparam>
+            <returns>The service collection form <paramref name="services"/></returns>
+        </member>
+    </members>
+</doc>

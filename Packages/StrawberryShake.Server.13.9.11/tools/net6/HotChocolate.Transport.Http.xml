@@ -1,0 +1,662 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Transport.Http</name>
+    </assembly>
+    <members>
+        <member name="T:HotChocolate.Transport.Http.DefaultGraphQLHttpClient">
+            <summary>
+            A default implementation of <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> that supports the GraphQL over HTTP spec draft.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.DefaultGraphQLHttpClient.#ctor(System.Net.Http.HttpClient,System.Boolean)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Transport.Http.DefaultGraphQLHttpClient"/>.
+            </summary>
+            <param name="httpClient">
+            The underlying HTTP client that is used to send the GraphQL request.
+            </param>
+            <param name="disposeInnerClient">
+            Specifies if <paramref name="httpClient"/> shall be disposed when this instance is disposed.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="httpClient"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.DefaultGraphQLHttpClient.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Transport.Http.DefaultGraphQLHttpClient"/>.
+            </summary>
+            <param name="httpClient">
+            The underlying HTTP client that is used to send the GraphQL request.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="httpClient"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.DefaultGraphQLHttpClient.SendAsync(HotChocolate.Transport.Http.GraphQLHttpRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends the GraphQL request to the specified GraphQL request <see cref="T:System.Uri"/>.
+            </summary>
+            <param name="request">
+            The GraphQL over HTTP request.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token that can be used to cancel the HTTP request.
+            </param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="request"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="request"/> has no <see cref="P:HotChocolate.Transport.Http.GraphQLHttpRequest.Uri"/> and the underlying
+            HTTP client has no <see cref="P:System.Net.Http.HttpClient.BaseAddress"/>.
+            </exception>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.GraphQLHttpClient">
+            <summary>
+            The interface for GraphQL over HTTP client implementations.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClient.SendAsync(HotChocolate.Transport.Http.GraphQLHttpRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends the GraphQL request to the specified GraphQL request <see cref="T:System.Uri"/>.
+            </summary>
+            <param name="request">
+            The GraphQL over HTTP request.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token that can be used to cancel the HTTP request.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> that represents the asynchronous operation to send the GraphQL
+            request to the specified GraphQL request <see cref="T:System.Uri"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClient.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClient.Create(System.Net.Http.HttpClient,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> instance.
+            </summary>
+            <param name="httpClient">
+            The underlying HTTP client that is used to send the GraphQL request.
+            </param>
+            <param name="disposeHttpClient">
+            Specifies if <paramref name="httpClient"/> shall be disposed
+            when the <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> instance is disposed.
+            </param>
+            <returns>
+            Returns the new &lt;see cref="GraphQLHttpClient"/&gt; instance.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.GraphQLHttpClientExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/>.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The <see cref="T:HotChocolate.Transport.OperationRequest"/> to send.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The <see cref="T:HotChocolate.Transport.OperationRequest"/> to send.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.GetAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL GET request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The <see cref="T:HotChocolate.Transport.OperationRequest"/> to send.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="variables">
+            The GraphQL variables.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The GraphQL operation request.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The GraphQL operation request.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpClientExtensions.PostAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Transport.OperationRequest,System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Sends a GraphQL POST request to the specified GraphQL endpoint.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> to send the request with.
+            </param>
+            <param name="operation">
+            The GraphQL operation request.
+            </param>
+            <param name="uri">
+            The GraphQL request URI.
+            </param>
+            <param name="cancellationToken">
+            A cancellation token to cancel the operation.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.Task`1"/> representing the asynchronous operation.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.GraphQLHttpMethod">
+            <summary>
+            This class provides the default HTTP methods for GraphQL requests.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpMethod.Get">
+            <summary>
+            Gets the HTTP GET method.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpMethod.Post">
+            <summary>
+            Gets the HTTP POST method.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.GraphQLHttpRequest">
+            <summary>
+            Represents a GraphQL over HTTP request.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpRequest.#ctor(System.String,System.Uri)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Transport.Http.GraphQLHttpRequest"/>.
+            </summary>
+            <param name="query">
+            The GraphQL query string.
+            </param>
+            <param name="requestUri">
+            The GraphQL request URI.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="query"/> is <see langword="null"/> or whitespace.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpRequest.#ctor(HotChocolate.Transport.OperationRequest,System.Uri)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Transport.Http.GraphQLHttpRequest"/>.
+            </summary>
+            <param name="operation">
+            The GraphQL request operation.
+            </param>
+            <param name="requestUri">
+            The GraphQL request URI.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="operation"/> has no <see cref="P:HotChocolate.Transport.OperationRequest.Id"/>, <see cref="P:HotChocolate.Transport.OperationRequest.Query"/>,
+            <see cref="P:HotChocolate.Transport.OperationRequest.Extensions"/> or <see cref="P:HotChocolate.Transport.OperationRequest.ExtensionsNode"/>.
+            </exception>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpRequest.Operation">
+            <summary>
+            Gets the GraphQL operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpRequest.Method">
+            <summary>
+            Gets or sets the HTTP method.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpRequest.Uri">
+            <summary>
+            Gets or sets the GraphQL request <see cref="P:HotChocolate.Transport.Http.GraphQLHttpRequest.Uri"/>.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpRequest.OnMessageCreated">
+            <summary>
+            Gets or sets a hook that can alter the <see cref="T:System.Net.Http.HttpRequestMessage"/> before it is sent.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpRequest.EnableFileUploads">
+            <summary>
+            Specifies if files shall be uploaded using the multipart request spec.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.GraphQLHttpResponse">
+            <summary>
+            Represents a GraphQL over HTTP response.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpResponse.#ctor(System.Net.Http.HttpResponseMessage)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Transport.Http.GraphQLHttpResponse"/>.
+            </summary>
+            <param name="message">
+            The underlying HTTP response message.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="message"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpResponse.StatusCode">
+            <summary>
+            Gets the HTTP response status code.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpResponse.IsSuccessStatusCode">
+            <summary>
+            Specifies whether the HTTP response was successful.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.GraphQLHttpResponse.ReasonPhrase">
+            <summary>
+            Gets the reason phrase which typically is sent by servers together with the status code.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpResponse.EnsureSuccessStatusCode">
+            <summary>
+            Throws an exception if the HTTP response was unsuccessful.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpResponse.ReadAsResultAsync(System.Threading.CancellationToken)">
+            <summary>
+            Reads the GraphQL response as a <see cref="T:HotChocolate.Transport.OperationResult"/>.
+            </summary>
+            <param name="cancellationToken">
+            A cancellation token that can be used to cancel the HTTP request.
+            </param>
+            <returns>
+            A <see cref="T:System.Threading.Tasks.ValueTask`1"/> that represents the asynchronous read operation
+            to read the <see cref="T:HotChocolate.Transport.OperationResult"/> from the underlying <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpResponse.ReadAsResultStreamAsync(System.Threading.CancellationToken)">
+            <summary>
+            Reads the GraphQL response as a <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of <see cref="T:HotChocolate.Transport.OperationResult"/>.
+            </summary>
+            <param name="cancellationToken">
+            A cancellation token that can be used to cancel the HTTP request.
+            </param>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IAsyncEnumerable`1"/> of <see cref="T:HotChocolate.Transport.OperationResult"/> that represents the asynchronous
+            read operation to read the stream of <see cref="T:HotChocolate.Transport.OperationResult"/>s from the underlying
+            <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.GraphQLHttpResponse.Dispose">
+            <summary>
+            Disposes the underlying <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.HttpRequestHeadersExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Net.Http.Headers.HttpRequestHeaders"/>.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.HttpRequestHeadersExtensions.AddGraphQLPreflight(System.Net.Http.Headers.HttpRequestHeaders)">
+            <summary>
+            Adds the <c>GraphQL-Preflight</c> header to the request.
+            </summary>
+            <param name="headers">
+            The <see cref="T:System.Net.Http.Headers.HttpRequestHeaders"/> to add the header to.
+            </param>
+            <returns>
+            Returns the <paramref name="headers"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="headers"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.HttpResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.HttpResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.HttpResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.HttpResources.DefaultGraphQLHttpClient_SendAsync_RequestUriIsNull">
+            <summary>
+              Looks up a localized string similar to The request URI is not set and the underlying HTTP client has no base address..
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.HttpResources.GraphQLHttpRequest_QueryIdAndExtensionsNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to Query, ID, and extensions cannot all be null. At least one must be provided for a valid GraphQL request.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.HttpResources.GraphQLHttpRequest_QueryNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The provided GraphQL query is null or empty..
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.OnHttpRequestMessageCreated">
+            <summary>
+            A delegate to intercept the <see cref="T:System.Net.Http.HttpRequestMessage"/> before it is sent.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet-graphql</name>
+    </assembly>
+    <members>
+        <member name="T:StrawberryShake.Tools.WellKnownDirectories">
+            <summary>
+            Provides the well known tool directories.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.Tools.WellKnownDirectories.Generated">
+            <summary>
+            The directory name of the generated code files.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Tools.WellKnownFiles">
+            <summary>
+            Provides the well known tool files.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.Tools.WellKnownFiles.Config">
+            <summary>
+            The GraphQL configuration file.
+            </summary>
+        </member>
+    </members>
+</doc>

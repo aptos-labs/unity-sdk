@@ -1,0 +1,1060 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StrawberryShake.CodeGeneration</name>
+    </assembly>
+    <members>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel">
+            <summary>
+            Represents a model for an operation argument (GraphQL variable declaration).
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel.#ctor(System.String,HotChocolate.Types.IInputType,HotChocolate.Language.VariableDefinitionNode,HotChocolate.Language.IValueNode)">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel" />
+            </summary>
+            <param name="name">The name of the argument.</param>
+            <param name="type">The GraphQL schema type of the argument.</param>
+            <param name="variable">The variable declaration from the query syntax tree.</param>
+            <param name="defaultValue">The default value.</param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel.Name">
+            <summary>
+            Gets the name of the argument.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel.Type">
+            <summary>
+            Gets the GraphQL schema type of the argument.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel.Variable">
+            <summary>
+            Gets the variable declaration from the query syntax tree.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ArgumentModel.DefaultValue">
+            <summary>
+            Gets the default value.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel">
+            <summary>
+            The client model represents the client with all its operations and types.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.#ctor(HotChocolate.ISchema,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Analyzers.Models.OperationModel},System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Analyzers.Models.LeafTypeModel},System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel})">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel" />.
+            </summary>
+            <param name="schema">
+            The GraphQL schema.
+            </param>
+            <param name="operations">
+            The operations that the client has defined.
+            </param>
+            <param name="leafTypes">
+            The leaf types that are used.
+            </param>
+            <param name="inputObjectTypes">
+            The input types that could be passed in.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.Schema">
+            <summary>
+            The analyzed schema
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.Operations">
+            <summary>
+            Gets the operations
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.OutputTypes">
+            <summary>
+            Gets all the output types.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.LeafTypes">
+            <summary>
+            Gets the leaf types that are used by this operation.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.InputObjectTypes">
+            <summary>
+            Gets the input objects that are needed.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ClientModel.Entities">
+            <summary>
+            Gets the entities that are used in the operations.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel">
+            <summary>
+            Represents a entity that is used by a GraphQL client.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel.#ctor(HotChocolate.Types.IComplexOutputType)">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel" />.
+            </summary>
+            <param name="type">
+            The entity type.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel.Name">
+            <summary>
+            Gets the type name of the entity.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel.Type">
+            <summary>
+            Gets the entity type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel.Definition">
+            <summary>
+            Gets the entity definition that specifies the fields that make up the id fields.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EntityModel.Fields">
+            <summary>
+            Gets the ID fields.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel">
+            <summary>
+            Represents an enum type model.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel.#ctor(System.String,System.String,HotChocolate.Types.IEnumType,System.String,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Analyzers.Models.EnumValueModel})">
+            <summary>
+            Initialize new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel"/>.
+            </summary>
+            <param name="name">
+            The name of the enum type.
+            </param>
+            <param name="description">
+            The description of the enum type.
+            </param>
+            <param name="type">
+            The enum type.
+            </param>
+            <param name="underlyingType">
+            The underlying runtime type.
+            </param>
+            <param name="values">
+            The enum values.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel.Type">
+            <summary>
+            Gets the enum type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel.UnderlyingType">
+            <summary>
+            Gets the underlying type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EnumTypeModel.Values">
+            <summary>
+            Gets the enum values models.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.EnumValueModel">
+            <summary>
+            Represents an enum value.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.EnumValueModel.Name">
+            <summary>
+            The enum value name. This is the string that is being used to
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.IFieldModel">
+            <summary>
+            Represents a field model.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.IFieldModel.Name">
+            <summary>
+            Gets the member name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.IFieldModel.Description">
+            <summary>
+            Gets the member xml documentation summary.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.IFieldModel.Field">
+            <summary>
+            Gets the field.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.IFieldModel.Type">
+            <summary>
+            Gets the field schema type.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel">
+            <summary>
+            Represents an input object field.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel.#ctor(System.String,System.String,HotChocolate.Types.IInputField,HotChocolate.Types.IInputType)">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel" />
+            </summary>
+            <param name="name">The property name.</param>
+            <param name="description">The property xml documentation summary.</param>
+            <param name="field"></param>
+            <param name="type"></param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel.Name">
+            <summary>
+            Gets the property name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel.Description">
+            <summary>
+            Gets the property xml documentation summary.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel">
+            <summary>
+            Represents an input object type model.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.#ctor(System.String,System.String,HotChocolate.Types.InputObjectType,System.Boolean,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Analyzers.Models.InputFieldModel})">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel" />
+            </summary>
+            <param name="name">The class name.</param>
+            <param name="description">The class description.</param>
+            <param name="type">The input object type.</param>
+            <param name="fields">The field models of this input type.</param>
+            <param name="hasUpload">
+            Defines if this input or one of its related has a upload scalar
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.Name">
+            <summary>
+            Gets the class name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.Description">
+            <summary>
+            Gets the class xml documentation summary.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.Type">
+            <summary>
+            Gets the input object type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.HasUpload">
+            <summary>
+            Defines if this input or one of its related has a upload scalar
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.InputObjectTypeModel.Fields">
+            <summary>
+            Gets the field models of this input type.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Analyzers.Models.ITypeModel">
+            <summary>
+            Represents a model that is bound to a specific GraphQL schema type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.ITypeModel.Type">
+            <summary>
+            Gets the GraphQL schema type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.LeafTypeModel.Name">
+            <summary>
+            Gets the enum name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.LeafTypeModel.Description">
+            <summary>
+            Gets the enum xml documentation summary.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Analyzers.Models.LeafTypeModel.Type">
+            <summary>
+            Gets the leaf type.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.CodeGenerationErrorCodes.SyntaxError">
+            <summary>
+            A document contains a syntax error and therefore is no valid graphql document.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.CodeGenerationErrorCodes.SchemaValidationError">
+            <summary>
+            The executable documents contain fields, that do not exist
+            in the server schema.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.CodeGenerationErrorCodes.UnionTypeDataEntityMixed">
+            <summary>
+            A union type must consist of only entity types or only data types.
+            Ensure that your @key directive correctly captures your entities.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings">
+            <summary>
+            Settings for the syntax generation.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.#ctor(StrawberryShake.CodeGeneration.AccessModifier,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new code generator settings instance.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.AccessModifier">
+            <summary>
+            Generates the client with specified access modifier.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.NoStore">
+            <summary>
+            Generates the client without a store
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.InputRecords">
+            <summary>
+            Generates input types as records.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.EntityRecords">
+            <summary>
+            Generates entities as records.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings.RazorComponents">
+            <summary>
+            Generate Razor components.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor">
+            <summary>
+            Describes a GraphQL client class, that bundles all operations defined in a single class.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor.Name">
+            <summary>
+            Gets the client name
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor.RuntimeType">
+            <summary>
+            The name of the client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor.Operations">
+            <summary>
+            The operations that are contained in this client class
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor.Documentation">
+            <summary>
+            The documentation for this client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ClientDescriptor.InterfaceType">
+            <summary>
+            The interface of this client
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor},System.Collections.Generic.IReadOnlyList{System.String},System.String,System.Boolean)">
+             <summary>
+             Describes the DataType
+             </summary>
+             <param name="name">
+            
+             </param>
+             <param name="namespace">
+            
+             </param>
+             <param name="operationTypes">
+             The types that are subsets of the DataType represented by this descriptor.
+             </param>
+             <param name="implements"></param>
+             <param name="documentation"></param>
+             <param name="isInterface"></param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name which this entity represents.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the entity name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.IsInterface">
+            <summary>
+            Defines if this data type descriptor reptresents an interface.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.Documentation">
+            <summary>
+            The documentation of this type
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.Properties">
+            <summary>
+            Gets the properties of this entity.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DataTypeDescriptor.Implements">
+            <summary>
+            The interfaces that this data type implements. A data type does only implement
+            interfaces, if it is part of a graphql union or interface type.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.DependencyInjectionDescriptor">
+            <summary>
+            Describes the dependency injection requirements of a  GraphQL client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DependencyInjectionDescriptor.Name">
+            <summary>
+            The name of the client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DependencyInjectionDescriptor.Operations">
+            <summary>
+            The operations that are contained in this client class
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.DependencyInjectionDescriptor.ResultFromEntityMappers">
+            <summary>
+            The result from entity mapper descriptors.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor">
+            <summary>
+            Represents the entity for which the ID shall be generated or an id field of that entity.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor.#ctor(System.String,System.String,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor})">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor"/>.
+            </summary>
+            <param name="name">
+            The GraphQL name of entity entity.
+            </param>
+            <param name="typeName">
+            The serialization type name of the entity id field, eg. String.
+            </param>
+            <param name="fields">
+            The child fields.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor.Name">
+            <summary>
+            Gets the name of the field or entity.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor.TypeName">
+            <summary>
+            Gets the type name of the entity id field.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor.Fields">
+            <summary>
+            Gets the child fields.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor">
+            <summary>
+            Represents the code descriptor of the entity id factor.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor.#ctor(System.String,System.Collections.Generic.IReadOnlyList{StrawberryShake.CodeGeneration.Descriptors.EntityIdDescriptor},System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor"/>.
+            </summary>
+            <param name="name">
+            The class name of the entity id factory.
+            </param>
+            <param name="entities">
+            The entity descriptors.
+            </param>
+            <param name="namespace">
+            The namespace of this class.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor.Name">
+            <summary>
+            Gets the class name of the entity id factory.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor.Namespace">
+            <summary>
+            Gets the namespace of this factory class.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor.Type">
+            <summary>
+            The type of the factory
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityIdFactoryDescriptor.Entities">
+            <summary>
+            Gets the entity descriptors.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor.#ctor(System.String,StrawberryShake.CodeGeneration.RuntimeTypeInfo,System.Collections.Generic.Dictionary{System.String,StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor" />
+            </summary>
+            <param name="name">
+            The name of the GraphQL type
+            </param>
+            <param name="runtimeType"></param>
+            <param name="properties">
+            The properties of this entity.
+            </param>
+            <param name="documentation">
+            The documentation of this entity
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name which this entity represents.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the entity name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor.Documentation">
+            <summary>
+            The documentation of this type
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.EntityTypeDescriptor.Properties">
+            <summary>
+            Gets the properties of this entity.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.Operations.MutationOperationDescriptor">
+            <summary>
+            Describes a GraphQL mutation
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor">
+            <summary>
+            Describes a GraphQL operation
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.Name">
+            <summary>
+            Gets the operation name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.RuntimeType">
+            <summary>
+            Gets the runtime type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.ResultTypeReference">
+            <summary>
+            Gets the type the operation returns
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.Body">
+            <summary>
+            Gets the GraphQL Document.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.BodyString">
+            <summary>
+            Gets the GraphQL Document as readable string.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.HashAlgorithm">
+            <summary>
+            Gets the document hash algorithm.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.HashValue">
+            <summary>
+            Gets the document hash value.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.HasUpload">
+            <summary>
+            Defines if the operation has any file uploads
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.Arguments">
+            <summary>
+            The arguments the operation takes.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.Strategy">
+            <summary>
+            The request strategy.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.Operations.OperationDescriptor.InterfaceType">
+            <summary>
+            The interface of this operation
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.Operations.QueryOperationDescriptor">
+            <summary>
+            Describes a GraphQL query
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.Operations.SubscriptionOperationDescriptor">
+            <summary>
+            Describes a GraphQL subscription
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.ResultBuilderDescriptor">
+            <summary>
+            Contains the information that are needed to generate a resultBuilder
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ResultBuilderDescriptor.ResultNamedType">
+            <summary>
+            The return type of the result builder.
+            This should be the same descriptor that is used to generate:
+             - EntityType
+             - ResultType
+             - ResultInfo
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ResultBuilderDescriptor.ValueParsers">
+            <summary>
+            A set of all type tuples, that represent the required
+            <see cref="!:ILeafValueParser&lt;TSerialized,TRuntime&gt;" /> of this
+            <see cref="T:StrawberryShake.CodeGeneration.Descriptors.ResultBuilderDescriptor" />.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor">
+            <summary>
+            Represents the entity for which the ID shall be generated or an id field of that entity.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor.#ctor(System.String,System.String,StrawberryShake.CodeGeneration.RuntimeTypeInfo)">
+            <summary>
+            Creates a new instance of <see cref="T:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor"/>.
+            </summary>
+            <param name="name">
+            The name of the field or entity.
+            </param>
+            <param name="typeName">
+            The serialization type name of the entity id field, eg. String.
+            </param>
+            <param name="serializationType">
+            The .NET serialization type.
+            </param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor.Name">
+            <summary>
+            Gets the name of the field or entity.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor.TypeName">
+            <summary>
+            Gets the GraphQL type name of the entity id field.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ScalarEntityIdDescriptor.SerializationType">
+            <summary>
+            Gets the .NET serialization type.
+            (the way we transport a leaf value.)
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.StoreAccessorDescriptor">
+            <summary>
+            Describes the dependency injection requirements of a  GraphQL client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.StoreAccessorDescriptor.Name">
+            <summary>
+            The name of the client
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the .NET runtime type of the GraphQL type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Description">
+            <summary>
+            The documentation of this type
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Properties">
+            <summary>
+            The properties that result from the requested fields of the operation this ResultType is
+            generated for.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Implements">
+            <summary>
+            A list of interface names the type implements
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.Deferred">
+            <summary>
+            Gets the deferred fragments of this type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor.ParentRuntimeType">
+            <summary>
+            Gets the .NET runtime type of the parent. If there is no parent type, this property is
+            null
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor">
+            <summary>
+            This descriptor refers to a deferred fragment.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor"/>.
+            </summary>
+            <param name="label">The defer label.</param>
+            <param name="interfaceName">The interface name of the deferred fragment.</param>
+            <param name="className">The class name of the deferred fragment.</param>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.Label">
+            <summary>
+            Gets the defer label.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.InterfaceName">
+            <summary>
+            Gets the interface name of the deferred fragment.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.Interface">
+            <summary>
+            The interface descriptor representing this deferred fragment.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.ClassName">
+            <summary>
+            Gets the class name of the deferred fragment.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.Class">
+            <summary>
+            The class descriptor representing this deferred fragment.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.FragmentIndicator">
+            <summary>
+            The entity property that represents the fragment indicator.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.DeferredFragmentDescriptor.FragmentIndicatorField">
+            <summary>
+            The result field that represents the fragment indicator.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the .NET runtime type of the GraphQL type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.SerializationType">
+            <summary>
+            Gets the .NET serialization type.
+            (the way we transport a leaf value.)
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.UnderlyingType">
+            <summary>
+            Gets the underlying enum type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.Values">
+            <summary>
+            Gets the enum values.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.EnumTypeDescriptor.Documentation">
+            <summary>
+            The documentation of this enum
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ILeafTypeDescriptor.SerializationType">
+            <summary>
+            Gets the .NET serialization type.
+            (the way we transport a leaf value.)
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.INamedTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the .NET runtime type of the GraphQL type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the .NET runtime type of the GraphQL type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.Documentation">
+            <summary>
+            The documentation of this type
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.HasUpload">
+            <summary>
+            Defines if the input object or one of its related types has any file uploads
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InputObjectTypeDescriptor.Properties">
+            <summary>
+            The properties that result from the requested fields of the operation this ResultType is
+            generated for.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.InterfaceTypeDescriptor.ImplementedBy">
+            <summary>
+            A list of types that implement this interface
+            This list must only contain the most specific, concrete classes (that implement this
+            interface), but no other interfaces.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ITypeDescriptor.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor">
+            <summary>
+            Describes a type reference like the type of a member, parameter or the return type of a method
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor.Name">
+            <summary>
+            The name of the property
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor.FieldName">
+            <summary>
+            Gets the GraphQL field name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor.Type">
+            <summary>
+            The referenced type
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor.Description">
+            <summary>
+            The description of the property
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyDescriptor.Kind">
+            <summary>
+            Defines the kind of this property.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyKind">
+            <summary>
+            Specifies the various property kinds.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyKind.Field">
+            <summary>
+            A property that is mapped from a GraphQL result.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyKind.FragmentIndicator">
+            <summary>
+            A property that represents an indicator that tells us if a fragment was fulfilled.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.PropertyKind.DeferredField">
+            <summary>
+            A non-null field that is deferred.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ScalarTypeDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ScalarTypeDescriptor.Kind">
+            <summary>
+            Gets the type kind.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ScalarTypeDescriptor.RuntimeType">
+            <summary>
+            Gets the .NET runtime type of the GraphQL type.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ScalarTypeDescriptor.SerializationType">
+            <summary>
+            Gets the .NET serialization type.
+            (the way we transport a leaf value.)
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind">
+            <summary>
+            Represents the generated type kind.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Leaf">
+            <summary>
+            A leaf type is a scalar or enum.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.AbstractData">
+            <summary>
+            A data interface or union type.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Data">
+            <summary>
+            A concrete data class.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Entity">
+            <summary>
+            An entity interface or class.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.EntityOrData">
+            <summary>
+            An abstract type that can be a entity or a data type.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Result">
+            <summary>
+            A result interface or class.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Input">
+            <summary>
+            A input class.
+            </summary>
+        </member>
+        <member name="F:StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.TypeKind.Fragment">
+            <summary>
+            A preserved fragment.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Descriptors.ValueParserDescriptor.Name">
+            <summary>
+            Gets the GraphQL type name.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Mappers.IMapperContext.Namespace">
+            <summary>
+            Gets the client root namespace.
+            This namespace is where we have all the public client APIs.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Mappers.IMapperContext.RequestStrategy">
+            <summary>
+            Gets the client request strategy.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.Mappers.IMapperContext.HashProvider">
+            <summary>
+            Gets the hash provider that is used to hash queries.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.ICSharpSyntaxGenerator">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.ICSharpSyntaxGenerator.CanHandle(StrawberryShake.CodeGeneration.Descriptors.ICodeDescriptor,StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings)">
+            <summary>
+            Defines if this code generator can handle the specified descriptor.
+            </summary>
+            <param name="descriptor">
+            The descriptor that shall be executed with this generator.
+            </param>
+            <param name="settings">
+            Settings for the code generation
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.ICSharpSyntaxGenerator.Generate(StrawberryShake.CodeGeneration.Descriptors.ICodeDescriptor,StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings)">
+            <summary>
+            Generates code for the specified descriptor and writes
+            the generated code to the specified code writer.
+            </summary>
+            <param name="descriptor">
+            The code descriptor.
+            </param>
+            <param name="settings">
+            Settings for the code generation
+            </param>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.Utilities.OperationDocumentHelper">
+            <summary>
+            Merges all documents and create one query document per operation.
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.Utilities.OperationDocumentHelper.CreateOperationDocumentsAsync(System.Collections.Generic.IEnumerable{HotChocolate.Language.DocumentNode},HotChocolate.ISchema)">
+            <summary>
+            Merges the documents and creates operation documents that
+            can be used for the actual requests.
+            </summary>
+            <param name="documents">
+            The GraphQL documents.
+            </param>
+            <param name="schema">
+            The schema to validate queries against.
+            </param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,16 @@
+{
+  "name": "com.aptoslabs.aptos-unity-sdk",
+  "version": "0.0.1-beta",
+  "description": "Aptos Web3 Unity SDK built by Aptos Labs.",
+  "displayName": "Aptos",
+  "author": {
+    "name": "Aptos Labs",
+    "url": "https://aptoslabs.com"
+  },
+  "keywords": [
+    "aptos",
+    "web3",
+    "blockchain",
+    "move"
+  ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Execution.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:HotChocolate.Execution.Configuration.IRequestExecutorBuilder">
+            <summary>
+            The GraphQL configuration builder.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Execution.Configuration.IRequestExecutorBuilder.Name">
+            <summary>
+            Gets the name of the schema.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Execution.Configuration.IRequestExecutorBuilder.Services">
+            <summary>
+            Gets the application services.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aptos.Indexer</name>
+    </assembly>
+    <members>
+        <member name="P:Aptos.Indexer.GraphQL.GetAccountTransactionsCountResult.Account_transactions_aggregate">
+            <summary>
+            fetch aggregated fields from the table: "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCount_Account_transactions_aggregate_account_transactions_aggregate">
+            <summary>
+            aggregated selection of "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCount_Account_transactions_aggregate_Aggregate_account_transactions_aggregate_fields">
+            <summary>
+            aggregate fields of "account_transactions"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetAccountTransactionsCountResult.Account_transactions_aggregate">
+            <summary>
+            fetch aggregated fields from the table: "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCount_Account_transactions_aggregate">
+            <summary>
+            aggregated selection of "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCount_Account_transactions_aggregate_account_transactions_aggregate">
+            <summary>
+            aggregated selection of "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCount_Account_transactions_aggregate_Aggregate">
+            <summary>
+            aggregate fields of "account_transactions"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCount_Account_transactions_aggregate_Aggregate_account_transactions_aggregate_fields">
+            <summary>
+            aggregate fields of "account_transactions"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetProcessorStatusResult.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatus_Processor_status_processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetProcessorStatusResult.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status_processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetNamesResult.Current_aptos_names">
+            <summary>
+            fetch data from the table: "current_aptos_names"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetNames_Current_aptos_names_current_aptos_names">
+            <summary>
+            columns and relationships of "current_aptos_names"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetNamesResult.Current_aptos_names">
+            <summary>
+            fetch data from the table: "current_aptos_names"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IAptosNameData">
+            <summary>
+            columns and relationships of "current_aptos_names"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names">
+            <summary>
+            columns and relationships of "current_aptos_names"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names_current_aptos_names">
+            <summary>
+            columns and relationships of "current_aptos_names"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnershipsResult.Current_token_ownerships_v2">
+            <summary>
+            fetch data from the table: "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_current_token_ownerships_v2">
+            <summary>
+            columns and relationships of "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_current_token_ownerships_v2.Current_token_data">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_current_token_datas_v2">
+            <summary>
+            columns and relationships of "current_token_datas_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_current_token_datas_v2.Current_collection">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_current_token_datas_v2.Cdn_asset_uris">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_current_collections_v2">
+            <summary>
+            columns and relationships of "current_collections_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_current_collections_v2.Cdn_asset_uris">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Cdn_asset_uris_nft_metadata_crawler_parsed_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_Cdn_asset_uris_nft_metadata_crawler_parsed_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnershipsResult.Current_token_ownerships_v2">
+            <summary>
+            fetch data from the table: "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2">
+            <summary>
+            columns and relationships of "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2.Current_token_data">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_current_token_ownerships_v2">
+            <summary>
+            columns and relationships of "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IDigitalAssetData">
+            <summary>
+            columns and relationships of "current_token_datas_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IDigitalAssetData.Current_collection">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IDigitalAssetData.Cdn_asset_uris">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data">
+            <summary>
+            columns and relationships of "current_token_datas_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_current_token_datas_v2">
+            <summary>
+            columns and relationships of "current_token_datas_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.ICollectionData">
+            <summary>
+            columns and relationships of "current_collections_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.ICollectionData.Cdn_asset_uris">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection">
+            <summary>
+            columns and relationships of "current_collections_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_current_collections_v2">
+            <summary>
+            columns and relationships of "current_collections_v2"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.ICdnAssetUris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Cdn_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Cdn_asset_uris_nft_metadata_crawler_parsed_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_Cdn_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnerships_Current_token_ownerships_v2_Current_token_data_Current_collection_Cdn_asset_uris_nft_metadata_crawler_parsed_asset_uris">
+            <summary>
+            columns and relationships of "nft_metadata_crawler.parsed_asset_uris"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetFungibleAssetBalancesResult.Current_fungible_asset_balances">
+            <summary>
+            fetch data from the table: "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetFungibleAssetBalances_Current_fungible_asset_balances_current_fungible_asset_balances">
+            <summary>
+            columns and relationships of "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetFungibleAssetBalances_Current_fungible_asset_balances_current_fungible_asset_balances.Metadata">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetFungibleAssetBalances_Current_fungible_asset_balances_Metadata_fungible_asset_metadata">
+            <summary>
+            columns and relationships of "fungible_asset_metadata"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetFungibleAssetBalancesResult.Current_fungible_asset_balances">
+            <summary>
+            fetch data from the table: "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetFungibleAssetBalances_Current_fungible_asset_balances">
+            <summary>
+            columns and relationships of "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetFungibleAssetBalances_Current_fungible_asset_balances.Metadata">
+            <summary>
+            An object relationship
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetFungibleAssetBalances_Current_fungible_asset_balances_current_fungible_asset_balances">
+            <summary>
+            columns and relationships of "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IFungibleAssetMetadata">
+            <summary>
+            columns and relationships of "fungible_asset_metadata"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetFungibleAssetBalances_Current_fungible_asset_balances_Metadata">
+            <summary>
+            columns and relationships of "fungible_asset_metadata"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetFungibleAssetBalances_Current_fungible_asset_balances_Metadata_fungible_asset_metadata">
+            <summary>
+            columns and relationships of "fungible_asset_metadata"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetEventsResult.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEvents_Events_events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetEventsResult.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IEventData">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events_events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.processor_status_bool_exp">
+            <summary>Boolean expression to filter rows from the table "processor_status". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.bigint_comparison_exp">
+            <summary>Boolean expression to compare columns of type "bigint". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.timestamp_comparison_exp">
+            <summary>Boolean expression to compare columns of type "timestamp". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.String_comparison_exp">
+            <summary>Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._ilike">
+            <summary>does the column match the given case-insensitive pattern</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._iregex">
+            <summary>does the column match the given POSIX regular expression, case insensitive</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._like">
+            <summary>does the column match the given pattern</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._nilike">
+            <summary>does the column NOT match the given case-insensitive pattern</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._niregex">
+            <summary>does the column NOT match the given POSIX regular expression, case insensitive</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._nlike">
+            <summary>does the column NOT match the given pattern</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._nregex">
+            <summary>does the column NOT match the given POSIX regular expression, case sensitive</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._nsimilar">
+            <summary>does the column NOT match the given SQL regular expression</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._regex">
+            <summary>does the column match the given POSIX regular expression, case sensitive</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._similar">
+            <summary>does the column match the given SQL regular expression</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_aptos_names_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_aptos_names". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Boolean_comparison_exp">
+            <summary>Boolean expression to compare columns of type "Boolean". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_aptos_names_order_by">
+            <summary>Ordering options when selecting data from "current_aptos_names".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_token_ownerships_v2". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.numeric_comparison_exp">
+            <summary>Boolean expression to compare columns of type "numeric". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Int_comparison_exp">
+            <summary>Boolean expression to compare columns of type "Int". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_datas_v2_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_token_datas_v2". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.nft_metadata_crawler_parsed_asset_uris_bool_exp">
+            <summary>Boolean expression to filter rows from the table "nft_metadata_crawler.parsed_asset_uris". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_collections_v2_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_collections_v2". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.jsonb_comparison_exp">
+            <summary>Boolean expression to compare columns of type "jsonb". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contained_in">
+            <summary>is the column contained in the given json value</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contains">
+            <summary>does the column contain the given json value at the top level</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_key">
+            <summary>does the string exist as a top-level key in the column</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_all">
+            <summary>do all of these strings exist as top-level keys in the column</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_any">
+            <summary>do any of these strings exist as top-level keys in the column</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_royalty_v1_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_token_royalty_v1". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by">
+            <summary>Ordering options when selecting data from "current_token_ownerships_v2".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_aggregate_order_by">
+            <summary>order by aggregate values of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_avg_order_by">
+            <summary>order by avg() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_max_order_by">
+            <summary>order by max() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_min_order_by">
+            <summary>order by min() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_stddev_order_by">
+            <summary>order by stddev() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_stddev_pop_order_by">
+            <summary>order by stddev_pop() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_stddev_samp_order_by">
+            <summary>order by stddev_samp() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_sum_order_by">
+            <summary>order by sum() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_var_pop_order_by">
+            <summary>order by var_pop() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_var_samp_order_by">
+            <summary>order by var_samp() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_variance_order_by">
+            <summary>order by variance() on columns of table "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_datas_v2_order_by">
+            <summary>Ordering options when selecting data from "current_token_datas_v2".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.nft_metadata_crawler_parsed_asset_uris_order_by">
+            <summary>Ordering options when selecting data from "nft_metadata_crawler.parsed_asset_uris".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_collections_v2_order_by">
+            <summary>Ordering options when selecting data from "current_collections_v2".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_token_royalty_v1_order_by">
+            <summary>Ordering options when selecting data from "current_token_royalty_v1".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_fungible_asset_balances". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.fungible_asset_metadata_bool_exp">
+            <summary>Boolean expression to filter rows from the table "fungible_asset_metadata". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by">
+            <summary>Ordering options when selecting data from "current_fungible_asset_balances".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.fungible_asset_metadata_order_by">
+            <summary>Ordering options when selecting data from "fungible_asset_metadata".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.events_bool_exp">
+            <summary>Boolean expression to filter rows from the table "events". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.events_order_by">
+            <summary>Ordering options when selecting data from "events".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Order_by">
+            <summary>
+            column ordering options
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.Asc">
+            <summary>
+            in ascending order, nulls last
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.AscNullsFirst">
+            <summary>
+            in ascending order, nulls first
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.AscNullsLast">
+            <summary>
+            in ascending order, nulls last
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.Desc">
+            <summary>
+            in descending order, nulls first
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.DescNullsFirst">
+            <summary>
+            in descending order, nulls first
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Order_by.DescNullsLast">
+            <summary>
+            in descending order, nulls last
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_and_arguments_columns">
+            <summary>
+            select "current_token_ownerships_v2_aggregate_bool_exp_bool_and_arguments_columns" columns of table "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_and_arguments_columns.IsFungibleV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_and_arguments_columns.IsSoulboundV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_and_arguments_columns.NonTransferrableByOwner">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_or_arguments_columns">
+            <summary>
+            select "current_token_ownerships_v2_aggregate_bool_exp_bool_or_arguments_columns" columns of table "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_or_arguments_columns.IsFungibleV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_or_arguments_columns.IsSoulboundV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column_current_token_ownerships_v2_aggregate_bool_exp_bool_or_arguments_columns.NonTransferrableByOwner">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column">
+            <summary>
+            select columns of table "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.Amount">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.IsFungibleV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.IsSoulboundV2">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.LastTransactionTimestamp">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.LastTransactionVersion">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.NonTransferrableByOwner">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.OwnerAddress">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.PropertyVersionV1">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.StorageId">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.TableTypeV1">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.TokenDataId">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.TokenPropertiesMutatedV1">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="F:Aptos.Indexer.GraphQL.Current_token_ownerships_v2_select_column.TokenStandard">
+            <summary>
+            column name
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQueryDocument">
+            <summary>
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
+            <code>
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
+                __typename
+                aggregate {
+                  __typename
+                  count
+                }
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQuery">
+            <summary>
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
+            <code>
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
+                __typename
+                aggregate {
+                  __typename
+                  count
+                }
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCountQuery">
+            <summary>
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
+            <code>
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
+                __typename
+                aggregate {
+                  __typename
+                  count
+                }
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQueryDocument">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQuery">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatusQuery">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetNamesQueryDocument">
+            <summary>
+            Represents the operation service of the GetNames GraphQL operation
+            <code>
+            query GetNames($offset: Int, $limit: Int, $where: current_aptos_names_bool_exp, $order_by: [current_aptos_names_order_by!]) {
+              current_aptos_names(limit: $limit, where: $where, order_by: $order_by, offset: $offset) {
+                __typename
+                ... AptosNameData
+              }
+            }
+            
+            fragment AptosNameData on current_aptos_names {
+              domain
+              expiration_timestamp
+              registered_address
+              subdomain
+              token_standard
+              is_primary
+              owner_address
+              subdomain_expiration_policy
+              domain_expiration_timestamp
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetNamesQuery">
+            <summary>
+            Represents the operation service of the GetNames GraphQL operation
+            <code>
+            query GetNames($offset: Int, $limit: Int, $where: current_aptos_names_bool_exp, $order_by: [current_aptos_names_order_by!]) {
+              current_aptos_names(limit: $limit, where: $where, order_by: $order_by, offset: $offset) {
+                __typename
+                ... AptosNameData
+              }
+            }
+            
+            fragment AptosNameData on current_aptos_names {
+              domain
+              expiration_timestamp
+              registered_address
+              subdomain
+              token_standard
+              is_primary
+              owner_address
+              subdomain_expiration_policy
+              domain_expiration_timestamp
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetNamesQuery">
+            <summary>
+            Represents the operation service of the GetNames GraphQL operation
+            <code>
+            query GetNames($offset: Int, $limit: Int, $where: current_aptos_names_bool_exp, $order_by: [current_aptos_names_order_by!]) {
+              current_aptos_names(limit: $limit, where: $where, order_by: $order_by, offset: $offset) {
+                __typename
+                ... AptosNameData
+              }
+            }
+            
+            fragment AptosNameData on current_aptos_names {
+              domain
+              expiration_timestamp
+              registered_address
+              subdomain
+              token_standard
+              is_primary
+              owner_address
+              subdomain_expiration_policy
+              domain_expiration_timestamp
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnershipsQueryDocument">
+            <summary>
+            Represents the operation service of the GetDigitalAssetOwnerships GraphQL operation
+            <code>
+            query GetDigitalAssetOwnerships($where_condition: current_token_ownerships_v2_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_token_ownerships_v2_order_by!]) {
+              current_token_ownerships_v2(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                token_properties_mutated_v1
+                table_type_v1
+                storage_id
+                property_version_v1
+                owner_address
+                is_soulbound_v2
+                amount
+                current_token_data {
+                  __typename
+                  ... DigitalAssetData
+                }
+              }
+            }
+            
+            fragment DigitalAssetData on current_token_datas_v2 {
+              description
+              is_fungible_v2
+              largest_property_version_v1
+              token_data_id
+              token_name
+              token_properties
+              token_standard
+              token_uri
+              decimals
+              current_collection {
+                __typename
+                ... CollectionData
+              }
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CollectionData on current_collections_v2 {
+              collection_id
+              collection_name
+              creator_address
+              current_supply
+              description
+              max_supply
+              mutable_description
+              mutable_uri
+              table_handle_v1
+              token_standard
+              total_minted_v2
+              uri
+              collection_properties
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CdnAssetUris on nft_metadata_crawler_parsed_asset_uris {
+              cdn_image_uri
+              cdn_json_uri
+              cdn_animation_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetDigitalAssetOwnershipsQuery">
+            <summary>
+            Represents the operation service of the GetDigitalAssetOwnerships GraphQL operation
+            <code>
+            query GetDigitalAssetOwnerships($where_condition: current_token_ownerships_v2_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_token_ownerships_v2_order_by!]) {
+              current_token_ownerships_v2(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                token_properties_mutated_v1
+                table_type_v1
+                storage_id
+                property_version_v1
+                owner_address
+                is_soulbound_v2
+                amount
+                current_token_data {
+                  __typename
+                  ... DigitalAssetData
+                }
+              }
+            }
+            
+            fragment DigitalAssetData on current_token_datas_v2 {
+              description
+              is_fungible_v2
+              largest_property_version_v1
+              token_data_id
+              token_name
+              token_properties
+              token_standard
+              token_uri
+              decimals
+              current_collection {
+                __typename
+                ... CollectionData
+              }
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CollectionData on current_collections_v2 {
+              collection_id
+              collection_name
+              creator_address
+              current_supply
+              description
+              max_supply
+              mutable_description
+              mutable_uri
+              table_handle_v1
+              token_standard
+              total_minted_v2
+              uri
+              collection_properties
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CdnAssetUris on nft_metadata_crawler_parsed_asset_uris {
+              cdn_image_uri
+              cdn_json_uri
+              cdn_animation_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetDigitalAssetOwnershipsQuery">
+            <summary>
+            Represents the operation service of the GetDigitalAssetOwnerships GraphQL operation
+            <code>
+            query GetDigitalAssetOwnerships($where_condition: current_token_ownerships_v2_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_token_ownerships_v2_order_by!]) {
+              current_token_ownerships_v2(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                token_properties_mutated_v1
+                table_type_v1
+                storage_id
+                property_version_v1
+                owner_address
+                is_soulbound_v2
+                amount
+                current_token_data {
+                  __typename
+                  ... DigitalAssetData
+                }
+              }
+            }
+            
+            fragment DigitalAssetData on current_token_datas_v2 {
+              description
+              is_fungible_v2
+              largest_property_version_v1
+              token_data_id
+              token_name
+              token_properties
+              token_standard
+              token_uri
+              decimals
+              current_collection {
+                __typename
+                ... CollectionData
+              }
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CollectionData on current_collections_v2 {
+              collection_id
+              collection_name
+              creator_address
+              current_supply
+              description
+              max_supply
+              mutable_description
+              mutable_uri
+              table_handle_v1
+              token_standard
+              total_minted_v2
+              uri
+              collection_properties
+              cdn_asset_uris {
+                __typename
+                ... CdnAssetUris
+              }
+            }
+            
+            fragment CdnAssetUris on nft_metadata_crawler_parsed_asset_uris {
+              cdn_image_uri
+              cdn_json_uri
+              cdn_animation_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetFungibleAssetBalancesQueryDocument">
+            <summary>
+            Represents the operation service of the GetFungibleAssetBalances GraphQL operation
+            <code>
+            query GetFungibleAssetBalances($where_condition: current_fungible_asset_balances_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_fungible_asset_balances_order_by!]) {
+              current_fungible_asset_balances(where: { _and: [ $where_condition, { asset_type: { _is_null: false } } ] }, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                amount
+                asset_type
+                is_frozen
+                is_primary
+                owner_address
+                token_standard
+                storage_id
+                metadata {
+                  __typename
+                  ... FungibleAssetMetadata
+                }
+              }
+            }
+            
+            fragment FungibleAssetMetadata on fungible_asset_metadata {
+              symbol
+              name
+              decimals
+              creator_address
+              project_uri
+              icon_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetFungibleAssetBalancesQuery">
+            <summary>
+            Represents the operation service of the GetFungibleAssetBalances GraphQL operation
+            <code>
+            query GetFungibleAssetBalances($where_condition: current_fungible_asset_balances_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_fungible_asset_balances_order_by!]) {
+              current_fungible_asset_balances(where: { _and: [ $where_condition, { asset_type: { _is_null: false } } ] }, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                amount
+                asset_type
+                is_frozen
+                is_primary
+                owner_address
+                token_standard
+                storage_id
+                metadata {
+                  __typename
+                  ... FungibleAssetMetadata
+                }
+              }
+            }
+            
+            fragment FungibleAssetMetadata on fungible_asset_metadata {
+              symbol
+              name
+              decimals
+              creator_address
+              project_uri
+              icon_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetFungibleAssetBalancesQuery">
+            <summary>
+            Represents the operation service of the GetFungibleAssetBalances GraphQL operation
+            <code>
+            query GetFungibleAssetBalances($where_condition: current_fungible_asset_balances_bool_exp!, $offset: Int, $limit: Int, $order_by: [current_fungible_asset_balances_order_by!]) {
+              current_fungible_asset_balances(where: { _and: [ $where_condition, { asset_type: { _is_null: false } } ] }, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                amount
+                asset_type
+                is_frozen
+                is_primary
+                owner_address
+                token_standard
+                storage_id
+                metadata {
+                  __typename
+                  ... FungibleAssetMetadata
+                }
+              }
+            }
+            
+            fragment FungibleAssetMetadata on fungible_asset_metadata {
+              symbol
+              name
+              decimals
+              creator_address
+              project_uri
+              icon_uri
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEventsQueryDocument">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEventsQuery">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEventsQuery">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.AptosIndexerClient">
+            <summary>
+            Represents the AptosIndexerClient GraphQL client
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IAptosIndexerClient">
+            <summary>
+            Represents the AptosIndexerClient GraphQL client
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetAccountTransactionsCountResultInfo.Account_transactions_aggregate">
+            <summary>
+            fetch aggregated fields from the table: "account_transactions"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetProcessorStatusResultInfo.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetNamesResultInfo.Current_aptos_names">
+            <summary>
+            fetch data from the table: "current_aptos_names"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetDigitalAssetOwnershipsResultInfo.Current_token_ownerships_v2">
+            <summary>
+            fetch data from the table: "current_token_ownerships_v2"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetFungibleAssetBalancesResultInfo.Current_fungible_asset_balances">
+            <summary>
+            fetch data from the table: "current_fungible_asset_balances"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetEventsResultInfo.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.account_transactions_aggregateData">
+            <summary>aggregated selection of "account_transactions"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.account_transactions_aggregate_fieldsData">
+            <summary>aggregate fields of "account_transactions"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.processor_statusData">
+            <summary>columns and relationships of "processor_status"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_aptos_namesData">
+            <summary>columns and relationships of "current_aptos_names"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_token_ownerships_v2Data">
+            <summary>columns and relationships of "current_token_ownerships_v2"</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.current_token_ownerships_v2Data.Current_token_data">
+            <summary>An object relationship</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_token_datas_v2Data">
+            <summary>columns and relationships of "current_token_datas_v2"</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.current_token_datas_v2Data.Current_collection">
+            <summary>An object relationship</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.current_token_datas_v2Data.Cdn_asset_uris">
+            <summary>An object relationship</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_collections_v2Data">
+            <summary>columns and relationships of "current_collections_v2"</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.current_collections_v2Data.Cdn_asset_uris">
+            <summary>An object relationship</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.nft_metadata_crawler_parsed_asset_urisData">
+            <summary>columns and relationships of "nft_metadata_crawler.parsed_asset_uris"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_fungible_asset_balancesData">
+            <summary>columns and relationships of "current_fungible_asset_balances"</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.current_fungible_asset_balancesData.Metadata">
+            <summary>An object relationship</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.fungible_asset_metadataData">
+            <summary>columns and relationships of "fungible_asset_metadata"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.eventsData">
+            <summary>columns and relationships of "events"</summary>
+        </member>
+    </members>
+</doc>

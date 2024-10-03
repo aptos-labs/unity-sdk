@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>StrawberryShake.Resources</id>
+    <version>13.9.11</version>
+    <authors>ChilliCream authors and contributors</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>strawberryshake-signet.png</icon>
+    <projectUrl>https://chillicream.com/</projectUrl>
+    <description>Resources for StrawberryShake GraphQL clients.</description>
+    <releaseNotes>Release notes: https://github.com/ChilliCream/graphql-platform/releases/</releaseNotes>
+    <copyright>Copyright © 2021 ChilliCream Inc.</copyright>
+    <tags>GraphQL ChilliCream</tags>
+    <repository type="GitHub" url="https://github.com/ChilliCream/graphql-platform.git" commit="28f39cf7eb97394d1a018b5c3be67a0033812bb1" />
+    <dependencies>
+      <group targetFramework="net6.0" />
+      <group targetFramework="net7.0" />
+      <group targetFramework="net8.0" />
+      <group targetFramework=".NETStandard2.0" />
+      <group targetFramework=".NETStandard2.1" />
+    </dependencies>
+  </metadata>
+</package>

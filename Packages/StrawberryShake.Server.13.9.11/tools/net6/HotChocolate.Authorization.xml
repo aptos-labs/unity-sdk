@@ -1,0 +1,516 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Authorization</name>
+    </assembly>
+    <members>
+        <member name="T:HotChocolate.Authorization.AllowAnonymousAttribute">
+            <summary>
+            Allows anonymous access to the annotated field.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.ApplyPolicy">
+            <summary>
+            Defines when a policy shall be executed.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.ApplyPolicy.BeforeResolver">
+            <summary>
+            Before the resolver was executed.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.ApplyPolicy.AfterResolver">
+            <summary>
+            After the resolver was executed.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.ApplyPolicy.Validation">
+            <summary>
+            The policy is applied in the validation step before the execution.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.AuthorizationContext">
+            <summary>
+            Represents the state that is used to execute authorization policies.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizationContext.#ctor(HotChocolate.ISchema,System.IServiceProvider,System.Collections.Generic.IDictionary{System.String,System.Object},HotChocolate.Language.DocumentNode,System.String)">
+            <summary>
+            Initializes a new <see cref="T:HotChocolate.Authorization.AuthorizationContext"/>.
+            </summary>
+            <param name="schema">The GraphQL schema.</param>
+            <param name="services">The application services.</param>
+            <param name="contextData">The request context data.</param>
+            <param name="document">The GraphQL request document.</param>
+            <param name="documentId">A unique string identifying the GraphQL document</param>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationContext.Schema">
+            <summary>
+            Gets the GraphQL schema.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationContext.Services">
+            <summary>
+            Gets the application services.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationContext.ContextData">
+            <summary>
+            Gets the request context data.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationContext.Document">
+            <summary>
+            Gets the GraphQL request document.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationContext.DocumentId">
+            <summary>
+            Gets a unique string identifying the GraphQL request document.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.AuthorizationOptions">
+            <summary>
+            The authorization options.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationOptions.ConfigureNodeFields">
+            <summary>
+            Gets or sets a hook that can be used to apply authorization
+            policies to the node and nodes field.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationOptions.ConfigureTypeField">
+            <summary>
+            Gets or sets a hook that can be used to apply authorization
+            policies to the __type field.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationOptions.ConfigureSchemaField">
+            <summary>
+            Gets or sets a hook that can be used to apply authorization
+            policies to the __schema field.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.Options">
+            <summary>
+            Provides access to the authorization options.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.NeedsAuth">
+            <summary>
+             Gets the types to which authorization middleware need to be applied.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.AuthTypes">
+            <summary>
+            Gets the types to which are annotated with the @authorize directive.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.AbstractToConcrete">
+            <summary>
+            Gets a lookup table from abstract types to concrete types that need authorization.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.Queue">
+            <summary>
+            Gets a helper queue for processing types.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizationTypeInterceptor.State.Completed">
+            <summary>
+            Gets a helper set for tracking process completion.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.AuthorizeAttribute">
+            <summary>
+            Applies the authorization directive to object types or object fields.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeAttribute.#ctor">
+            <summary>
+            Applies the authorization directive to object types or object fields.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeAttribute.#ctor(System.String)">
+            <summary>
+            Applies the authorization directive with a specific policy to
+            object types or object fields.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeAttribute.#ctor(System.String,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Applies the authorization directive with a specific policy to
+            object types or object fields.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeAttribute.#ctor(HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Applies the authorization directive with a specific policy to
+            object types or object fields.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeAttribute.Policy">
+            <summary>
+            Gets or sets the authorization policy.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeAttribute.Roles">
+            <summary>
+            Gets or sets the authorization roles.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeAttribute.Apply">
+            <summary>
+            Specifies when the authorization directive shall be applied.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.AuthorizeDirective">
+            <summary>
+            The authorize directive.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeDirective.#ctor(System.Collections.Generic.IReadOnlyList{System.String},HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Authorization.AuthorizeDirective"/>.
+            </summary>
+            <param name="roles">
+            The authorization roles.
+            </param>
+            <param name="apply">
+            Specifies when the authorization directive shall be applied.
+            </param>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeDirective.#ctor(HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Authorization.AuthorizeDirective"/>.
+            </summary>
+            <param name="apply">
+            Specifies when the authorization directive shall be applied.
+            </param>
+        </member>
+        <member name="M:HotChocolate.Authorization.AuthorizeDirective.#ctor(System.String,System.Collections.Generic.IReadOnlyList{System.String},HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Initializes a new instance of <see cref="T:HotChocolate.Authorization.AuthorizeDirective"/>.
+            </summary>
+            <param name="policy">
+            The authorization policy.
+            </param>
+            <param name="roles">
+            The authorization roles.
+            </param>
+            <param name="apply">
+            Specifies when the authorization directive shall be applied.
+            </param>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeDirective.Policy">
+            <summary>
+            Gets the policy name that determines access to the resource.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeDirective.Roles">
+            <summary>
+            Gets of roles that are allowed to access the resource.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Authorization.AuthorizeDirective.Apply">
+            <summary>
+            <para>
+            Gets a value indicating if the resolver has to be executed
+            before the policy is run or after the policy is run.
+            </para>
+            <para>
+            The before policy option is good if the actual object is needed
+            for the policy to be evaluated.
+            </para>
+            <para>The default is BeforeResolver.</para>
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.AuthorizeResult">
+            <summary>
+            Represents the authorization result.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.AuthorizeResult.Allowed">
+            <summary>
+            The current session is allowed to access the resolver data.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.AuthorizeResult.NotAllowed">
+            <summary>
+            The current session is not allowed to access the resolver data.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.AuthorizeResult.NotAuthenticated">
+            <summary>
+            The current session is not authenticated.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.AuthorizeResult.NoDefaultPolicy">
+            <summary>
+            There is no default policy configured and authorize cannot be handled.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Authorization.AuthorizeResult.PolicyNotFound">
+            <summary>
+            The specified authorization policy was not found.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Authorization.IAuthorizationHandler">
+            <summary>
+            The authorization handler abstracts the authorization logic that is applied to schema objects.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Authorization.IAuthorizationHandler.AuthorizeAsync(HotChocolate.Resolvers.IMiddlewareContext,HotChocolate.Authorization.AuthorizeDirective,System.Threading.CancellationToken)">
+            <summary>
+            Executes the authorization logic during the GraphQL request execution
+            for the specified <paramref name="directive"/>.
+            </summary>
+            <param name="context">
+            The middleware context.
+            </param>
+            <param name="directive">
+            The authorization directive.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>
+            Returns a value indicating if the current session is authorized to
+            access the resolver data.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Authorization.IAuthorizationHandler.AuthorizeAsync(HotChocolate.Authorization.AuthorizationContext,System.Collections.Generic.IReadOnlyList{HotChocolate.Authorization.AuthorizeDirective},System.Threading.CancellationToken)">
+            <summary>
+            Executes the authorization logic during the GraphQL request validation.
+            The validation will collect all authorization policies for a provided GraphQL
+            request document and validate them in one batch call before the request execution
+            has begun.
+            </summary>
+            <param name="context">
+            The authorization context.
+            </param>
+            <param name="directives">
+            The authorization directives.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>
+            Returns a value indicating if the current session is authorized to
+            execute the GraphQL request document.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Types.AuthorizeObjectFieldDescriptorExtensions">
+            <summary>
+            Authorize extensions for the object field descriptor.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectFieldDescriptorExtensions.Authorize(HotChocolate.Types.IObjectFieldDescriptor,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a field.
+            </summary>
+            <param name="descriptor">The field descriptor.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectFieldDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectFieldDescriptorExtensions.Authorize(HotChocolate.Types.IObjectFieldDescriptor,System.String,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a field.
+            </summary>
+            <param name="descriptor">The field descriptor.</param>
+            <param name="policy">The authorization policy name.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectFieldDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectFieldDescriptorExtensions.Authorize(HotChocolate.Types.IObjectFieldDescriptor,System.String[])">
+            <summary>
+            Adds authorization to a field.
+            </summary>
+            <param name="descriptor">The field descriptor.</param>
+            <param name="roles">The roles for which this field shall be accessible.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectFieldDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectFieldDescriptorExtensions.AllowAnonymous(HotChocolate.Types.IObjectFieldDescriptor)">
+            <summary>
+            Allows anonymous access to this field.
+            </summary>
+            <param name="descriptor">
+            The field descriptor.
+            </param>
+            <returns>
+             Returns the <see cref="T:HotChocolate.Types.IObjectFieldDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="T:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions">
+            <summary>
+            Authorize extensions for the object type descriptor.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize(HotChocolate.Types.IObjectTypeDescriptor,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize(HotChocolate.Types.IObjectTypeDescriptor,System.String,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="policy">The authorization policy name.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize(HotChocolate.Types.IObjectTypeDescriptor,System.String[])">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="roles">The roles for which this field shall be accessible.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize``1(HotChocolate.Types.IObjectTypeDescriptor{``0},HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize``1(HotChocolate.Types.IObjectTypeDescriptor{``0},System.String,HotChocolate.Authorization.ApplyPolicy)">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="policy">The authorization policy name.</param>
+            <param name="apply">Defines when the authorization policy is invoked.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Types.AuthorizeObjectTypeDescriptorExtensions.Authorize``1(HotChocolate.Types.IObjectTypeDescriptor{``0},System.String[])">
+            <summary>
+            Adds authorization to a type.
+            </summary>
+            <param name="descriptor">The type descriptor.</param>
+            <param name="roles">The roles for which this field shall be accessible.</param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Types.IObjectTypeDescriptor"/> for configuration chaining.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="descriptor"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.HotChocolateAuthorizeRequestExecutorBuilder">
+            <summary>
+            Provides extension methods for the GraphQL builder.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HotChocolateAuthorizeRequestExecutorBuilder.AddAuthorizationCore(HotChocolate.Execution.Configuration.IRequestExecutorBuilder)">
+            <summary>
+            Adds the authorization support to the schema.
+            </summary>
+            <param name="builder">
+            The GraphQL configuration builder.
+            </param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Execution.Configuration.IRequestExecutorBuilder"/> for chaining in more configurations.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="builder"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HotChocolateAuthorizeRequestExecutorBuilder.ModifyAuthorizationOptions(HotChocolate.Execution.Configuration.IRequestExecutorBuilder,System.Action{HotChocolate.Authorization.AuthorizationOptions})">
+            <summary>
+            Modify authorization options.
+            </summary>
+            <param name="builder">
+            The GraphQL configuration builder.
+            </param>
+            <param name="configure">
+            A delegate to mutate the configuration object.
+            </param>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Execution.Configuration.IRequestExecutorBuilder"/> for chaining in more configurations.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="builder"/> or <paramref name="configure"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HotChocolateAuthorizeRequestExecutorBuilder.AddAuthorizationHandler``1(HotChocolate.Execution.Configuration.IRequestExecutorBuilder)">
+            <summary>
+            Adds a custom authorization handler.
+            </summary>
+            <param name="builder">
+            The GraphQL configuration builder.
+            </param>
+            <typeparam name="T">
+            The custom authorization handler.
+            </typeparam>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Execution.Configuration.IRequestExecutorBuilder"/> for chaining in more configurations.
+            </returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HotChocolateAuthorizeRequestExecutorBuilder.AddAuthorizationHandler``1(HotChocolate.Execution.Configuration.IRequestExecutorBuilder,System.Func{System.IServiceProvider,``0})">
+            <summary>
+            Adds a custom authorization handler.
+            </summary>
+            <param name="builder">
+            The GraphQL configuration builder.
+            </param>
+            <param name="factory">
+            The handler factory.
+            </param>
+            <typeparam name="T">
+            The custom authorization handler.
+            </typeparam>
+            <returns>
+            Returns the <see cref="T:HotChocolate.Execution.Configuration.IRequestExecutorBuilder"/> for chaining in more configurations.
+            </returns>
+        </member>
+    </members>
+</doc>

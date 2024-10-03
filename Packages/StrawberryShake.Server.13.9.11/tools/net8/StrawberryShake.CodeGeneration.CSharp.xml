@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StrawberryShake.CodeGeneration.CSharp</name>
+    </assembly>
+    <members>
+        <member name="M:StrawberryShake.CodeGeneration.CSharp.Builders.XmlCommentBuilder.Build(StrawberryShake.CodeGeneration.CodeWriter)">
+             <summary>
+            
+             </summary>
+             <param name="writer"></param>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.CSharp.Generators.JsonResultBuilderGenerator.AddRequiredDeserializeMethods(StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.INamedTypeDescriptor,StrawberryShake.CodeGeneration.CSharp.Builders.ClassBuilder,System.Collections.Generic.HashSet{System.String})">
+            <summary>
+            Adds all required deserializers of the given type descriptors properties
+            </summary>
+        </member>
+        <member name="M:StrawberryShake.CodeGeneration.CSharp.Generators.TypeMapperGenerator.AddRequiredMapMethods(StrawberryShake.CodeGeneration.CSharpSyntaxGeneratorSettings,StrawberryShake.CodeGeneration.Descriptors.TypeDescriptors.ComplexTypeDescriptor,StrawberryShake.CodeGeneration.CSharp.Builders.ClassBuilder,StrawberryShake.CodeGeneration.CSharp.Builders.ConstructorBuilder,System.Collections.Generic.HashSet{System.String},System.Boolean)">
+            <summary>
+            Adds all required deserializers of the given type descriptors properties
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings">
+            <summary>
+            The csharp generator settings.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.ClientName">
+            <summary>
+            The name of the client class.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.Namespace">
+            <summary>
+            The root namespace of the client.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.AccessModifier">
+            <summary>
+            The access modifier of the client.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.StrictSchemaValidation">
+            <summary>
+            Defines if a schema needs to be fully valid.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.NoStore">
+            <summary>
+            Generates the client without a store
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.InputRecords">
+            <summary>
+            Generates input types as records.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.EntityRecords">
+            <summary>
+            Generates entity as records.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.RazorComponents">
+            <summary>
+            Generate razor components.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.SingleCodeFile">
+            <summary>
+            Generate a single CSharp code file.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.RequestStrategy">
+            <summary>
+            The default request strategy.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.HashProvider">
+            <summary>
+            The <see cref="T:HotChocolate.Language.IDocumentHashProvider"/> that shall be used for persisted queries.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.CodeGeneration.CSharp.CSharpGeneratorSettings.TransportProfiles">
+            <summary>
+            The transport profiles that shall be generated.
+            </summary>
+        </member>
+    </members>
+</doc>

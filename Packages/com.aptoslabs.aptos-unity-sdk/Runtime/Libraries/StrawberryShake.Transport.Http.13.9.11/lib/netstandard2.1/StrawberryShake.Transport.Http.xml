@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StrawberryShake.Transport.Http</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions">
+            <summary>
+            Common extensions of <see cref="T:StrawberryShake.IClientBuilder`1"/> for <see cref="T:StrawberryShake.Transport.Http.HttpConnection"/>
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.ConfigureHttpClient``1(StrawberryShake.IClientBuilder{``0},System.Action{System.Net.Http.HttpClient},System.Action{Microsoft.Extensions.DependencyInjection.IHttpClientBuilder})">
+            <summary>
+            Adds the <see cref="T:System.Net.Http.IHttpClientFactory"/> and related services to the
+            <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and configures a <see cref="T:System.Net.Http.HttpClient"/>
+            with the correct name
+            </summary>
+            <param name="clientBuilder">
+            The <see cref="T:StrawberryShake.IClientBuilder`1"/>
+            </param>
+            <param name="configureClient">
+            A delegate that is used to configure an <see cref="T:System.Net.Http.HttpClient"/>.
+            </param>
+            <param name="configureClientBuilder">
+            A delegate that is used to additionally configure the <see cref="T:System.Net.Http.HttpClient"/>
+            with a <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/>
+            </param>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.HttpClientBuilderExtensions.ConfigureHttpClient``1(StrawberryShake.IClientBuilder{``0},System.Action{System.IServiceProvider,System.Net.Http.HttpClient},System.Action{Microsoft.Extensions.DependencyInjection.IHttpClientBuilder})">
+            <summary>
+            Adds the <see cref="T:System.Net.Http.IHttpClientFactory"/> and related services to the
+            <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/> and configures a <see cref="T:System.Net.Http.HttpClient"/>
+            with the correct name
+            </summary>
+            <param name="clientBuilder">
+            The <see cref="T:StrawberryShake.IClientBuilder`1"/>
+            </param>
+            <param name="configureClient">
+            A delegate that is used to configure an <see cref="T:System.Net.Http.HttpClient"/>.
+            </param>
+            <param name="configureClientBuilder">
+            A delegate that is used to additionally configure the <see cref="T:System.Net.Http.HttpClient"/>
+            with a <see cref="T:Microsoft.Extensions.DependencyInjection.IHttpClientBuilder"/>
+            </param>
+        </member>
+        <member name="M:StrawberryShake.Transport.Http.HttpConnection.MapVariables(System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Converts the variables into a dictionary that can be serialized. This is necessary
+            because the variables can contain lists of key value pairs which are not supported
+            by HotChocolate.Transport.Http
+            </summary>
+            <remarks>
+            We only convert the variables if necessary to avoid unnecessary allocations.
+            </remarks>
+        </member>
+    </members>
+</doc>

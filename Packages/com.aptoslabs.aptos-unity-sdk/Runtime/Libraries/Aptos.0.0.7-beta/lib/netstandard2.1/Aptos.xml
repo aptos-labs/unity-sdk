@@ -1,0 +1,917 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aptos</name>
+    </assembly>
+    <members>
+        <member name="T:Aptos.Account">
+            <summary>
+            Abstract class representing a signer account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Account.VerifyingKey">
+            <summary>
+            Gets the public key of the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Account.Address">
+            <summary>
+            Gets the address of the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Account.SigningScheme">
+            <summary>
+            Gets the signing scheme used by the account.
+            </summary>
+        </member>
+        <member name="M:Aptos.Account.Sign(System.String)">
+            <inheritdoc cref="M:Aptos.Account.Sign(System.Byte[])"/>
+        </member>
+        <member name="M:Aptos.Account.Sign(Aptos.AnyRawTransaction)">
+            <summary>
+            Signs a transaction using the account's private key.
+            </summary>
+            <param name="transaction">The transaction to sign.</param>
+            <returns>The signed transaction.</returns>
+        </member>
+        <member name="M:Aptos.Account.Sign(System.Byte[])">
+            <summary>
+            Signs a message with the using the signer.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The signed message.</returns>
+        </member>
+        <member name="M:Aptos.Account.SignWithAuthenticator(System.String)">
+            <inheritdoc cref="M:Aptos.Account.SignWithAuthenticator(System.Byte[])"/>
+        </member>
+        <member name="M:Aptos.Account.SignWithAuthenticator(Aptos.AnyRawTransaction)">
+            <summary>
+            Signs a transaction and returns an authenticator for the account.
+            </summary>
+            <param name="transaction">The transaction to sign.</param>
+            <returns>The authenticator containing the signature.</returns>
+        </member>
+        <member name="M:Aptos.Account.SignWithAuthenticator(System.Byte[])">
+            <summary>
+            Signs a message and returns an authenticator for the account.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The authenticator containing the signature.</returns>
+        </member>
+        <member name="M:Aptos.Account.Generate">
+            <summary>
+            Generates a new Ed25519 account.
+            </summary>
+            <returns>A new instance of <see cref="T:Aptos.Ed25519Account"/>.</returns>
+        </member>
+        <member name="T:Aptos.Ed25519Account">
+            <summary>
+            Represents an Ed25519 signer used to sign transaction with a Ed25519 private key.
+            </summary>
+        </member>
+        <member name="F:Aptos.Ed25519Account.PrivateKey">
+            <summary>
+            Gets the Ed25519PrivateKey for the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Ed25519Account.VerifyingKey">
+            <summary>
+            Gets the Ed25519PublicKey for the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Ed25519Account.PublicKey">
+            <summary>
+            Gets the Ed25519PublicKey for the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Ed25519Account.Address">
+            <summary>
+            Gets the address of the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.Ed25519Account.SigningScheme">
+            <summary>
+            The Ed25519 account uses a Ed25519 signing scheme.
+            </summary>
+        </member>
+        <member name="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey)">
+            <inheritdoc cref="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,Aptos.AccountAddress)"/>
+        </member>
+        <member name="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,System.String)">
+            <inheritdoc cref="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,Aptos.AccountAddress)"/>
+        </member>
+        <member name="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,System.Byte[])">
+            <inheritdoc cref="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,Aptos.AccountAddress)"/>
+        </member>
+        <member name="M:Aptos.Ed25519Account.#ctor(Aptos.Ed25519PrivateKey,Aptos.AccountAddress)">
+            <summary>
+            Initializes a new instance of the Ed25519Account class with a private key and an optional account address.
+            </summary>
+            <param name="privateKey">The private key for the account.</param>
+            <param name="address">The account address.</param>
+        </member>
+        <member name="M:Aptos.Ed25519Account.VerifySignature(System.Byte[],Aptos.Ed25519Signature)">
+            <summary>
+            Verifies a signature for a given message.
+            </summary>
+            <param name="message">The message that was signed.</param>
+            <param name="signature">The signed message to verify.</param>
+            <returns>True if the signature is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:Aptos.Ed25519Account.Sign(System.Byte[])">
+            <summary>
+            Signs a message with the using the account's private key.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The signed message.</returns>
+        </member>
+        <member name="M:Aptos.Ed25519Account.SignWithAuthenticator(System.Byte[])">
+            <summary>
+            Signs a message and returns an authenticator with the signature.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The authenticator containing the signature.</returns>
+        </member>
+        <member name="M:Aptos.Ed25519Account.Generate">
+            <summary>
+            Generates a new Ed25519 account.
+            </summary>
+            <returns>A new instance of <see cref="T:Aptos.Ed25519Account"/>.</returns>
+        </member>
+        <member name="M:Aptos.Ed25519Account.FromDerivationPath(System.String,System.String)">
+             <summary>
+             Generates a new Ed25519 account from a derivation path and mnemonic.
+            
+             The derivation path is a string that follows the BIP-44 standard.
+             </summary>
+             <param name="path">The derivation path (e.g. "m/44'/637'/0'/0'/0'").</param>
+             <param name="mnemonic">The mnemonic phrase (e.g. "abandon ... flyer about").</param>
+             <returns>A new instance of <see cref="T:Aptos.Ed25519Account"/>.</returns>
+        </member>
+        <member name="F:Aptos.EphemeralKeyPair.DEFAULT_EXPIRY_DURATION">
+            <summary>
+            The default expiry duration for an ephemeral key pair is 14 days.
+            </summary>
+        </member>
+        <member name="F:Aptos.EphemeralKeyPair._privateKey">
+            <summary>
+            The private key is used to sign transactions. This private key is not tied to any account on the chain as it is
+            ephemeral (not permanent) in nature.
+            </summary>
+        </member>
+        <member name="F:Aptos.EphemeralKeyPair.PublicKey">
+            <summary>
+            A public key used to verify transactions. This public key is not tied to any account on the chain as it is
+            ephemeral (not permanent) in nature.
+            </summary>
+        </member>
+        <member name="F:Aptos.EphemeralKeyPair.ExpiryTimestamp">
+            <summary>
+            A timestamp in seconds indicating when the ephemeral key pair will expire. After expiry, a new
+            EphemeralKeyPair must be generated and a new JWT needs to be created.
+            </summary>
+        </member>
+        <member name="F:Aptos.EphemeralKeyPair.Nonce">
+            <summary>
+            The value passed to the IdP when the user logs in.
+            </summary>
+        </member>
+        <member name="P:Aptos.KeylessAccount.VerifyingKey">
+            <summary>
+            Gets the KeylessPublicKey inside a SingleKey for the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.KeylessAccount.Address">
+            <summary>
+            Gets the address of the account.
+            </summary>
+        </member>
+        <member name="T:Aptos.MultiKeyAccount">
+             <summary>
+             Represents a MultiKey signer used to sign transactions with the MultiKey authentication scheme.
+            
+             This accounts to use a M of N signing scheme. M and N are specified in the <see cref="T:Aptos.MultiKey"/>.
+             It signs messages via the array of M number of Accounts that individually correspond to a public key in the <see cref="T:Aptos.MultiKey"/>.
+             </summary>
+        </member>
+        <member name="P:Aptos.MultiKeyAccount.VerifyingKey">
+            <summary>
+            Gets the MultiKeyPublicKey for the account.
+            </summary>
+        </member>
+        <member name="P:Aptos.MultiKeyAccount.Address">
+            <summary>
+            Gets the address of the account.
+            </summary>
+        </member>
+        <member name="F:Aptos.MultiKeyAccount.Signers">
+            <summary>
+            The signers used to sign messages. These signers should correspond to public keys in the
+            MultiKeyAccount's public key. The number of signers should be equal or greater than the
+            number of public keys in the MultiKeyAccount's public key.
+            </summary>
+        </member>
+        <member name="F:Aptos.MultiKeyAccount.SignerIndicies">
+            <summary>
+            The corresponding indicies of the signers in the MultiKeyAccount's public key.
+            <br/>
+            Example: If the MultiKey has 3 public keys [0x1, 0x2, 0x3] and signers [0x1, 0x3],
+            then the signer indices would be [0, 2].
+            </summary>
+        </member>
+        <member name="P:Aptos.MultiKeyAccount.SigningScheme">
+            <summary>
+            The MultiKeyAccount uses a MultiKey signing scheme.
+            </summary>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.#ctor(Aptos.MultiKey,System.Collections.Generic.List{Aptos.Account})">
+             <summary>
+             Initializes a new instance of the MultiKeyAccount class with a MultiKey and a list of signers.
+            
+             The signers should correspond to public keys in the MultiKeyAccount's public key.
+             </summary>
+             <param name="multiKey">The MultiKey to use for signing.</param>
+             <param name="signers">The signers to use for signing.</param>
+             <exception cref="T:System.ArgumentException">If the signers do not correspond to public keys in the MultiKeyAccount's public key.</exception>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.VerifySignature(System.String,Aptos.MultiKeySignature)">
+            <inheritdoc cref="M:Aptos.MultiKeyAccount.VerifySignature(System.Byte[],Aptos.MultiKeySignature)"/>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.VerifySignature(System.Byte[],Aptos.MultiKeySignature)">
+            <summary>
+            Verifies a signature for a given message.
+            </summary>
+            <param name="message">The message that was signed.</param>
+            <param name="signature">The signed message to verify.</param>
+            <returns>True if the signature is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.Sign(Aptos.AnyRawTransaction)">
+            <inheritdoc cref="M:Aptos.Account.Sign(Aptos.AnyRawTransaction)"/>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.Sign(System.Byte[])">
+            <summary>
+            Signs a message into a signature using the signer.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The signed message.</returns>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.SignWithAuthenticator(Aptos.AnyRawTransaction)">
+            <inheritdoc cref="M:Aptos.MultiKeyAccount.Sign(Aptos.AnyRawTransaction)"/>
+        </member>
+        <member name="M:Aptos.MultiKeyAccount.SignWithAuthenticator(System.Byte[])">
+            <summary>
+            Signs a message and returns an authenticator with the signature.
+            </summary>
+            <param name="message">The message to sign as a byte array.</param>
+            <returns>The authenticator containing the signature.</returns>
+        </member>
+        <member name="T:Aptos.ResourceStruct.InnerStruct">
+            <summary>
+            Resource structs will have an inner struct inside a vec. The inner struct will contain the account address, module name, and struct name. Typically
+            the module name and struct name will be in hex format.
+            <br/>
+            Example of 0x1::aptos_coin::AptosCoin struct:
+            {
+                account_address: "0x1",
+                module_name: "0x6170746f735f636f696e",
+                struct_name: "0x4170746f73436f696e",
+            }
+            </summary>
+        </member>
+        <member name="M:Aptos.ResourceStruct.InnerStruct.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Resource structs will have an inner struct inside a vec. The inner struct will contain the account address, module name, and struct name. Typically
+            the module name and struct name will be in hex format.
+            <br/>
+            Example of 0x1::aptos_coin::AptosCoin struct:
+            {
+                account_address: "0x1",
+                module_name: "0x6170746f735f636f696e",
+                struct_name: "0x4170746f73436f696e",
+            }
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Aptos.MoveOption`1.SerializeForScriptFunction(Aptos.Serializer)" -->
+        <member name="M:Aptos.AccountClient.GetInfo(Aptos.AccountAddress)">
+            <inheritdoc cref = "M:Aptos.AccountClient.GetInfo(System.String)" />
+        </member>
+        <member name="M:Aptos.AccountClient.GetInfo(System.String)">
+            <summary>
+            Gets the account information of the given address. This includes the sequence number and authentication key.
+            </summary>
+            <param name="address"> The address of the account.</param>
+            <returns> The account information of the given address.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetModule(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetModule(System.String,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetModule(System.String,System.String,System.Nullable{System.UInt64})">
+             <summary>
+             Gets the Move module of the given address and module name.
+            
+             The function will be cached every time it is called with the same parameters to avoid unnecessary network requests.
+             </summary>
+             <param name="address">The address of the account.</param>
+             <param name="moduleName">The name of the module.</param>
+             <param name="ledgerVersion">The ledger version to use for the module call.</param>
+             <returns>The Move bytecode and ABI.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTransactionCount(Aptos.AccountAddress)">
+            <inheritdoc cref="M:Aptos.AccountClient.GetTransactionCount(System.String)"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTransactionCount(System.String)">
+            <summary>
+            Gets the number of transactions committed for the given address.
+            </summary>
+            <param name="address"> The address of the account.</param>
+            <returns> The number of transactions committed for the given address.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetResource(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResource(System.String,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetResource(System.String,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResource(System.String,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetResource``1(System.String,System.String,System.Nullable{System.UInt64})">
+            <summary>
+            Gets the resource of the given address and resource type.
+            </summary>
+            <typeparam name="T"> The return type of the resource. Should typically be <see cref="T:Aptos.MoveResource"/>.</typeparam>
+            <param name="address">The address of the account.</param>
+            <param name="resourceType">The resource type.</param>
+            <param name="ledgerVersion">The ledger version to use for the resource call.</param>
+            <returns>The resource of the given address and resource type.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetResources(Aptos.AccountAddress,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResources(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetResources(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Gets a paginated list of resources of the given address.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="start">The start index of the resources to return.</param>
+            <param name="limit">The limit of the resources to return.</param>
+            <returns>The resources of the given address.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetCoinBalances(Aptos.AccountAddress,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <inheritdoc cref="M:Aptos.AccountClient.GetCoinBalances(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetCoinBalances(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <summary>
+            Gets a paginated list of coin balances of the given address.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="types">The types of the coin balances to return.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the coin balances.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of coin balances.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetCoinBalance(Aptos.AccountAddress,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <inheritdoc cref="M:Aptos.AccountClient.GetCoinBalance(System.String,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetCoinBalance(System.String,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <summary>
+            Gets the coin balance of the given address and coin type. When providing the types, its important to include both the Fungible Asset address
+            and the coin type if they both exist for the asset.
+            <br/>
+            The default will be "0xa" and "0x1::aptos_coin::AptosCoin".
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="type">The type of the coin.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the coin balances.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>The coin balance of the given address and coin type.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTokenOwnerships(Aptos.AccountAddress,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <inheritdoc cref="M:Aptos.AccountClient.GetTokenOwnerships(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTokenOwnerships(System.String,System.Collections.Generic.List{System.String},System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <summary>
+            Gets a paginated list of token ownerships of the given address.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="collectionIds">The collection ids of the token ownerships to return.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the token ownerships.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of token ownerships.</returns>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTokenOwnership(Aptos.AccountAddress,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <inheritdoc cref="M:Aptos.AccountClient.GetTokenOwnership(System.String,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)"/>
+        </member>
+        <member name="M:Aptos.AccountClient.GetTokenOwnership(System.String,System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <summary>
+            Gets the token ownership of the given address and token id.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="tokenId">The token id of the token ownership to return.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the token ownerships.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>The token ownership of the given address and token id.</returns>
+        </member>
+        <member name="M:Aptos.ANSClient.GetAnsName(System.String)">
+            <inheritdoc cref="M:Aptos.ANSClient.GetAnsName(Aptos.AccountAddress)"/>
+        </member>
+        <member name="M:Aptos.ANSClient.GetAnsName(Aptos.AccountAddress)">
+            <summary>
+            Gets the registered ANS name of the given address. This includes the subdomain of the name.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <returns>The ANS name of the given address.</returns>
+        </member>
+        <member name="M:Aptos.ANSClient.GetAnsAddress(System.String)">
+            <inheritdoc cref="M:Aptos.ANSClient.GetAnsAddress(System.String,System.String)"/>
+        </member>
+        <member name="M:Aptos.ANSClient.GetAnsAddress(System.String,System.String)">
+            <summary>
+            Gets the ANS address of the given domain and subdomain. If the network is not supported by the ANS resolver, an exception will be thrown.
+            </summary>
+            <param name="domain">The domain of the ANS name.</param>
+            <param name="subdomain">The subdomain of the ANS name.</param>
+            <returns>The ANS address of the given domain and subdomain.</returns>
+        </member>
+        <member name="T:Aptos.AptosClient">
+            <inheritdoc cref="M:Aptos.AptosClient.#ctor(Aptos.AptosConfig)"/>
+        </member>
+        <member name="M:Aptos.AptosClient.#ctor(Aptos.NetworkConfig)">
+            <inheritdoc cref="M:Aptos.AptosClient.#ctor(Aptos.AptosConfig)"/>
+        </member>
+        <member name="M:Aptos.AptosClient.#ctor(Aptos.AptosConfig)">
+            <summary>
+            Creates an instance of the AptosClient with a given <see cref="T:Aptos.AptosConfig"/>.
+            This client is used to interface with the Aptos blockchain and perform various operations such
+            as querying the blockchain, submitting transactions, and interacting with the Aptos network.
+            </summary>
+            <remarks>
+            By default, the client will use Devnet as the network configuration.
+            </remarks>
+        </member>
+        <member name="M:Aptos.AptosClient.View(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.ContractClient.View(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.View``1(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.ContractClient.View``1(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.SignAndSubmitTransaction(Aptos.Account,Aptos.AnyRawTransaction,Aptos.AccountAuthenticator,System.Collections.Generic.List{Aptos.AccountAuthenticator})">
+            <inheritdoc cref="M:Aptos.TransactionClient.SignAndSubmitTransaction(Aptos.Account,Aptos.AnyRawTransaction,Aptos.AccountAuthenticator,System.Collections.Generic.List{Aptos.AccountAuthenticator})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetLedgerInfo">
+            <inheritdoc cref="M:Aptos.BlockClient.GetLedgerInfo"/>
+        </member>
+        <member name="M:Aptos.AptosClient.FundAccount(System.String,System.UInt64)">
+            <inheritdoc cref="M:Aptos.FaucetClient.FundAccount(System.String,System.UInt64)"/>
+        </member>
+        <member name="M:Aptos.AptosClient.FundAccount(Aptos.AccountAddress,System.UInt64)">
+            <inheritdoc cref="M:Aptos.FaucetClient.FundAccount(Aptos.AccountAddress,System.UInt64)"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetModule(System.String,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetModule(System.String,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetModule(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetModule(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetResource(System.String,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResource(System.String,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetResource(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResource(Aptos.AccountAddress,System.String,System.Nullable{System.UInt64})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetResources(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResources(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})"/>
+        </member>
+        <member name="M:Aptos.AptosClient.GetResources(Aptos.AccountAddress,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <inheritdoc cref="M:Aptos.AccountClient.GetResources(Aptos.AccountAddress,System.Nullable{System.Int32},System.Nullable{System.Int32})"/>
+        </member>
+        <member name="T:Aptos.AptosConfig">
+            <summary>
+            Instantiate a new instance of the AptosConfig class. This class is used to configure the AptosClient, its dependencies, and endpoints. See the <see cref="T:Aptos.Networks"/> class
+            for a predefined list of networks.
+            </summary>
+            <param name="networkConfig">The endpoints and chain ID for the network. If none are provided, Devnet is used.</param>
+            <param name="headers">Default headers to be added to all requests.</param>
+            <param name="requestClient">The request client used to make HTTP requests. If none is provided, a default client is used.</param>
+        </member>
+        <member name="M:Aptos.AptosConfig.#ctor(Aptos.NetworkConfig,System.Collections.Generic.Dictionary{System.String,System.String},Aptos.RequestClient)">
+            <summary>
+            Instantiate a new instance of the AptosConfig class. This class is used to configure the AptosClient, its dependencies, and endpoints. See the <see cref="T:Aptos.Networks"/> class
+            for a predefined list of networks.
+            </summary>
+            <param name="networkConfig">The endpoints and chain ID for the network. If none are provided, Devnet is used.</param>
+            <param name="headers">Default headers to be added to all requests.</param>
+            <param name="requestClient">The request client used to make HTTP requests. If none is provided, a default client is used.</param>
+        </member>
+        <member name="M:Aptos.BlockClient.GetLedgerInfo">
+            <summary>
+            Gets the ledger information of the blockchain.
+            </summary>
+            <returns>The ledger information of the blockchain.</returns>
+        </member>
+        <member name="M:Aptos.ContractClient.View(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})">
+            <summary>
+            Calls the Move view function with the given payload and returns the result.
+            </summary>
+            <param name="data">The payload of the view function to call.</param>
+            <param name="ledgerVersion">The ledger version to use for the view function call.</param>
+            <returns>An array of Move values representing the result of the view function.</returns>
+        </member>
+        <member name="M:Aptos.ContractClient.View``1(Aptos.GenerateViewFunctionPayloadData,System.Nullable{System.UInt64})">
+            <summary>
+            Calls the Move view function with the given payload and returns the result.
+            </summary>
+            <typeparam name="T">The type of the result of the view function.</typeparam>
+            <param name="data">The payload of the view function to call.</param>
+            <param name="ledgerVersion">The ledger version to use for the view function call.</param>
+            <returns>An instance of the specified type T representing the result of the view function.</returns>
+        </member>
+        <member name="M:Aptos.DigitalAssetClient.GetAccountDigitalAssetOwnerships(Aptos.AccountAddress,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <inheritdoc cref="M:Aptos.DigitalAssetClient.GetAccountDigitalAssetOwnerships(System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)"/>
+        </member>
+        <member name="M:Aptos.DigitalAssetClient.GetAccountDigitalAssetOwnerships(System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <summary>
+            Gets the digital asset ownerships of an account. Digital assets are a representation of NFTs on Aptos.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the digital asset ownerships.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of digital asset ownerships.</returns>
+        </member>
+        <member name="M:Aptos.DigitalAssetClient.GetDigitalAssetOwnerships(Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_token_ownerships_v2_order_by)">
+            <summary>
+            Gets the digital asset ownerships of the account. Digital assets are a representation of NFTs on Aptos.
+            </summary>
+            <param name="where">The condition to filter the digital asset ownerships.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of digital asset ownerships.</returns>
+        </member>
+        <member name="M:Aptos.EventClient.GetEvents(Aptos.Indexer.GraphQL.events_bool_exp,System.Int32,System.Int32,Aptos.Indexer.GraphQL.events_order_by)">
+            <summary>
+            Gets the events that match the given condition.
+            </summary>
+            <param name="where">The condition to filter the events.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of events.</returns>
+        </member>
+        <member name="M:Aptos.FaucetClient.FundAccount(System.String,System.UInt64)">
+            <inheritdoc cref="M:Aptos.FaucetClient.FundAccount(System.String,System.UInt64)"/>
+        </member>
+        <member name="M:Aptos.FaucetClient.FundAccount(Aptos.AccountAddress,System.UInt64)">
+            <summary>
+            Funds an account with the given amount of coins using the faucet. If the network is not supported by the faucet, an exception will be thrown.
+            </summary>
+            <param name="address">The address of the account to fund.</param>
+            <param name="amount">The amount of APT coins to fund.</param>
+            <returns>The transaction response of the funded account.</returns>
+            <exception cref="T:Aptos.Exceptions.FaucetException">Unable to fund the account.</exception>
+            <exception cref="T:System.Exception">If the response from the faucet is not in the expected format.</exception>
+        </member>
+        <member name="M:Aptos.FungibleAssetClient.GetPairedTypes(System.String)">
+            <summary>
+            Gets the paired types for a given value. If the value is a fungible asset object address, it will query
+            for the paired coin type.
+            </summary>
+            <param name="value">A struct coin type or fungible asset object address.</param>
+            <returns>An array of paired types.</returns>
+        </member>
+        <member name="M:Aptos.FungibleAssetClient.GetAccountFungibleAssetBalances(Aptos.AccountAddress,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <inheritdoc cref="M:Aptos.FungibleAssetClient.GetAccountFungibleAssetBalances(System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)"/>
+        </member>
+        <member name="M:Aptos.FungibleAssetClient.GetAccountFungibleAssetBalances(System.String,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <summary>
+            Gets a paginated list of fungible asset balances of the given address.
+            </summary>
+            <param name="address">The address of the account.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="where">The condition to filter the fungible asset balances.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of fungible asset balances.</returns>
+        </member>
+        <member name="M:Aptos.FungibleAssetClient.GetFungibleAssetBalances(Aptos.Indexer.GraphQL.current_fungible_asset_balances_bool_exp,System.Int32,System.Int32,Aptos.Indexer.GraphQL.current_fungible_asset_balances_order_by)">
+            <summary>
+            Gets a paginated list of fungible asset balances.
+            </summary>
+            <param name="where">The condition to filter the fungible asset balances.</param>
+            <param name="offset">The offset of the query.</param>
+            <param name="limit">The item limit of the query.</param>
+            <param name="orderBy">The order by condition of the query.</param>
+            <returns>A list of fungible asset balances.</returns>
+        </member>
+        <member name="M:Aptos.GasClient.GetGasPriceEstimation">
+            <summary>
+            Gets the gas price estimation for the current network.
+            </summary>
+            <returns>The gas price estimation for the current network.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.SignTransaction(Aptos.Account,Aptos.AnyRawTransaction)">
+            <summary>
+            Helper method to sign a transaction with an account.
+            </summary>
+            <param name="signer">The account to sign the transaction with.</param>
+            <param name="transaction">The transaction to sign.</param>
+            <returns>The authenticator with the signed transaction and public key.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.SignAsFeePayer(Aptos.Account,Aptos.AnyRawTransaction)">
+            <summary>
+            Helper method to sign a transaction as a FeePayer with an account. The FeePayerAddress
+            will be set to the signer's address.
+            </summary>
+            <param name="signer">The fee payer account to sign the transaction with.</param>
+            <param name="transaction">The transaction to sign.</param>
+            <returns>The authenticator with the signed transaction and public key.</returns>
+            <exception cref="T:System.ArgumentException">If the transaction is not a FeePayer transaction.</exception>
+        </member>
+        <member name="M:Aptos.TransactionClient.SubmitTransaction(Aptos.SubmitTransactionData)">
+            <summary>
+            Submits a transaction to the blockchain.
+            </summary>
+            <param name="data">The transaction data to submit.</param>
+            <returns>The pending transaction response.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.SignAndSubmitTransaction(Aptos.Account,Aptos.AnyRawTransaction,Aptos.AccountAuthenticator,System.Collections.Generic.List{Aptos.AccountAuthenticator})">
+            <summary>
+            Signs and submits a transaction to the blockchain. You can build a transaction payload by using the <see cref="M:Aptos.TransactionClient.Build(Aptos.AccountAddress,Aptos.GenerateEntryFunctionPayloadData,System.Boolean,Aptos.TransactionBuilder.GenerateTransactionOptions)"/> method.
+            </summary>
+            <param name="signer">The account to sign the transaction with.</param>
+            <param name="transaction">The transaction to sign and submit.</param>
+            <param name="feePayerAuthenticator">If the transaction has a fee payer, you can provide an authenticator for it here.</param>
+            <param name="additionalSignersAuthenticators">If the transaction has additional signers, you can provide authenticators for them here.</param>
+            <returns> The pending transaction response.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.GetTransactionByHash(System.String)">
+            <summary>
+            Gets a transaction data by hash.
+            </summary>
+            <param name="hash">The hash of the transaction.</param>
+            <returns>The transaction data.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.GetTransactionByVersion(System.String)">
+            <summary>
+            Gets a transaction data by version.
+            </summary>
+            <param name="version">The version of the transaction.</param>
+            <returns>The transaction data.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.GetTransactions(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Gets a paginated list of transactions.
+            </summary>
+            <param name="start">The start index of the transactions to return.</param>
+            <param name="limit">The limit of the transactions to return.</param>
+            <returns>A list of transactions.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.LongWaitForTransaction(System.String)">
+            <summary>
+            Waits for a transaction to be committed. Its recommended to use <see cref="M:Aptos.TransactionClient.WaitForTransaction(Aptos.PendingTransactionResponse,Aptos.TransactionClient.WaitForTransactionOptions)"/> instead.
+            </summary>
+            <param name="hash">The hash of the transaction to wait for.</param>
+            <returns>The transaction response.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.WaitForTransaction(Aptos.PendingTransactionResponse,Aptos.TransactionClient.WaitForTransactionOptions)">
+            <summary>
+            Waits for a transaction to be committed using polling.
+            </summary>
+            <param name="pendingTransaction">The pending transaction to wait for.</param>
+            <param name="options">The options for waiting for the transaction.</param>
+            <returns>The transaction response.</returns>
+        </member>
+        <member name="M:Aptos.TransactionClient.Simulate(Aptos.SimulateTransactionData)">
+            <summary>
+            Simulates a transaction without submitting it to the blockchain.
+            </summary>
+            <param name="data">The transaction data to simulate.</param>
+            <returns>The simulated transaction responses.</returns>
+        </member>
+        <member name="M:Aptos.Ans.EnsureValidANSSegment(System.String)">
+             <summary>
+             Ensures that the ANS segment is valid. Throws a ANSInvalidName exception if it is not.
+            
+             A valid ANS segment is a string between 3 and 63 characters long, and only contains lowercase a-z, 0-9, and hyphens. A segment may not start or end with a hyphen.
+             </summary>
+             <param name="segment">domain or subdomain of a name</param>
+             <exception cref="T:Aptos.Exceptions.ANSInvalidName"></exception>
+        </member>
+        <member name="M:Aptos.Core.Extensions.ToUnixTimestamp(System.DateTime)">
+            <summary>
+            Converts a given DateTime into a Unix timestamp
+            </summary>
+            <param name="value">Any DateTime</param>
+            <returns>The given DateTime in Unix timestamp format</returns>
+        </member>
+        <member name="M:Aptos.Core.Memoize.MemoAsync``1(System.Func{System.Threading.Tasks.Task{``0}},System.String,System.Nullable{System.Int64})">
+            <summary>
+            A memoize higher-order function to cache async function response.
+            </summary>
+            <typeparam name="T">The type of the function result.</typeparam>
+            <param name="func">An async function to cache the result of.</param>
+            <param name="key">The provided cache key.</param>
+            <param name="ttlMs">Time-to-live in milliseconds for cached data.</param>
+            <returns>The cached or latest result.</returns>
+        </member>
+        <member name="M:Aptos.Core.Memoize.Memo``1(System.Func{``0},System.String,System.Nullable{System.Int64})">
+            <summary>
+            A memoize higher-order function to cache function response.
+            </summary>
+            <typeparam name="T">The type of the function result.</typeparam>
+            <param name="func">A function to cache the result of.</param>
+            <param name="key">The provided cache key.</param>
+            <param name="ttlMs">Time-to-live in milliseconds for cached data.</param>
+            <returns>The cached or latest result.</returns>
+        </member>
+        <member name="M:Aptos.Core.Utilities.ParseFunctionParts(System.String)">
+            <summary>
+            Parses a function string into its module address, module name, and function name.
+            </summary>
+            <param name="function">An function split by "::". E.g. "0x1::aptos_account::transfer_coins"</param>
+            <returns>A tuple containing the module address, module name, and function name.</returns>
+            <exception cref="T:System.ArgumentException">If the function string is not in the correct format.</exception>
+        </member>
+        <member name="F:Aptos.MimeType.JSON">
+            <summary>
+            JSON representation, used for transaction submission and accept type JSON output
+            </summary>
+        </member>
+        <member name="F:Aptos.MimeType.BCS">
+            <summary>
+            BCS representation, used for accept type BCS output
+            </summary>
+        </member>
+        <member name="F:Aptos.MimeType.BCS_SIGNED_TRANSACTION">
+            <summary>
+            BCS representation, used for transaction submission in BCS input
+            </summary>
+        </member>
+        <member name="F:Aptos.MimeType.BCS_VIEW_FUNCTION">
+            <summary>
+            BCS representation, used for view function in BCS
+            </summary>
+        </member>
+        <member name="T:Aptos.IVerifyingKey">
+            <summary>
+            A verifying key represents a collection of public keys that can be used to verify signatures
+            or derive authentication keys. This interface is typically implemented to collect public keys
+            for Account Authenticators.
+            </summary>
+        </member>
+        <member name="T:Aptos.PublicKeySignature">
+            <summary>
+            Cryptographic signatures typically using a private key to sign a message or transaction.
+            </summary>
+        </member>
+        <member name="M:Aptos.PublicKeySignature.#ctor(Aptos.PublicKeySignatureVariant)">
+            <summary>
+            Cryptographic signatures typically using a private key to sign a message or transaction.
+            </summary>
+        </member>
+        <member name="T:Aptos.Signature">
+            <summary>
+            Base signatures for anything signed (not specific to signing transactions/messages). This may include all signatures needed for ZK proofs, Certificates, etc.
+            </summary>
+        </member>
+        <member name="T:Aptos.NetworkConfig">
+            <summary>
+            The network configuration for an AptosConfig for all endpoints used by the AptosClient.
+            </summary>
+            <param name="name">The name of the network.</param>
+            <param name="nodeUrl">The endpoint for the full node.</param>
+            <param name="indexerUrl">The endpoint for the indexer.</param>
+            <param name="faucetUrl">The endpoint for the faucet.</param>
+            <param name="proverUrl"></param>
+            <param name="pepperUrl"></param>
+            <param name="chainId">The chain ID for the network. If -1, the chain ID is automatically retrieved from the full node.</param>
+        </member>
+        <member name="M:Aptos.NetworkConfig.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            The network configuration for an AptosConfig for all endpoints used by the AptosClient.
+            </summary>
+            <param name="name">The name of the network.</param>
+            <param name="nodeUrl">The endpoint for the full node.</param>
+            <param name="indexerUrl">The endpoint for the indexer.</param>
+            <param name="faucetUrl">The endpoint for the faucet.</param>
+            <param name="proverUrl"></param>
+            <param name="pepperUrl"></param>
+            <param name="chainId">The chain ID for the network. If -1, the chain ID is automatically retrieved from the full node.</param>
+        </member>
+        <member name="F:Aptos.GenerateTransactionPayloadDataWithAbi.Abi">
+            <summary>
+            The ABI of the function that will be used to check the type and function arguments of the transaction.
+            </summary>
+            <remarks>
+            If the ABI is not provided, a remote ABI will be fetch from the blockchain.
+            </remarks>
+        </member>
+        <member name="F:Aptos.GenerateTransactionPayloadDataWithAbi.Function">
+            <summary>
+            The function to be called on the module. This should be in the format of "address::module_name::function_name".
+            </summary>
+        </member>
+        <member name="F:Aptos.GenerateTransactionPayloadDataWithAbi.FunctionArguments">
+            <summary>
+            A list of either strings or <see cref="T:Aptos.TransactionArgument"/>  objects representing the function arguments.
+            If the function arguments are strings, they will be converted to <see cref="T:Aptos.TransactionArgument"/> objects using the <see cref="M:Aptos.TransactionArgument.ConvertArgument(System.Object,Aptos.TypeTag,System.Collections.Generic.List{Aptos.TypeTag})"/> method.
+            </summary>
+            <remarks>
+            The function arguments are expected to be in the same order and type as the function's expected ABI.
+            </remarks>
+        </member>
+        <member name="T:Aptos.GenerateViewFunctionPayloadData">
+            <summary>
+            Represents a payload data for a view function.
+            </summary>
+            <param name="function">The function to be called on the module. This should be in the format of "address::module_name::function_name".</param>
+            <param name="functionArguments">A list of either strings or <see cref="T:Aptos.TransactionArgument"/> objects representing the function arguments. If the function arguments are strings, they will be converted to <see cref="T:Aptos.TransactionArgument"/> objects using the <see cref="M:Aptos.TransactionArgument.ConvertArgument(System.Object,Aptos.TypeTag,System.Collections.Generic.List{Aptos.TypeTag})"/> method.</param>
+            <param name="typeArguments">A list of <see cref="T:Aptos.TypeTag"/> objects representing the type arguments of the function.</param>
+            <param name="abi">The ABI of the function that will be used to check the type and function arguments of the transaction.</param>
+        </member>
+        <member name="M:Aptos.GenerateViewFunctionPayloadData.#ctor(System.String,System.Collections.Generic.List{System.Object},System.Collections.Generic.List{System.Object},Aptos.ViewFunctionAbi)">
+            <summary>
+            Represents a payload data for a view function.
+            </summary>
+            <param name="function">The function to be called on the module. This should be in the format of "address::module_name::function_name".</param>
+            <param name="functionArguments">A list of either strings or <see cref="T:Aptos.TransactionArgument"/> objects representing the function arguments. If the function arguments are strings, they will be converted to <see cref="T:Aptos.TransactionArgument"/> objects using the <see cref="M:Aptos.TransactionArgument.ConvertArgument(System.Object,Aptos.TypeTag,System.Collections.Generic.List{Aptos.TypeTag})"/> method.</param>
+            <param name="typeArguments">A list of <see cref="T:Aptos.TypeTag"/> objects representing the type arguments of the function.</param>
+            <param name="abi">The ABI of the function that will be used to check the type and function arguments of the transaction.</param>
+        </member>
+        <member name="F:Aptos.GenerateViewFunctionPayloadData.Abi">
+            <inheritdoc cref="F:Aptos.GenerateTransactionPayloadDataWithAbi.Abi"/>
+        </member>
+        <member name="F:Aptos.GenerateViewFunctionPayloadData.Function">
+            <inheritdoc cref="F:Aptos.GenerateTransactionPayloadDataWithAbi.Function"/>
+        </member>
+        <member name="F:Aptos.GenerateViewFunctionPayloadData.FunctionArguments">
+            <inheritdoc cref="F:Aptos.GenerateTransactionPayloadDataWithAbi.FunctionArguments"/>
+        </member>
+        <member name="T:Aptos.GenerateEntryFunctionPayloadData">
+            <summary>
+            Represents a payload data for an entry function.
+            </summary>
+            <param name="function">The function to be called on the module. This should be in the format of "address::module_name::function_name".</param>
+            <param name="functionArguments">A list of either strings or <see cref="T:Aptos.TransactionArgument"/> objects representing the function arguments. If the function arguments are strings, they will be converted to <see cref="T:Aptos.TransactionArgument"/> objects using the <see cref="M:Aptos.TransactionArgument.ConvertArgument(System.Object,Aptos.TypeTag,System.Collections.Generic.List{Aptos.TypeTag})"/> method.</param>
+            <param name="typeArguments">A list of <see cref="T:Aptos.TypeTag"/> objects representing the type arguments of the function.</param>
+            <param name="abi">The ABI of the function that will be used to check the type and function arguments of the transaction.</param>
+        </member>
+        <member name="M:Aptos.GenerateEntryFunctionPayloadData.#ctor(System.String,System.Collections.Generic.List{System.Object},System.Collections.Generic.List{System.Object},Aptos.EntryFunctionAbi)">
+            <summary>
+            Represents a payload data for an entry function.
+            </summary>
+            <param name="function">The function to be called on the module. This should be in the format of "address::module_name::function_name".</param>
+            <param name="functionArguments">A list of either strings or <see cref="T:Aptos.TransactionArgument"/> objects representing the function arguments. If the function arguments are strings, they will be converted to <see cref="T:Aptos.TransactionArgument"/> objects using the <see cref="M:Aptos.TransactionArgument.ConvertArgument(System.Object,Aptos.TypeTag,System.Collections.Generic.List{Aptos.TypeTag})"/> method.</param>
+            <param name="typeArguments">A list of <see cref="T:Aptos.TypeTag"/> objects representing the type arguments of the function.</param>
+            <param name="abi">The ABI of the function that will be used to check the type and function arguments of the transaction.</param>
+        </member>
+        <member name="F:Aptos.GenerateMultisigPayloadData.MultisigAddress">
+            <summary>
+            The address of the multisig account.
+            </summary>
+        </member>
+        <member name="F:Aptos.GenerateScriptPayloadData.Bytecode">
+            <summary>
+            The bytecode of the script to be executed.
+            </summary>
+        </member>
+        <member name="F:Aptos.GenerateScriptPayloadData.FunctionArguments">
+            <summary>
+            A list of <see cref="T:Aptos.IScriptFunctionArgument"/> objects representing the function arguments.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Aptos.TypeTag.Parse(System.String,System.Boolean)" -->
+        <member name="M:Aptos.TypeTag.ParseType(System.String,System.Collections.Generic.List{Aptos.TypeTag},System.Boolean)">
+            <summary>
+            Parses a type tag with internal types associated
+            </summary>
+            <param name="str">The string representation of the type</param>
+            <param name="types">The internal types associated with the type</param>
+            <param name="allowGenerics">Whether or not to allow generics in the type</param>
+            <returns>The parsed type</returns>
+        </member>
+        <member name="M:Aptos.TypeTag.ValidIdentifierRegex">
+            <summary>
+            Tells if the string is a valid Move identifier. It can only be alphanumeric and '_'.
+            </summary>
+        </member>
+        <member name="M:Aptos.TypeTag.GenericTypeRegex">
+            <summary>
+            Tells if a type is a generic type from the ABI, this will be of the form T0, T1, ...
+            </summary>
+        </member>
+        <member name="M:Aptos.TypeTag.WhitespaceRegex">
+            <summary>
+            Tells if the character is a whitespace character. Does not work for multiple characters.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Aptos.TypeTag.RefTypeRegex" -->
+    </members>
+</doc>

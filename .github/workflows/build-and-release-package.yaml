@@ -1,0 +1,62 @@
+name: "Build and Release Unity Asset Package"
+on:
+  workflow_dispatch:
+
+permissions:
+  packages: write
+  contents: write
+
+jobs:
+  build-and-upload:
+    name: Build .unitypackage and Upload to Artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Output Directory
+        run: mkdir out
+
+      - name: Get Package Info
+        id: package-info
+        uses: ./.github/actions/get-package-info
+
+      - name: Annotate All .meta File Paths
+        run: |
+          find Packages/com.aptoslabs.aptos-unity-sdk -name \*.meta >> META_FILE_PATHS
+
+      - name: Create .unitypackage
+        uses: pCYSl5EDgo/create-unitypackage@b5c57408698b1fab8b3a84d4b67f767b8b7c0be9
+        with:
+          package-path: ./out/com.aptoslabs.aptos-unity-sdk.unitypackage
+          include-files: META_FILE_PATHS
+
+      - name: Upload .unitypackage as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.package-info.outputs.name }}
+          path: ./out/com.aptoslabs.aptos-unity-sdk.unitypackage
+
+  create-release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    needs: build-and-upload
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get Package Info
+        id: package-info
+        uses: ./.github/actions/get-package-info
+
+      - name: Download .unitypackage from Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.package-info.outputs.name }}
+
+      - name: Rename Package
+        run: mv ./com.aptoslabs.aptos-unity-sdk.unitypackage ./${{ steps.package-info.outputs.name }}.unitypackage
+
+      - name: Release .unitypackage
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.package-info.outputs.version }}
+          files: ./${{ steps.package-info.outputs.name }}.unitypackage

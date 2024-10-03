@@ -1,0 +1,23 @@
+name: "Get Package Info"
+description: |
+  Gets the version and name of the package from the package.json file.
+
+outputs:
+  version:
+    description: "The version of the package."
+    value: ${{ steps.package-info.outputs.version }}
+  name:
+    description: "The name of the package."
+    value: ${{ steps.package-info.outputs.name }}
+
+runs:
+  using: composite
+  steps:
+    - name: Get Package Info
+      id: package-info
+      run: |
+        PACKAGE_VERSION=$(cat Packages/com.aptoslabs.aptos-unity-sdk/package.json | jq -r '.version')
+        PACKAGE_NAME="com.aptoslabs.aptos-unity-sdk-v$PACKAGE_VERSION"
+        echo "version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
+        echo "name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+      shell: bash

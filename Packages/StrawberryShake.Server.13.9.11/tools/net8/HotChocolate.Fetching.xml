@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Fetching</name>
+    </assembly>
+    <members>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.BatchAsync``2(HotChocolate.Resolvers.IResolverContext,HotChocolate.Fetching.FetchBatch{``0,``1},``0,System.String)">
+            <summary>
+            This utility methods creates a new <see cref="T:GreenDonut.BatchDataLoader`2" />
+            with the provided <paramref name="fetch"/> logic and invoked the
+            <see cref="M:GreenDonut.IDataLoader`2.LoadAsync(`0,System.Threading.CancellationToken)"/> with
+            the specified <paramref name="key"/>.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="fetch">
+            The batch fetch logic.
+            </param>
+            <param name="key">
+            The key to fetch.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <returns>
+            Returns the value for the requested key.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.BatchDataLoader``2(HotChocolate.Resolvers.IResolverContext,HotChocolate.Fetching.FetchBatch{``0,``1},System.String)">
+            <summary>
+            Creates a new BatchDataLoader with the specified <paramref name="fetch"/> logic.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="fetch">
+            The batch fetch logic.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <returns>
+            Returns the DataLoader.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.BatchDataLoader``2(HotChocolate.Resolvers.IResolverContext,System.String,HotChocolate.Fetching.FetchBatch{``0,``1})">
+            <summary>
+            Creates a new batch DataLoader with the specified <paramref name="fetch"/> logic.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <param name="fetch">
+            The batch fetch logic.
+            </param>
+            <returns>
+            Returns the DataLoader.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.GroupAsync``2(HotChocolate.Resolvers.IResolverContext,HotChocolate.Fetching.FetchGroup{``0,``1},``0,System.String)">
+            <summary>
+            This utility methods creates a new <see cref="T:GreenDonut.GroupedDataLoader`2" />
+            with the provided <paramref name="fetch"/> logic and invoked the
+            <see cref="M:GreenDonut.IDataLoader`2.LoadAsync(`0,System.Threading.CancellationToken)"/> with
+            the specified <paramref name="key"/>.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="fetch">
+            The batch fetch logic for a GroupDataLoader.
+            </param>
+            <param name="key">
+            The key to fetch.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <returns>
+            Returns the value for the requested key.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.GroupDataLoader``2(HotChocolate.Resolvers.IResolverContext,HotChocolate.Fetching.FetchGroup{``0,``1},System.String)">
+            <summary>
+            Creates a new GroupDataLoader with the specified <paramref name="fetch"/> logic.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="fetch">
+            The batch fetch logic for the GroupDataLoader.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <returns>
+            Returns the DataLoader.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.GroupDataLoader``2(HotChocolate.Resolvers.IResolverContext,System.String,HotChocolate.Fetching.FetchGroup{``0,``1})">
+            <summary>
+            Creates a new GroupDataLoader with the specified <paramref name="fetch"/> logic.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <param name="fetch">
+            The batch fetch logic for the GroupDataLoader.
+            </param>
+            <returns>
+            Returns the DataLoader.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Types.DataLoaderResolverContextExtensions.CacheAsync``2(HotChocolate.Resolvers.IResolverContext,HotChocolate.Fetching.FetchCache{``0,``1},``0,System.String)">
+            <summary>
+            This utility methods creates a new <see cref="T:GreenDonut.CacheDataLoader`2" />
+            with the provided <paramref name="fetch"/> logic and invoked the
+            <see cref="M:GreenDonut.IDataLoader`2.LoadAsync(`0,System.Threading.CancellationToken)"/> with
+            the specified <paramref name="key"/>.
+            </summary>
+            <param name="context">
+            The resolver context.
+            </param>
+            <param name="fetch">
+            The fetch logic for a CacheDataLoader.
+            </param>
+            <param name="key">
+            The key to fetch.
+            </param>
+            <param name="dataLoaderName">
+            The optional DataLoader name.
+            </param>
+            <returns>
+            Returns the value for the requested key.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Fetching.BatchDispatcherResult">
+            <summary>
+            Represents the outcome of dispatching enqueued batches.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Fetching.BatchDispatcherResult.#ctor(System.Collections.Generic.IReadOnlyList{System.Exception})">
+            <summary>
+            Creates a new error result.
+            </summary>
+            <param name="exceptions">
+            The exceptions that occured while dispatching enqueued batches.
+            </param>
+        </member>
+        <member name="P:HotChocolate.Fetching.BatchDispatcherResult.IsSuccessful">
+            <summary>
+            Specifies that the execution of the enqueued batches was successful.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Fetching.BatchDispatcherResult.Exceptions">
+            <summary>
+            Gets the list of exceptions that occured during the execution of the enqueued
+            batches if <see cref="P:HotChocolate.Fetching.BatchDispatcherResult.IsSuccessful"/> is <c>false</c>.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Fetching.BatchDispatcherResult.Success">
+            <summary>
+            Gets the cached success result.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Fetching.BatchScheduler">
+            <summary>
+            The execution engine batch dispatcher.
+            </summary>
+        </member>
+        <member name="E:HotChocolate.Fetching.BatchScheduler.TaskEnqueued">
+            <inheritdoc />
+        </member>
+        <member name="P:HotChocolate.Fetching.BatchScheduler.DispatchOnSchedule">
+            <inheritdoc />
+        </member>
+        <member name="M:HotChocolate.Fetching.BatchScheduler.BeginDispatch(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:HotChocolate.Fetching.IBatchDispatcher">
+            <summary>
+            The execution engine batch dispatcher.
+            </summary>
+        </member>
+        <member name="E:HotChocolate.Fetching.IBatchDispatcher.TaskEnqueued">
+            <summary>
+            Signals that a batch task was enqueued.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Fetching.IBatchDispatcher.DispatchOnSchedule">
+            <summary>
+            Defines if the batch dispatcher shall dispatch tasks directly when they are enqueued.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Fetching.IBatchDispatcher.BeginDispatch(System.Threading.CancellationToken)">
+            <summary>
+            Begins dispatching batched tasks.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Fetching.IDataLoaderRegistry">
+            <summary>
+            The DataLoader-registry holds the instances of DataLoaders
+            that are used by the execution engine.
+            </summary>
+        </member>
+    </members>
+</doc>

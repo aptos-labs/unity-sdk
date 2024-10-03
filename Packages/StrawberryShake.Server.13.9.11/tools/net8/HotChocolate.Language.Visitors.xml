@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Language.Visitors</name>
+    </assembly>
+    <members>
+        <member name="T:HotChocolate.Language.Visitors.INavigatorContext">
+            <summary>
+            A visitor context that contains a syntax navigator.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.INavigatorContext.Navigator">
+            <summary>
+            Gets the associated <see cref="T:HotChocolate.Language.Visitors.ISyntaxNavigator" /> from the current context.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.NavigatorContext">
+            <summary>
+            A base implementation of the visitor context that contains a syntax navigator.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.NavigatorContext.Navigator">
+            <inheritdoc cref="P:HotChocolate.Language.Visitors.INavigatorContext.Navigator"/>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.ISyntaxNavigator">
+            <summary>
+            The syntax navigator keeps track of the syntax path that has been traversed and
+            allows to access the nodes in the path in a streamlined way.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.ISyntaxNavigator.Count">
+            <summary>
+            Returns the count of items in the current path.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Push(HotChocolate.Language.ISyntaxNode)">
+            <summary>
+            Adds a syntax node to the Syntax Navigator to record the parent
+            of the Syntax Node being visited.
+            </summary>
+            <param name="node">The parent syntax node to be added to the Syntax Navigator</param>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Pop">
+            <summary>
+            Removes the current parent node from the Syntax Navigator.
+            </summary>
+            <returns>The removed parent node.</returns>
+            <exception cref="T:System.InvalidOperationException">Navigator is empty.</exception>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Peek">
+            <summary>
+            Returns the current parent node from the Syntax Navigator without removing it.
+            </summary>
+            <returns>The removed parent node.</returns>
+            <exception cref="T:System.InvalidOperationException">Navigator is empty.</exception>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Peek(System.Int32)">
+            <summary>
+            Returns the current parent node from the Syntax Navigator without removing it.
+            </summary>
+            <param name="count">The ancestor level.</param>
+            <returns>The removed parent node.</returns>
+            <exception cref="T:System.InvalidOperationException">Navigator is empty.</exception>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPop(HotChocolate.Language.ISyntaxNode@)">
+            <summary>
+            Attempts to remove the current parent node from the Syntax Navigator.
+            </summary>
+            <param name="node">The removed parent node.</param>
+            <returns>True when a syntax node was successfully removed from the Syntax Navigator.
+            False when a syntax node was not removed.</returns>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPeek(HotChocolate.Language.ISyntaxNode@)">
+            <summary>
+            Attempts to return the current parent node from the Syntax Navigator without removing it.
+            </summary>
+            <param name="node">The removed parent node.</param>
+            <returns>True when a syntax node was successfully removed from the Syntax Navigator.
+            False when a syntax node was not removed.</returns>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPeek(System.Int32,HotChocolate.Language.ISyntaxNode@)">
+            <summary>
+            Attempts to return the current parent node from the Syntax Navigator without removing it.
+            </summary>
+            <param name="count">The ancestor level.</param>
+            <param name="node">The removed parent node.</param>
+            <returns>True when a syntax node was successfully removed from the Syntax Navigator.
+            False when a syntax node was not removed.</returns>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.GetAncestor``1">
+            <summary>
+            Returns the first ancestor of the provided <typeparamref name="TNode" /> type.
+            </summary>
+            <typeparam name="TNode">The type of syntax node to be returned.</typeparam>
+            <returns>The matching first ancestor or null if no match is found.</returns>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.GetAncestors``1">
+            <summary>
+            Returns all ancestors of the provided <typeparamref name="TNode" /> type.
+            </summary>
+            <typeparam name="TNode">The type of syntax nodes to be returned.</typeparam>
+            <returns>A collection of Syntax Nodes of type <typeparamref name="TNode" /></returns>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxNavigator.CreateCoordinate">
+            <summary>
+            Creates a Schema Coordinate from the current path.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException">
+            If the path does not allow to create a Schema Coordinate.
+            For instance, if traversing an executable document it is not possible to create a
+            Schema Coordinate.
+            </exception>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.ISyntaxRewriter`1">
+            <summary>
+            Represents a syntax rewriter. A syntax rewriter is a visitor that creates a new syntax tree
+            from the passed in syntax tree.
+            </summary>
+            <typeparam name="TContext">
+            The context type.
+            </typeparam>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.ISyntaxRewriter`1.Rewrite(HotChocolate.Language.ISyntaxNode,`0)">
+            <summary>
+            Rewrite the syntax node.
+            </summary>
+            <param name="node">The syntax node that shall be rewritten.</param>
+            <param name="context">The visitor context.</param>
+            <returns>
+            Returns the rewritten <see cref="T:HotChocolate.Language.ISyntaxNode"/> or null if the node should be removed.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.DefaultSyntaxNavigator">
+            <summary>
+            Represents the default implementation of <see cref="T:HotChocolate.Language.Visitors.ISyntaxNavigator" />
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.Count">
+            <inheritdoc cref="P:HotChocolate.Language.Visitors.ISyntaxNavigator.Count"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.Push(HotChocolate.Language.ISyntaxNode)">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Push(HotChocolate.Language.ISyntaxNode)"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.Pop">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Pop"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.Peek">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Peek"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.Peek(System.Int32)">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.Peek"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.TryPop(HotChocolate.Language.ISyntaxNode@)">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPop(HotChocolate.Language.ISyntaxNode@)"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.TryPeek(HotChocolate.Language.ISyntaxNode@)">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPeek(HotChocolate.Language.ISyntaxNode@)"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.TryPeek(System.Int32,HotChocolate.Language.ISyntaxNode@)">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.TryPeek(System.Int32,HotChocolate.Language.ISyntaxNode@)"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.GetAncestor``1">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.GetAncestor``1"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.GetAncestors``1">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.GetAncestors``1"/>
+        </member>
+        <member name="M:HotChocolate.Language.Visitors.DefaultSyntaxNavigator.CreateCoordinate">
+            <inheritdoc cref="M:HotChocolate.Language.Visitors.ISyntaxNavigator.CreateCoordinate"/>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.SyntaxNodeCannotBeNullException">
+            <summary>
+            Raised when a required <see cref="T:HotChocolate.Language.ISyntaxNode"/> is rewritten to <see langword="null"/>.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxNodeCannotBeNullException.Kind">
+            <summary>
+            Gets the <see cref="T:HotChocolate.Language.SyntaxKind"/> of the Syntax node
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxNodeCannotBeNullException.Location">
+            <summary>
+            Gets the <see cref="P:HotChocolate.Language.Visitors.SyntaxNodeCannotBeNullException.Location"/> of the Syntax node
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.SyntaxRewriter">
+            <summary>
+            Represents a helper class to create a new syntax rewriter.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.SyntaxRewriter`1">
+            <summary>
+            Represents a syntax rewriter. A syntax rewriter is a visitor that creates a new syntax tree
+            from the passed in syntax tree.
+            </summary>
+            <typeparam name="TContext">
+            The context type.
+            </typeparam>
+        </member>
+        <member name="T:HotChocolate.Language.Visitors.SyntaxVisitorOptions">
+            <summary>
+            Represents basic visitor options.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitorOptions.VisitNames">
+            <summary>
+            Specifies if the visitor shall traverse name nodes.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitorOptions.VisitDescriptions">
+            <summary>
+            Specifies if the visitor shall traverse description nodes.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitorOptions.VisitDirectives">
+            <summary>
+            Specifies if the visitor shall traverse directives nodes.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitorOptions.VisitArguments">
+            <summary>
+            Specifies if the visitor shall traverse argument nodes.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.Options">
+            <summary>
+            The visitor options.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.DefaultAction">
+            <summary>
+            The visitor default action.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.Break">
+            <summary>
+            Ends traversing the graph.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.Skip">
+            <summary>
+            Skips the child nodes and the current node.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.Continue">
+            <summary>
+            Continues traversing the graph.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Language.Visitors.SyntaxVisitor`1.SkipAndLeave">
+            <summary>
+            Skips the child node but completes the current node.
+            </summary>
+        </member>
+    </members>
+</doc>

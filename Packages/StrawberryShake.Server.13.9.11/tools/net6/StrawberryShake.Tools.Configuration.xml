@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StrawberryShake.Tools.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:StrawberryShake.Tools.Configuration.StrawberryShakeSettings">
+            <summary>
+            The Strawberry Shake generator settings.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.Name">
+            <summary>
+            Gets or sets the name of the client.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.Namespace">
+            <summary>
+            Gets or sets the namespace of the client.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.Url">
+            <summary>
+            Gets or sets the Url to update the schema files.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.AccessModifier">
+            <summary>
+            Gets or sets the access modifier of the client..
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.DependencyInjection">
+            <summary>
+            Defines if the generator shall generate dependency injection code.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.StrictSchemaValidation">
+            <summary>
+            Defines if the generator shall validate the schema.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.HashAlgorithm">
+            <summary>
+            Gets or sets the persisted query hash algorithm.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.UseSingleFile">
+            <summary>
+            Defines that only a single code file shall be generated.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.RequestStrategy">
+            <summary>
+            Defines the default request strategy.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.OutputDirectoryName">
+            <summary>
+            Gets or sets the name of the generated code output directory.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.NoStore">
+            <summary>
+            Defines if a client shall be generated without a store.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.RazorComponents">
+            <summary>
+            Defines if the generator shall generate blazor query components.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.Records">
+            <summary>
+            Gets the record generator settings.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettings.TransportProfiles">
+            <summary>
+            Gets the transport profiles.
+            </summary>
+        </member>
+        <member name="T:StrawberryShake.Tools.Configuration.StrawberryShakeSettingsRecords">
+            <summary>
+            This settings class defines which parts shall be generated as records.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettingsRecords.Inputs">
+            <summary>
+            Defines if the generator shall generate records for input types.
+            </summary>
+        </member>
+        <member name="P:StrawberryShake.Tools.Configuration.StrawberryShakeSettingsRecords.Entities">
+            <summary>
+            Defines if the generator shall generate records for entities.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Utilities.Introspection</name>
+    </assembly>
+    <members>
+        <member name="T:HotChocolate.Utilities.Introspection.CapabilityInspector">
+            <summary>
+            This helper class issues requests to determine what capabilities a GraphQL server has. 
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.IntrospectionClient">
+            <summary>
+            A utility for inspecting GraphQL server feature support and for introspecting a GraphQL server.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.IntrospectServerAsync(System.Net.Http.HttpClient,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the schema information from a GraphQL server
+            and returns the schema syntax tree.
+            </summary>
+            <param name="client">
+            The HttpClient that shall be used to execute the introspection query.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns a parsed GraphQL schema syntax tree.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.IntrospectServerAsync(System.Net.Http.HttpClient,HotChocolate.Utilities.Introspection.IntrospectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the schema information from a GraphQL server
+            and returns the schema syntax tree.
+            </summary>
+            <param name="client">
+            The HttpClient that shall be used to execute the introspection query.
+            </param>
+            <param name="options">
+            The introspection options.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns a parsed GraphQL schema syntax tree.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.IntrospectServerAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the schema information from a GraphQL server
+            and returns the schema syntax tree.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> that shall be used to execute the introspection query.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns a parsed GraphQL schema syntax tree.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.IntrospectServerAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Utilities.Introspection.IntrospectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Downloads the schema information from a GraphQL server
+            and returns the schema syntax tree.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> that shall be used to execute the introspection query.
+            </param>
+            <param name="options">
+            The introspection options.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns a parsed GraphQL schema syntax tree.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.InspectServerAsync(System.Net.Http.HttpClient,System.Threading.CancellationToken)">
+            <summary>
+            Gets the supported GraphQL server capabilities from the server by doing an introspection query.
+            </summary>
+            <param name="client">
+            The HttpClient that shall be used to execute the introspection query.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns an object that indicates what capabilities the GraphQL server has.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.InspectServerAsync(System.Net.Http.HttpClient,HotChocolate.Utilities.Introspection.IntrospectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Gets the supported GraphQL server capabilities from the server by doing an introspection query.
+            </summary>
+            <param name="client">
+            The HttpClient that shall be used to execute the introspection query.
+            </param>
+            <param name="options">
+            The introspection options.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns an object that indicates what capabilities the GraphQL server has.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.InspectServerAsync(HotChocolate.Transport.Http.GraphQLHttpClient,System.Threading.CancellationToken)">
+            <summary>
+            Gets the supported GraphQL server capabilities from the server by doing an introspection query.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> that shall be used to execute the introspection query.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns an object that indicates what capabilities the GraphQL server has.</returns>
+        </member>
+        <member name="M:HotChocolate.Utilities.Introspection.IntrospectionClient.InspectServerAsync(HotChocolate.Transport.Http.GraphQLHttpClient,HotChocolate.Utilities.Introspection.IntrospectionOptions,System.Threading.CancellationToken)">
+            <summary>
+            Gets the supported GraphQL server capabilities from the server by doing an introspection query.
+            </summary>
+            <param name="client">
+            The <see cref="T:HotChocolate.Transport.Http.GraphQLHttpClient"/> that shall be used to execute the introspection query.
+            </param>
+            <param name="options">
+            The introspection options.
+            </param>
+            <param name="cancellationToken">
+            The cancellation token.
+            </param>
+            <returns>Returns an object that indicates what capabilities the GraphQL server has.</returns>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.IntrospectionException">
+            <summary>
+            This exception is thrown if an error happens during introspection.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.IntrospectionFormatter">
+            <summary>
+            A utility to format an introspection result into a GraphQL schema document. 
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.IntrospectionOptions">
+            <summary>
+            Represents the GraphQL introspection options.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.IntrospectionOptions.Method">
+            <summary>
+            Gets or sets the HTTP method that shall be used for the introspection request.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.IntrospectionOptions.Uri">
+            <summary>
+            Gets or sets the GraphQL server <see cref="P:HotChocolate.Utilities.Introspection.IntrospectionOptions.Uri"/>.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.IntrospectionOptions.OnMessageCreated">
+            <summary>
+            Gets or sets a hook that can alter the <see cref="T:System.Net.Http.HttpRequestMessage"/> before it is sent.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.IntrospectionOptions.TypeDepth">
+            <summary>
+            Gets or sets a value that determines how deep the introspection request shall dive into types.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.IntrospectionQueryBuilder">
+            <summary>
+            A utility to build the GraphQL introspection request document. 
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Utilities.Introspection.ServerCapabilities">
+            <summary>
+            Represents the capabilities that are supported by a GraphQL server.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasDirectiveLocations">
+            <summary>
+            Gets a value that indicates whether the server supports the
+            newer directive locations on when introspecting.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasRepeatableDirectives">
+            <summary>
+            Gets a value that indicates whether the server supports the repeatable directives.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasSubscriptionSupport">
+            <summary>
+            Gets a value that indicates whether the server supports subscriptions.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasDeferSupport">
+            <summary>
+            Gets a value that defines if the GraphQL server supports the @defer directive.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasStreamSupport">
+            <summary>
+            Gets a value that defines if the GraphQL server supports the @stream directive.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasArgumentDeprecation">
+            <summary>
+            Gets a value that defines if the GraphQL server supports argument deprecation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Utilities.Introspection.ServerCapabilities.HasSchemaDescription">
+            <summary>
+            Gets a value that defines if the GraphQL server supports schema descriptions.
+            </summary>
+        </member>
+    </members>
+</doc>

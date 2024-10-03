@@ -1,0 +1,599 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HotChocolate.Transport.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
+            <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DisallowNullAttribute">
+            <summary>Specifies that null is disallowed as an input even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullAttribute">
+            <summary>Specifies that an output may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+            <summary>Specifies that an output will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue"/>, the parameter may be null even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter may be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute">
+            <summary>Specifies that when a method returns <see cref="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue"/>, the parameter will not be null even if the corresponding type allows it.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified return value condition.</summary>
+            <param name="returnValue">
+            The return value condition. If the method returns this value, the associated parameter will not be null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute.ReturnValue">
+            <summary>Gets the return value condition.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+            <summary>Specifies that the output will be non-null if the named parameter is non-null.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+            <summary>Initializes the attribute with the associated parameter name.</summary>
+            <param name="parameterName">
+            The associated parameter name.  The output will be non-null if the argument to the parameter specified is non-null.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+            <summary>Gets the associated parameter name.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnAttribute">
+            <summary>Applied to a method that will never return under any circumstance.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>Specifies that the method will not return if the associated Boolean parameter is passed the specified value.</summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>Initializes the attribute with the specified parameter value.</summary>
+            /// <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
+        </member>
+        <member name="T:HotChocolate.Transport.ContentType">
+            <summary>
+            This class provides the default content types for GraphQL requests and responses.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Transport.ContentType.Json">
+            <summary>
+            Gets the application/json content type.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Transport.ContentType.GraphQL">
+            <summary>
+            Gets the application/graphql-response+json content type.
+            </summary>
+        </member>
+        <member name="F:HotChocolate.Transport.ContentType.EventStream">
+            <summary>
+            Gets the text/event-stream content type.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.FileReference">
+            <summary>
+            A file reference can be used to upload a file with the
+            GraphQL multipart request protocol.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReference.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReference" />
+            </summary>
+            <param name="stream">
+            The file stream.
+            </param>
+            <param name="fileName">
+            The file name.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="stream"/> is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="fileName"/> is <c>null</c>, empty or white space.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReference.#ctor(System.Func{System.IO.Stream},System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReference" />
+            </summary>
+            <param name="openRead">
+            The stream factory.
+            </param>
+            <param name="fileName">
+            The file name.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="fileName"/> is <c>null</c>, empty or white space.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="openRead"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReference.FileName">
+            <summary>
+            The file name eg. <c>foo.txt</c>.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReference.OpenRead">
+            <summary>
+            Opens the file stream.
+            </summary>
+            <returns>
+            Returns the file stream.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.FileReferenceInfo">
+            <summary>
+            The file reference info contains the actual
+            <see cref="T:HotChocolate.Transport.Http.FileReference"/> and the reference
+            name that is used to upload the referenced file.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceInfo.#ctor(HotChocolate.Transport.Http.FileReference,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReferenceInfo" />
+            </summary>
+            <param name="file">
+            The file reference.
+            </param>
+            <param name="name">
+            The internal reference name.
+            </param>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReferenceInfo.File">
+            <summary>
+            Gets the file that shall be uploaded.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReferenceInfo.Name">
+            <summary>
+            Gets the internal reference name that is used to refer to
+            this file instance within the GraphQL multipart request protocol. 
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Http.FileReferenceNode">
+            <summary>
+            This file literal is used in order to allow for file references in <see cref="T:HotChocolate.Language.ObjectValueNode"/>.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReferenceNode" />
+            </summary>
+            <param name="stream">
+            The file stream.
+            </param>
+            <param name="fileName">
+            The file name.
+            </param>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.#ctor(System.Func{System.IO.Stream},System.String)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReferenceNode" />
+            </summary>
+            <param name="openRead">
+            The stream factory.
+            </param>
+            <param name="fileName">
+            The file name.
+            </param>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.#ctor(HotChocolate.Transport.Http.FileReference)">
+            <summary>
+            Creates a new instance of <see cref="T:HotChocolate.Transport.Http.FileReferenceNode" />
+            </summary>
+            <param name="value">
+            The file Reference.
+            </param>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReferenceNode.Kind">
+            <summary>
+            Returns the <see cref="T:HotChocolate.Language.SyntaxKind"/> of the node.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReferenceNode.Location">
+            <summary>
+            Gets a <see cref="P:HotChocolate.Transport.Http.FileReferenceNode.Location"/> of this node in the parsed source text 
+            if available the parser provided this information.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Http.FileReferenceNode.Value">
+            <summary>
+            Gets the actual file reference.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.GetNodes">
+            <summary>
+            Gets the children of this node.
+            </summary>
+            <returns>
+            Returns the children of this node..
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.Equals(HotChocolate.Transport.Http.FileReferenceNode)">
+            <summary>
+            Determines whether the specified <see cref="T:HotChocolate.Language.IValueNode"/> is equal
+            to the current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </summary>
+            <param name="other">
+            The <see cref="T:HotChocolate.Language.IValueNode"/> to compare with the current
+            <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:HotChocolate.Language.IValueNode"/> is equal
+            to the current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>;
+            otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.Equals(HotChocolate.Language.IValueNode)">
+            <summary>
+            Determines whether the specified <see cref="T:HotChocolate.Language.IValueNode"/> is equal
+            to the current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </summary>
+            <param name="other">
+            The <see cref="T:HotChocolate.Language.IValueNode"/> to compare with the current
+            <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:HotChocolate.Language.IValueNode"/> is equal
+            to the current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>;
+            otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to
+            the current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Object"/> to compare with the current
+            <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>.
+            </param>
+            <returns>
+            <c>true</c> if the specified <see cref="T:System.Object"/> is equal to the
+            current <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.GetHashCode">
+            <summary>
+            Serves as a hash function for a <see cref="T:HotChocolate.Transport.Http.FileReferenceNode"/>
+            object.
+            </summary>
+            <returns>
+            A hash code for this instance that is suitable for use in
+            hashing algorithms and data structures such as a hash table.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.ToString">
+            <summary>
+            Returns the GraphQL syntax representation of this <see cref="T:HotChocolate.Language.ISyntaxNode"/>.
+            </summary>
+            <returns>
+            Returns the GraphQL syntax representation of this <see cref="T:HotChocolate.Language.ISyntaxNode"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.Http.FileReferenceNode.ToString(System.Boolean)">
+            <summary>
+            Returns the GraphQL syntax representation of this <see cref="T:HotChocolate.Language.ISyntaxNode"/>.
+            </summary>
+            <param name="indented">
+            A value that indicates whether the GraphQL output should be formatted,
+            which includes indenting nested GraphQL tokens, adding
+            new lines, and adding white space between property names and values.
+            </param>
+            <returns>
+            Returns the GraphQL syntax representation of this <see cref="T:HotChocolate.Language.ISyntaxNode"/>.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Transport.OperationRequest">
+            <summary>
+            Represents a GraphQL operation request that can be sent over a WebSocket connection.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.#ctor(System.String,System.String,System.String,HotChocolate.Language.ObjectValueNode,HotChocolate.Language.ObjectValueNode)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HotChocolate.Transport.OperationRequest"/> struct.
+            </summary>
+            <param name="query">
+            The query document containing the operation to execute.
+            </param>
+            <param name="id">
+            The ID of a previously persisted query that should be executed.
+            </param>
+            <param name="operationName">
+            The name of the operation to execute.
+            </param>
+            <param name="variables">
+            A dictionary containing the variable values to use when executing the operation.
+            </param>
+            <param name="extensions">
+            A dictionary containing extension values to include with the operation.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the query, ID, and extensions parameters are all null.
+            </exception>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.#ctor(System.String,System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object},System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object})">
+            <summary>
+            Initializes a new instance of the <see cref="T:HotChocolate.Transport.OperationRequest"/> struct.
+            </summary>
+            <param name="query">
+            The query string containing the operation to execute.
+            </param>
+            <param name="id">
+            The ID of a previously persisted query that should be executed.
+            </param>
+            <param name="operationName">
+            The name of the operation to execute.
+            </param>
+            <param name="variables">
+            A dictionary containing the variable values to use when executing the operation.
+            </param>
+            <param name="extensions">
+            A dictionary containing extension values to include with the operation.
+            </param>
+            <exception cref="T:System.ArgumentException">
+            Thrown if the query, ID, and extensions parameters are all null.
+            </exception>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.Id">
+            <summary>
+            Gets the ID of a previously persisted query that should be executed.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.Query">
+            <summary>
+            Gets the query string or document containing the operation to execute.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.OperationName">
+            <summary>
+            Gets the name of the operation to execute.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.Variables">
+            <summary>
+            Gets a dictionary containing the variable values to use when executing the operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.VariablesNode">
+            <summary>
+            Gets an <see cref="T:HotChocolate.Language.ObjectValueNode"/> representing the variable values to use when executing
+            the operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.Extensions">
+            <summary>
+            Gets a dictionary containing extension values to include with the operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationRequest.ExtensionsNode">
+            <summary>
+            Gets an <see cref="T:HotChocolate.Language.ObjectValueNode"/> representing the extension values to include with the
+            operation.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.WriteTo(System.Text.Json.Utf8JsonWriter)">
+            <summary>
+            Writes a serialized version of this request to a <see cref="T:System.Text.Json.Utf8JsonWriter"/>.
+            </summary>
+            <param name="writer">
+            The JSON writer.
+            </param>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.Equals(HotChocolate.Transport.OperationRequest)">
+            <summary>
+            Determines whether this <see cref="T:HotChocolate.Transport.OperationRequest"/> object is equal to another object.
+            </summary>
+            <param name="other">
+            The object to compare with this <see cref="T:HotChocolate.Transport.OperationRequest"/> object.
+            </param>
+            <returns>
+            <see langword="true"/> if the two objects are equal; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.op_Equality(HotChocolate.Transport.OperationRequest,HotChocolate.Transport.OperationRequest)">
+            <summary>
+            Determines whether two <see cref="T:HotChocolate.Transport.OperationRequest"/> objects are equal.
+            </summary>
+            <param name="left">
+            The first <see cref="T:HotChocolate.Transport.OperationRequest"/> object to compare.
+            </param>
+            <param name="right">
+            The second <see cref="T:HotChocolate.Transport.OperationRequest"/> object to compare.
+            </param>
+            <returns>
+            <see langword="true"/> if the two objects are equal; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationRequest.op_Inequality(HotChocolate.Transport.OperationRequest,HotChocolate.Transport.OperationRequest)">
+            <summary>
+            Determines whether two <see cref="T:HotChocolate.Transport.OperationRequest"/> objects are not equal.
+            </summary>
+            <param name="left">
+            The first <see cref="T:HotChocolate.Transport.OperationRequest"/> object to compare.
+            </param>
+            <param name="right">
+            The second <see cref="T:HotChocolate.Transport.OperationRequest"/> object to compare.
+            </param>
+            <returns>
+            <see langword="true"/> if the two objects are not equal; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="T:HotChocolate.Transport.OperationResult">
+            <summary>
+            Represents the result of a GraphQL operation.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationResult.#ctor(System.IDisposable,System.Text.Json.JsonElement,System.Text.Json.JsonElement,System.Text.Json.JsonElement)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HotChocolate.Transport.OperationResult"/> class with the
+            specified JSON document and optional data, errors, and extensions.
+            </summary>
+            <param name="memoryOwner">
+            The memory owner of the json elements.
+            operation.
+            </param>
+            <param name="data">
+            A <see cref="T:System.Text.Json.JsonElement"/> object representing the data returned by the operation.
+            </param>
+            <param name="errors">
+            A <see cref="T:System.Text.Json.JsonElement"/> object representing any errors that occurred during
+            the operation.
+            </param>
+            <param name="extensions">
+            A <see cref="T:System.Text.Json.JsonElement"/> object representing any extensions returned by the
+            operation.
+            </param>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationResult.Data">
+            <summary>
+            Gets the <see cref="T:System.Text.Json.JsonElement"/> object representing the data returned by
+            the operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationResult.Errors">
+            <summary>
+            Gets the <see cref="T:System.Text.Json.JsonElement"/> object representing any errors that occurred
+            during the operation.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.OperationResult.Extensions">
+            <summary>
+            Gets the <see cref="T:System.Text.Json.JsonElement"/> object representing any extensions returned
+            by the operation.
+            </summary>
+        </member>
+        <member name="M:HotChocolate.Transport.OperationResult.Dispose">
+            <summary>
+            Releases all resources used by the <see cref="T:HotChocolate.Transport.OperationResult"/> object.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Properties.TransportAbstractionResoucrces">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Properties.TransportAbstractionResoucrces.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Properties.TransportAbstractionResoucrces.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Properties.TransportAbstractionResoucrces.FileReference_FileName_NullOrEmpty">
+            <summary>
+              Looks up a localized string similar to Value cannot be null or whitespace..
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Properties.TransportAbstractionResoucrces.OperationRequest_QueryOrPersistedQueryId">
+            <summary>
+              Looks up a localized string similar to Either a query needs to be provided or a persisted query id..
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Properties.TransportAbstractionResoucrces.OperationResult_Parse_JsonDataIsEmpty">
+            <summary>
+              Looks up a localized string similar to The JSON document is empty..
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Serialization.JsonOptionDefaults">
+            <summary>
+            A helper class that contains the default settings for JSON serialization.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.JsonOptionDefaults.WriterOptions">
+            <summary>
+            Gets the default <see cref="T:System.Text.Json.JsonWriterOptions"/>.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.JsonOptionDefaults.SerializerOptions">
+            <summary>
+            Gets the default <see cref="T:System.Text.Json.JsonSerializerOptions"/>.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties">
+            <summary>
+            A helper class that contains the default names of the GraphQL request properties.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties.IdProp">
+            <summary>
+            Gets the name of the id property.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties.QueryProp">
+            <summary>
+            Gets the name of the query property.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties.OperationNameProp">
+            <summary>
+            Gets the name of the operationName property.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties.VariablesProp">
+            <summary>
+            Gets the name of the variables property.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLRequestProperties.ExtensionsProp">
+            <summary>
+            Gets the name of the extensions property.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Serialization.Utf8GraphQLResultProperties">
+            <summary>
+            This helper class contains the default property names for the GraphQL result object.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLResultProperties.DataProp">
+            <summary>
+            Gets the data property name.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLResultProperties.ErrorsProp">
+            <summary>
+            Gets the errors property name.
+            </summary>
+        </member>
+        <member name="P:HotChocolate.Transport.Serialization.Utf8GraphQLResultProperties.ExtensionsProp">
+            <summary>
+            Gets the extensions property name.
+            </summary>
+        </member>
+        <member name="T:HotChocolate.Transport.Serialization.Utf8JsonWriterHelper">
+            <summary>
+            Helper methods for writing <see cref="T:HotChocolate.Transport.OperationRequest"/> to a <see cref="T:System.Text.Json.Utf8JsonWriter"/>.
+            </summary>
+        </member>
+    </members>
+</doc>
