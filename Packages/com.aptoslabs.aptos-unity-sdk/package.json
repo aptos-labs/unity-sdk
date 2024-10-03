@@ -12,5 +12,8 @@
     "web3",
     "blockchain",
     "move"
-  ]
+  ],
+  "license": "Apache-2.0",
+  "licensesUrl": "https://github.com/aptos-labs/unity-sdk/blob/master/Packages/com.aptoslabs.aptos-unity-sdk/LICENSE",
+  "changelogUrl": "https://github.com/aptos-labs/unity-sdk/blob/master/Packages/com.aptoslabs.aptos-unity-sdk/CHANGELOG.md"
 }

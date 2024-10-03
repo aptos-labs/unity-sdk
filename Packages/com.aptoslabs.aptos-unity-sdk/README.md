@@ -1,4 +1,4 @@
-# Aptos Unity SDK
+# Aptos Unity SDK (Beta)
 
 ![License][github-license]
 
@@ -77,3 +77,5 @@ yield return CoroutineHelper.Await(async () =>
     }
 });
 ```
+
+[github-license]: https://img.shields.io/github/license/aptos-labs/aptos-ts-sdk

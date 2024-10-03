@@ -1,4 +1,4 @@
-# Aptos Unity SDK
+# Aptos Unity SDK (Beta)
 
 ![License][github-license]
 
@@ -68,7 +68,7 @@ var committedTransaction = await client.Transaction.WaitForTransaction(pendingTr
 2. Click on the `+` button and select `Add package from git URL...`.
 3. Enter the URL of the Aptos Unity SDK path in this repository: 
 ```bash
-https://github.com/aptos-labs/unity-sdk?path=/Packages/com.aptoslabs.aptos-unity-sdk
+https://github.com/aptos-labs/unity-sdk.git?path=/Packages/com.aptoslabs.aptos-unity-sdk
 ```
 
 ### Import Asset Package
