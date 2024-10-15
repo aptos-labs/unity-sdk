@@ -60,6 +60,30 @@ var pendingTransaction = client.Transaction.SignAndSubmitTransaction(account, tr
 var committedTransaction = await client.Transaction.WaitForTransaction(pendingTransaction);
 ```
 
+### Smart Contract View Functions
+
+Call view functions to query smart contracts.
+
+```csharp
+using Aptos;
+
+// 1. Initialize the Aptos client
+var config = new AptosConfig(Networks.Mainnet);
+var client = new AptosClient(config);
+
+// 2. Call a view function
+var result = await client.Contract.View(
+    new GenerateViewFunctionPayloadData(
+        function: "0x1::coin::name",
+        functionArguments: [],
+        typeArguments: ["0x1::aptos_coin::AptosCoin"]
+    )
+);
+
+// 3. Parse the return values
+Console.WriteLine(result[0]);
+```
+
 ### Couroutine Helper
 
 The SDK provides a helper class `CoroutineHelper` to run the SDK methods in a Unity coroutine. This is useful when you do not want to block the main thread while waiting for an asynchronous response.
