@@ -4,6 +4,10 @@ All notable changes to the Aptos Unity SDK will be captured in this file. This c
 
 # Unreleased
 
+# 0.0.3-beta (2024-11-05)
+
+- Bump Aptos Unity SDK version to 0.0.13-beta
+
 # 0.0.2-beta (2024-10-04)
 
 - Bump Aptos Unity SDK version to 0.0.12-beta
