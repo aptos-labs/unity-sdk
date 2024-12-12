@@ -23,7 +23,7 @@ using Aptos;
 
 // 2. Initialize the Aptos client
 var config = new AptosConfig(Networks.Mainnet);
-var client = new AptosClient(config);
+var client = new AptosUnityClient(config);
 
 // 3. Use the client to interact with the blockchain!
 var ledgerInfo = await client.Block.GetLedgerInfo();
@@ -38,7 +38,7 @@ using Aptos;
 
 // 1. Initialize the Aptos client
 var config = new AptosConfig(Networks.Mainnet);
-var client = new AptosClient(config);
+var client = new AptosUnityClient(config);
 
 // 2. Create a new account
 var account = Account.Generate();
@@ -69,7 +69,7 @@ using Aptos;
 
 // 1. Initialize the Aptos client
 var config = new AptosConfig(Networks.Mainnet);
-var client = new AptosClient(config);
+var client = new AptosUnityClient(config);
 
 // 2. Call a view function
 var result = await client.Contract.View(
@@ -144,7 +144,7 @@ public partial class MyClass : Node
 {
     public override void _Ready()
     {
-        var client = new AptosClient(Networks.Mainnet);
+        var client = new AptosUnityClient(Networks.Mainnet);
         var ledgerInfo = await client.Block.GetLedgerInfo();
         Console.WriteLine($"Ledger Block Height: {ledgerInfo.BlockHeight}");
     }

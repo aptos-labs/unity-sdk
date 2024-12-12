@@ -12,7 +12,7 @@ namespace Aptos
     /// <example>
     /// yield return CoroutineHelper.Await(async () =>
     /// {
-    ///     var client = new AptosClient();
+    ///     var client = new AptosUnityClient();
     ///
     ///     using (
     ///         var res = await client.SomeMethod(...)
@@ -28,7 +28,7 @@ namespace Aptos
         /// Await the completion of a task and throw any exceptions.
         /// </summary>
         /// <example>
-        /// var client = new AptosClient();
+        /// var client = new AptosUnityClient();
         /// yield return CoroutineHelper.Await(client.SomeAsyncMethod(...));
         /// </example>
         /// <param name="task">The task to await.</param>
@@ -51,7 +51,7 @@ namespace Aptos
         /// <example>
         /// yield return CoroutineHelper.Await(async () =>
         /// {
-        ///     var client = new AptosClient();
+        ///     var client = new AptosUnityClient();
         ///
         ///     using (
         ///         var res = await client.SomeMethod(...)
