@@ -4,6 +4,10 @@ All notable changes to the Aptos Unity SDK will be captured in this file. This c
 
 # Unreleased
 
+# 0.0.6-beta (2025-04-22)
+
+- Bump Aptos .NET SDK version to 0.0.16-beta
+
 # 0.0.5-beta (2024-12-11)
 
 - Add AptosUnityClient class that supports UnityWebRequest instead of HttpClient
