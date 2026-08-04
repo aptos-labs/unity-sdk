@@ -1,6 +1,6 @@
 {
   "name": "com.aptoslabs.aptos-unity-sdk",
-  "version": "0.0.7-beta",
+  "version": "0.0.8-beta",
   "unity": "6000.3",
   "description": "Aptos Web3 Unity SDK built by Aptos Labs.",
   "displayName": "Aptos",
