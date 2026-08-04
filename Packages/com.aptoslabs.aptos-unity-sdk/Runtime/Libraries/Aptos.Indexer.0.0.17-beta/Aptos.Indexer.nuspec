@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Aptos.Indexer</id>
-    <version>0.0.16-beta</version>
+    <version>0.0.17-beta</version>
     <authors>Aptos Labs</authors>
     <license type="expression">Apache-2.0</license>
     <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
@@ -10,7 +10,7 @@
     <projectUrl>https://aptos.dev/en/build/sdks/dotnet-sdk</projectUrl>
     <description>Package Description</description>
     <copyright>Copyright (c) Aptos Labs 2024</copyright>
-    <repository type="git" url="https://github.com/aptos-labs/aptos-dotnet-sdk" commit="0bb37d4fc0866cb094e1cc88d141431ea419095a" />
+    <repository type="git" url="https://github.com/aptos-labs/aptos-dotnet-sdk" commit="603f173cb0c755263ec9f84e1aa6e260bc9facba" />
     <dependencies>
       <group targetFramework="net8.0">
         <dependency id="StrawberryShake" version="13.9.11" exclude="Build,Analyzers" />
