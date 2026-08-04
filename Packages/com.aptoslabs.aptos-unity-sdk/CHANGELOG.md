@@ -7,6 +7,7 @@ All notable changes to the Aptos Unity SDK will be captured in this file. This c
 # 0.0.8-beta (2026-08-04)
 
 - Bump `System.Text.Json` from 8.0.4 to 8.0.6 to address CVE-2024-43485 (GHSA-8g4q-xg66-9fp4)
+- Remove stray `Packages/StrawberryShake.Server.13.9.11` NuGet tools dump (included vulnerable `System.Text.Json` 6.0.7); the SDK already vendors the package under `Runtime/Libraries`
 
 # 0.0.7-beta (2026-08-04)
 
