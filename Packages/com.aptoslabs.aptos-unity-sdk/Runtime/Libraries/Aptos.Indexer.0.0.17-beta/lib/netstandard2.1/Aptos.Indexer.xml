@@ -4,34 +4,34 @@
         <name>Aptos.Indexer</name>
     </assembly>
     <members>
-        <member name="P:Aptos.Indexer.GraphQL.GetEventsResult.Events">
+        <member name="P:Aptos.Indexer.GraphQL.GetNamesResult.Current_aptos_names">
             <summary>
-            fetch data from the table: "events"
+            fetch data from the table: "current_aptos_names"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetEvents_Events_events">
+        <member name="T:Aptos.Indexer.GraphQL.GetNames_Current_aptos_names_current_aptos_names">
             <summary>
-            columns and relationships of "events"
+            columns and relationships of "current_aptos_names"
             </summary>
         </member>
-        <member name="P:Aptos.Indexer.GraphQL.IGetEventsResult.Events">
+        <member name="P:Aptos.Indexer.GraphQL.IGetNamesResult.Current_aptos_names">
             <summary>
-            fetch data from the table: "events"
+            fetch data from the table: "current_aptos_names"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.IEventData">
+        <member name="T:Aptos.Indexer.GraphQL.IAptosNameData">
             <summary>
-            columns and relationships of "events"
+            columns and relationships of "current_aptos_names"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events">
+        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names">
             <summary>
-            columns and relationships of "events"
+            columns and relationships of "current_aptos_names"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events_events">
+        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names_current_aptos_names">
             <summary>
-            columns and relationships of "events"
+            columns and relationships of "current_aptos_names"
             </summary>
         </member>
         <member name="P:Aptos.Indexer.GraphQL.GetAccountTransactionsCountResult.Account_transactions_aggregate">
@@ -72,61 +72,6 @@
         <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCount_Account_transactions_aggregate_Aggregate_account_transactions_aggregate_fields">
             <summary>
             aggregate fields of "account_transactions"
-            </summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.GetNamesResult.Current_aptos_names">
-            <summary>
-            fetch data from the table: "current_aptos_names"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetNames_Current_aptos_names_current_aptos_names">
-            <summary>
-            columns and relationships of "current_aptos_names"
-            </summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.IGetNamesResult.Current_aptos_names">
-            <summary>
-            fetch data from the table: "current_aptos_names"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IAptosNameData">
-            <summary>
-            columns and relationships of "current_aptos_names"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names">
-            <summary>
-            columns and relationships of "current_aptos_names"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetNames_Current_aptos_names_current_aptos_names">
-            <summary>
-            columns and relationships of "current_aptos_names"
-            </summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.GetProcessorStatusResult.Processor_status">
-            <summary>
-            fetch data from the table: "processor_status"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatus_Processor_status_processor_status">
-            <summary>
-            columns and relationships of "processor_status"
-            </summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.IGetProcessorStatusResult.Processor_status">
-            <summary>
-            fetch data from the table: "processor_status"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status">
-            <summary>
-            columns and relationships of "processor_status"
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status_processor_status">
-            <summary>
-            columns and relationships of "processor_status"
             </summary>
         </member>
         <member name="P:Aptos.Indexer.GraphQL.GetDigitalAssetOwnershipsResult.Current_token_ownerships_v2">
@@ -324,8 +269,63 @@
             columns and relationships of "fungible_asset_metadata"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.events_bool_exp">
-            <summary>Boolean expression to filter rows from the table "events". All fields are combined with a logical 'AND'.</summary>
+        <member name="P:Aptos.Indexer.GraphQL.GetProcessorStatusResult.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatus_Processor_status_processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetProcessorStatusResult.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatus_Processor_status_processor_status">
+            <summary>
+            columns and relationships of "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.GetEventsResult.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEvents_Events_events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.IGetEventsResult.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IEventData">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEvents_Events_events">
+            <summary>
+            columns and relationships of "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.current_aptos_names_bool_exp">
+            <summary>Boolean expression to filter rows from the table "current_aptos_names". All fields are combined with a logical 'AND'.</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.String_comparison_exp">
             <summary>Boolean expression to compare columns of type "String". All fields are combined with logical 'AND'.</summary>
@@ -360,44 +360,17 @@
         <member name="P:Aptos.Indexer.GraphQL.String_comparison_exp._similar">
             <summary>does the column match the given SQL regular expression</summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.bigint_comparison_exp">
-            <summary>Boolean expression to compare columns of type "bigint". All fields are combined with logical 'AND'.</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.jsonb_comparison_exp">
-            <summary>Boolean expression to compare columns of type "jsonb". All fields are combined with logical 'AND'.</summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contained_in">
-            <summary>is the column contained in the given json value</summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contains">
-            <summary>does the column contain the given json value at the top level</summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_key">
-            <summary>does the string exist as a top-level key in the column</summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_all">
-            <summary>do all of these strings exist as top-level keys in the column</summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_any">
-            <summary>do any of these strings exist as top-level keys in the column</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.events_order_by">
-            <summary>Ordering options when selecting data from "events".</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.current_aptos_names_bool_exp">
-            <summary>Boolean expression to filter rows from the table "current_aptos_names". All fields are combined with a logical 'AND'.</summary>
-        </member>
         <member name="T:Aptos.Indexer.GraphQL.timestamp_comparison_exp">
             <summary>Boolean expression to compare columns of type "timestamp". All fields are combined with logical 'AND'.</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.Boolean_comparison_exp">
             <summary>Boolean expression to compare columns of type "Boolean". All fields are combined with logical 'AND'.</summary>
         </member>
+        <member name="T:Aptos.Indexer.GraphQL.bigint_comparison_exp">
+            <summary>Boolean expression to compare columns of type "bigint". All fields are combined with logical 'AND'.</summary>
+        </member>
         <member name="T:Aptos.Indexer.GraphQL.current_aptos_names_order_by">
             <summary>Ordering options when selecting data from "current_aptos_names".</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.processor_status_bool_exp">
-            <summary>Boolean expression to filter rows from the table "processor_status". All fields are combined with a logical 'AND'.</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.current_token_ownerships_v2_bool_exp">
             <summary>Boolean expression to filter rows from the table "current_token_ownerships_v2". All fields are combined with a logical 'AND'.</summary>
@@ -416,6 +389,24 @@
         </member>
         <member name="T:Aptos.Indexer.GraphQL.current_collections_v2_bool_exp">
             <summary>Boolean expression to filter rows from the table "current_collections_v2". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.jsonb_comparison_exp">
+            <summary>Boolean expression to compare columns of type "jsonb". All fields are combined with logical 'AND'.</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contained_in">
+            <summary>is the column contained in the given json value</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._contains">
+            <summary>does the column contain the given json value at the top level</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_key">
+            <summary>does the string exist as a top-level key in the column</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_all">
+            <summary>do all of these strings exist as top-level keys in the column</summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.jsonb_comparison_exp._has_keys_any">
+            <summary>do any of these strings exist as top-level keys in the column</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.current_token_royalty_v1_bool_exp">
             <summary>Boolean expression to filter rows from the table "current_token_royalty_v1". All fields are combined with a logical 'AND'.</summary>
@@ -479,6 +470,15 @@
         </member>
         <member name="T:Aptos.Indexer.GraphQL.fungible_asset_metadata_order_by">
             <summary>Ordering options when selecting data from "fungible_asset_metadata".</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.processor_status_bool_exp">
+            <summary>Boolean expression to filter rows from the table "processor_status". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.events_bool_exp">
+            <summary>Boolean expression to filter rows from the table "events". All fields are combined with a logical 'AND'.</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.events_order_by">
+            <summary>Ordering options when selecting data from "events".</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.Order_by">
             <summary>
@@ -625,129 +625,6 @@
             column name
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetEventsQueryDocument">
-            <summary>
-            Represents the operation service of the GetEvents GraphQL operation
-            <code>
-            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
-              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
-                __typename
-                ... EventData
-              }
-            }
-            
-            fragment EventData on events {
-              account_address
-              creation_number
-              data
-              event_index
-              sequence_number
-              transaction_block_height
-              transaction_version
-              type
-              indexed_type
-            }
-            </code>
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetEventsQuery">
-            <summary>
-            Represents the operation service of the GetEvents GraphQL operation
-            <code>
-            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
-              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
-                __typename
-                ... EventData
-              }
-            }
-            
-            fragment EventData on events {
-              account_address
-              creation_number
-              data
-              event_index
-              sequence_number
-              transaction_block_height
-              transaction_version
-              type
-              indexed_type
-            }
-            </code>
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetEventsQuery">
-            <summary>
-            Represents the operation service of the GetEvents GraphQL operation
-            <code>
-            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
-              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
-                __typename
-                ... EventData
-              }
-            }
-            
-            fragment EventData on events {
-              account_address
-              creation_number
-              data
-              event_index
-              sequence_number
-              transaction_block_height
-              transaction_version
-              type
-              indexed_type
-            }
-            </code>
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQueryDocument">
-            <summary>
-            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
-            <code>
-            query GetAccountTransactionsCount($address: String) {
-              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
-                __typename
-                aggregate {
-                  __typename
-                  count
-                }
-              }
-            }
-            </code>
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQuery">
-            <summary>
-            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
-            <code>
-            query GetAccountTransactionsCount($address: String) {
-              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
-                __typename
-                aggregate {
-                  __typename
-                  count
-                }
-              }
-            }
-            </code>
-            </summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCountQuery">
-            <summary>
-            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
-            <code>
-            query GetAccountTransactionsCount($address: String) {
-              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
-                __typename
-                aggregate {
-                  __typename
-                  count
-                }
-              }
-            }
-            </code>
-            </summary>
-        </member>
         <member name="T:Aptos.Indexer.GraphQL.GetNamesQueryDocument">
             <summary>
             Represents the operation service of the GetNames GraphQL operation
@@ -823,46 +700,49 @@
             </code>
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQueryDocument">
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQueryDocument">
             <summary>
-            Represents the operation service of the GetProcessorStatus GraphQL operation
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
             <code>
-            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
-              processor_status(where: $where_condition) {
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
                 __typename
-                last_success_version
-                processor
-                last_updated
+                aggregate {
+                  __typename
+                  count
+                }
               }
             }
             </code>
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQuery">
+        <member name="T:Aptos.Indexer.GraphQL.GetAccountTransactionsCountQuery">
             <summary>
-            Represents the operation service of the GetProcessorStatus GraphQL operation
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
             <code>
-            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
-              processor_status(where: $where_condition) {
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
                 __typename
-                last_success_version
-                processor
-                last_updated
+                aggregate {
+                  __typename
+                  count
+                }
               }
             }
             </code>
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatusQuery">
+        <member name="T:Aptos.Indexer.GraphQL.IGetAccountTransactionsCountQuery">
             <summary>
-            Represents the operation service of the GetProcessorStatus GraphQL operation
+            Represents the operation service of the GetAccountTransactionsCount GraphQL operation
             <code>
-            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
-              processor_status(where: $where_condition) {
+            query GetAccountTransactionsCount($address: String) {
+              account_transactions_aggregate(where: { account_address: { _eq: $address } }) {
                 __typename
-                last_success_version
-                processor
-                last_updated
+                aggregate {
+                  __typename
+                  count
+                }
               }
             }
             </code>
@@ -1171,6 +1051,126 @@
             </code>
             </summary>
         </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQueryDocument">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetProcessorStatusQuery">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetProcessorStatusQuery">
+            <summary>
+            Represents the operation service of the GetProcessorStatus GraphQL operation
+            <code>
+            query GetProcessorStatus($where_condition: processor_status_bool_exp) {
+              processor_status(where: $where_condition) {
+                __typename
+                last_success_version
+                processor
+                last_updated
+              }
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEventsQueryDocument">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.GetEventsQuery">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.IGetEventsQuery">
+            <summary>
+            Represents the operation service of the GetEvents GraphQL operation
+            <code>
+            query GetEvents($where_condition: events_bool_exp, $offset: Int, $limit: Int, $order_by: [events_order_by!]) {
+              events(where: $where_condition, offset: $offset, limit: $limit, order_by: $order_by) {
+                __typename
+                ... EventData
+              }
+            }
+            
+            fragment EventData on events {
+              account_address
+              creation_number
+              data
+              event_index
+              sequence_number
+              transaction_block_height
+              transaction_version
+              type
+              indexed_type
+            }
+            </code>
+            </summary>
+        </member>
         <member name="T:Aptos.Indexer.GraphQL.AptosIndexerClient">
             <summary>
             Represents the AptosIndexerClient GraphQL client
@@ -1181,24 +1181,14 @@
             Represents the AptosIndexerClient GraphQL client
             </summary>
         </member>
-        <member name="P:Aptos.Indexer.GraphQL.State.GetEventsResultInfo.Events">
-            <summary>
-            fetch data from the table: "events"
-            </summary>
-        </member>
-        <member name="P:Aptos.Indexer.GraphQL.State.GetAccountTransactionsCountResultInfo.Account_transactions_aggregate">
-            <summary>
-            fetch aggregated fields from the table: "account_transactions"
-            </summary>
-        </member>
         <member name="P:Aptos.Indexer.GraphQL.State.GetNamesResultInfo.Current_aptos_names">
             <summary>
             fetch data from the table: "current_aptos_names"
             </summary>
         </member>
-        <member name="P:Aptos.Indexer.GraphQL.State.GetProcessorStatusResultInfo.Processor_status">
+        <member name="P:Aptos.Indexer.GraphQL.State.GetAccountTransactionsCountResultInfo.Account_transactions_aggregate">
             <summary>
-            fetch data from the table: "processor_status"
+            fetch aggregated fields from the table: "account_transactions"
             </summary>
         </member>
         <member name="P:Aptos.Indexer.GraphQL.State.GetDigitalAssetOwnershipsResultInfo.Current_token_ownerships_v2">
@@ -1211,20 +1201,24 @@
             fetch data from the table: "current_fungible_asset_balances"
             </summary>
         </member>
-        <member name="T:Aptos.Indexer.GraphQL.State.eventsData">
-            <summary>columns and relationships of "events"</summary>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetProcessorStatusResultInfo.Processor_status">
+            <summary>
+            fetch data from the table: "processor_status"
+            </summary>
+        </member>
+        <member name="P:Aptos.Indexer.GraphQL.State.GetEventsResultInfo.Events">
+            <summary>
+            fetch data from the table: "events"
+            </summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.current_aptos_namesData">
+            <summary>columns and relationships of "current_aptos_names"</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.State.account_transactions_aggregateData">
             <summary>aggregated selection of "account_transactions"</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.State.account_transactions_aggregate_fieldsData">
             <summary>aggregate fields of "account_transactions"</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.State.current_aptos_namesData">
-            <summary>columns and relationships of "current_aptos_names"</summary>
-        </member>
-        <member name="T:Aptos.Indexer.GraphQL.State.processor_statusData">
-            <summary>columns and relationships of "processor_status"</summary>
         </member>
         <member name="T:Aptos.Indexer.GraphQL.State.current_token_ownerships_v2Data">
             <summary>columns and relationships of "current_token_ownerships_v2"</summary>
@@ -1258,6 +1252,12 @@
         </member>
         <member name="T:Aptos.Indexer.GraphQL.State.fungible_asset_metadataData">
             <summary>columns and relationships of "fungible_asset_metadata"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.processor_statusData">
+            <summary>columns and relationships of "processor_status"</summary>
+        </member>
+        <member name="T:Aptos.Indexer.GraphQL.State.eventsData">
+            <summary>columns and relationships of "events"</summary>
         </member>
     </members>
 </doc>
